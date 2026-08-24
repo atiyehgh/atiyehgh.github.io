@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عطیه قیومی‌پور — طراح گرافیک و دیجیتال مارکتینگ</title>
+<meta name="description" content="پورتفولیوی عطیه قیومی‌پور، طراح گرافیک و مدیر دیجیتال مارکتینگ — نمونه‌کار، آمار رشد واقعی و رشته‌های استوری">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Vazirmatn:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1b130f;
+    --bg-card:#2a1e17;
+    --text:#f4ebdd;
+    --text-dim:#c9b8a4;
+    --text-mute:#8f7c6a;
+    --amber:#e8a33d;
+    --flame:#ff8a4c;
+    --wine:#8c3b33;
+    --gold-line:#c9a227;
+    --radius:18px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--bg); color:var(--text); font-family:'Vazirmatn', sans-serif; line-height:1.9; overflow-x:hidden; }
+  body::before{
+    content:""; position:fixed; inset:0;
+    background:
+      radial-gradient(ellipse 800px 500px at 15% -5%, rgba(232,163,61,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 30%, rgba(140,59,51,0.14), transparent 60%);
+    pointer-events:none; z-index:0;
+  }
+  h1,h2,h3,.display{ font-family:'Aref Ruqaa', serif; font-weight:700; color:var(--text); }
+  .num{ font-family:'Space Grotesk', sans-serif; direction:ltr; display:inline-block; }
+  a{ color:var(--amber); text-decoration:none; }
+  section{ position:relative; z-index:1; padding:88px 22px; max-width:920px; margin:0 auto; }
+  .eyebrow{ font-size:13px; letter-spacing:2px; color:var(--amber); font-weight:600; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--amber); }
+  .hero{ min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding-top:60px; padding-bottom:60px; text-align:center; }
+  .flame{ width:14px; height:20px; margin:0 auto 26px; position:relative; }
+  .flame::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 65%, var(--flame), var(--amber) 55%, transparent 75%);
+    border-radius:50% 50% 50% 50% / 65% 65% 35% 35%;
+    animation:flicker 2.6s ease-in-out infinite;
+  }
+  @keyframes flicker{
+    0%,100%{ transform:scaleY(1) scaleX(1) rotate(0deg); opacity:1;}
+    30%{ transform:scaleY(1.08) scaleX(0.94) rotate(-2deg); opacity:0.92;}
+    55%{ transform:scaleY(0.92) scaleX(1.05) rotate(2deg); opacity:1;}
+    80%{ transform:scaleY(1.05) scaleX(0.97) rotate(-1deg); opacity:0.95;}
+  }
+  .hero .role{ font-size:14px; letter-spacing:1px; color:var(--text-dim); margin-bottom:18px; }
+  .hero h1{ font-size:clamp(2.6rem, 9vw, 4.6rem); line-height:1.25; margin-bottom:22px; }
+  .hero p{ color:var(--text-dim); font-size:17px; max-width:520px; margin:0 auto 34px; }
+  .cta-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn{ border:1px solid rgba(244,235,221,0.25); color:var(--text); padding:14px 26px; border-radius:999px; font-size:14px; letter-spacing:0.5px; transition:border-color .25s, background .25s, transform .25s; display:inline-block; }
+  .btn:hover, .btn:focus-visible{ border-color:var(--amber); background:rgba(232,163,61,0.08); transform:translateY(-2px); }
+  .btn.solid{ background:linear-gradient(135deg, var(--amber), var(--flame)); color:#1b130f; border:none; font-weight:700; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--amber); outline-offset:3px; }
+  .scroll-cue{ margin-top:56px; font-size:12px; color:var(--text-mute); letter-spacing:1px; }
+  .drip{ height:34px; width:100%; z-index:1; }
+  .drip svg{ width:100%; height:100%; display:block; }
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .about-card{ background:var(--bg-card); border:1px solid rgba(244,235,221,0.06); border-radius:var(--radius); padding:34px; }
+  .about-card h2{ font-size:2rem; margin-bottom:18px; }
+  .about-card p{ color:var(--text-dim); font-size:16px; margin-bottom:14px; white-space:pre-line; }
+  .tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .tag{ font-size:13px; padding:8px 16px; border-radius:999px; border:1px solid rgba(232,163,61,0.35); color:var(--amber); background:rgba(232,163,61,0.06); }
+  .project-head{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:10px; }
+  .project-head h2{ font-size:2.2rem; }
+  .duration{ font-family:'Space Grotesk', sans-serif; direction:ltr; font-size:13px; color:var(--text-mute); background:rgba(244,235,221,0.05); padding:8px 14px; border-radius:999px; white-space:nowrap; }
+  .project-lead{ color:var(--text-dim); font-size:16px; max-width:640px; margin-bottom:34px; }
+  .scope-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:14px; }
+  .scope-item{ background:var(--bg-card); border:1px solid rgba(244,235,221,0.06); border-radius:14px; padding:20px; font-size:15px; color:var(--text-dim); display:flex; align-items:center; gap:12px; }
+  .scope-item .dot{ width:8px; height:8px; border-radius:50%; background:var(--amber); flex-shrink:0; }
+  .stats-wrap{ display:grid; gap:20px; }
+  .stat-card{ background:var(--bg-card); border:1px solid rgba(244,235,221,0.06); border-radius:var(--radius); padding:26px 28px; }
+  .stat-top{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px; flex-wrap:wrap; gap:8px; }
+  .stat-label{ font-size:15px; color:var(--text-dim); }
+  .stat-mult{ font-family:'Space Grotesk', sans-serif; direction:ltr; font-size:13px; color:var(--flame); background:rgba(255,138,76,0.1); padding:4px 12px; border-radius:999px; border:1px solid rgba(255,138,76,0.3); }
+  .stat-values{ display:flex; align-items:center; gap:14px; margin-bottom:14px; flex-wrap:wrap; direction:ltr; }
+  .stat-values .from{ font-size:1.1rem; color:var(--text-mute); font-family:'Space Grotesk', sans-serif; }
+  .stat-values .to{ font-size:2.1rem; font-weight:700; color:var(--amber); font-family:'Space Grotesk', sans-serif; }
+  .single-stat{ text-align:center; padding:22px 16px; }
+  .single-stat .to{ font-size:1.9rem; }
+  .stats-mini{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; }
+  .proof-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:12px; margin-top:24px; }
+  .proof-slot img, .story-slot img{ width:100%; border-radius:14px; display:block; object-fit:cover; aspect-ratio:9/16; border:1px solid rgba(244,235,221,0.1); }
+  .empty-note{ color:var(--text-mute); font-size:13px; text-align:center; padding:20px; border:1.5px dashed rgba(232,163,61,0.25); border-radius:14px; }
+  .month-group{ margin-bottom:44px; }
+  .month-title{ display:flex; align-items:center; gap:12px; font-size:1.3rem; margin-bottom:18px; }
+  .month-title .wick{ width:26px; height:1px; background:var(--gold-line); }
+  .story-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:14px; }
+  .calendar-grid{ display:grid; grid-template-columns:repeat(7, 1fr); gap:6px; }
+  .cal-day-head{ font-size:11px; color:var(--text-mute); text-align:center; padding-bottom:6px; }
+  .cal-cell{ aspect-ratio:1; border:1px dashed rgba(244,235,221,0.12); border-radius:8px; font-size:10px; color:var(--text-mute); display:flex; align-items:center; justify-content:center; text-align:center; padding:3px; }
+  .cal-cell.filled{ border-style:solid; border-color:rgba(232,163,61,0.3); background:rgba(232,163,61,0.06); color:var(--amber); }
+  footer{ text-align:center; padding:70px 22px 50px; position:relative; z-index:1; }
+  footer h2{ font-size:1.9rem; margin-bottom:14px; }
+  footer p{ color:var(--text-dim); margin-bottom:28px; font-size:15px; }
+  .insta-link{ display:inline-flex; align-items:center; gap:8px; font-family:'Space Grotesk', sans-serif; direction:ltr; font-size:15px; font-weight:600; }
+  .foot-note{ margin-top:50px; font-size:11.5px; color:var(--text-mute); }
+  @media (max-width:520px){ section{ padding:64px 18px; } .about-card, .stat-card{ padding:22px; } }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } .reveal{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<section class="hero" id="hero">
+  <div class="flame" aria-hidden="true"></div>
+  <div class="role" id="hero-role"></div>
+  <h1 id="hero-name"></h1>
+  <p id="hero-tagline"></p>
+  <div class="cta-row">
+    <a href="#project" class="btn solid">نمونه‌کار اصلی</a>
+    <a href="#contact" class="btn">تماس با من</a>
+  </div>
+  <div class="scroll-cue">پایین را ببین ↓</div>
+</section>
+
+<div class="drip" aria-hidden="true"><svg viewBox="0 0 500 34" preserveAspectRatio="none"><path d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z" fill="#1b130f"></path></svg></div>
+
+<section class="reveal" id="about">
+  <div class="eyebrow">درباره من</div>
+  <div class="about-card">
+    <h2 id="about-heading"></h2>
+    <p id="about-body"></p>
+    <div class="tags" id="about-tags"></div>
+  </div>
+</section>
+
+<div class="drip" aria-hidden="true"><svg viewBox="0 0 500 34" preserveAspectRatio="none"><path d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z" fill="#1b130f"></path></svg></div>
+
+<section class="reveal" id="project">
+  <div class="eyebrow">پروژه ویژه</div>
+  <div class="project-head">
+    <h2 id="project-title"></h2>
+    <span class="duration" id="project-duration"></span>
+  </div>
+  <p class="project-lead" id="project-lead"></p>
+  <div class="scope-grid" id="project-scope"></div>
+</section>
+
+<div class="drip" aria-hidden="true"><svg viewBox="0 0 500 34" preserveAspectRatio="none"><path d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z" fill="#1b130f"></path></svg></div>
+
+<section class="reveal" id="stats">
+  <div class="eyebrow">نتیجه، با عدد</div>
+  <h2 style="font-size:2.2rem; margin-bottom:30px;">قبل و بعد از این همکاری</h2>
+  <div class="stats-wrap" id="stats-wrap"></div>
+  <div class="proof-grid" id="proof-grid"></div>
+</section>
+
+<div class="drip" aria-hidden="true"><svg viewBox="0 0 500 34" preserveAspectRatio="none"><path d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z" fill="#1b130f"></path></svg></div>
+
+<section class="reveal" id="stories">
+  <div class="eyebrow">نمونه استوری‌ها</div>
+  <h2 style="font-size:2.2rem; margin-bottom:8px;">رشته‌های نکات شمع‌سازی</h2>
+  <div id="story-groups"></div>
+</section>
+
+<div class="drip" aria-hidden="true"><svg viewBox="0 0 500 34" preserveAspectRatio="none"><path d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z" fill="#1b130f"></path></svg></div>
+
+<section class="reveal" id="calendar">
+  <div class="eyebrow">تقویم محتوایی</div>
+  <h2 style="font-size:2.2rem; margin-bottom:28px;">نمونه چیدمان هفتگی</h2>
+  <div class="calendar-grid" id="calendar-grid"></div>
+</section>
+
+<div class="drip" aria-hidden="true"><svg viewBox="0 0 500 34" preserveAspectRatio="none"><path d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z" fill="#1b130f"></path></svg></div>
+
+<footer id="contact" class="reveal">
+  <div class="flame" aria-hidden="true" style="margin-bottom:22px;"></div>
+  <h2>بریم پروژه بعدی رو شروع کنیم؟</h2>
+  <p>برای همکاری یا دیدن نمونه‌کارهای بیشتر، پیام بده.</p>
+  <a class="insta-link" id="insta-link" href="#" target="_blank" rel="noopener"></a>
+  <div class="foot-note" id="footer-name"></div>
+</footer>
+
+<script>
+async function loadSite(){
+  let data;
+  try{
+    const res = await fetch('content/site.json', {cache:'no-store'});
+    data = await res.json();
+  }catch(e){
+    console.error('Could not load site content', e);
+    return;
+  }
+
+  // Appearance
+  if(data.appearance){
+    const r = document.documentElement.style;
+    if(data.appearance.bg_color) r.setProperty('--bg', data.appearance.bg_color);
+    if(data.appearance.card_color) r.setProperty('--bg-card', data.appearance.card_color);
+    if(data.appearance.text_color) r.setProperty('--text', data.appearance.text_color);
+    if(data.appearance.accent_color) r.setProperty('--amber', data.appearance.accent_color);
+    if(data.appearance.accent2_color) r.setProperty('--wine', data.appearance.accent2_color);
+  }
+
+  // Hero
+  document.getElementById('hero-role').textContent = data.hero?.role || '';
+  document.getElementById('hero-name').textContent = data.hero?.name || '';
+  document.getElementById('hero-tagline').textContent = data.hero?.tagline || '';
+  document.getElementById('footer-name').textContent = data.hero?.name || '';
+
+  // About
+  document.getElementById('about-heading').textContent = data.about?.heading || '';
+  document.getElementById('about-body').textContent = data.about?.body || '';
+  const tagsWrap = document.getElementById('about-tags');
+  (data.about?.tags || []).forEach(t=>{
+    const s = document.createElement('span');
+    s.className='tag'; s.textContent=t; tagsWrap.appendChild(s);
+  });
+
+  // Project
+  document.getElementById('project-title').textContent = data.project?.title || '';
+  document.getElementById('project-duration').textContent = data.project?.duration || '';
+  document.getElementById('project-lead').textContent = data.project?.lead || '';
+  const scopeWrap = document.getElementById('project-scope');
+  (data.project?.scope || []).forEach(item=>{
+    const d = document.createElement('div');
+    d.className='scope-item';
+    d.innerHTML = '<span class="dot"></span>'+item;
+    scopeWrap.appendChild(d);
+  });
+
+  // Stats
+  const s = data.stats || {};
+  const statsWrap = document.getElementById('stats-wrap');
+  statsWrap.innerHTML = `
+    <div class="stat-card">
+      <div class="stat-top"><span class="stat-label">ویوز استوری</span><span class="stat-mult">${s.views_mult||''}</span></div>
+      <div class="stat-values"><span class="from num">${s.views_before||''}</span><span class="arrow">←</span><span class="to num">${s.views_after||''}</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><span class="stat-label">تعامل (Engagement)</span><span class="stat-mult">${s.engagement_mult||''}</span></div>
+      <div class="stat-values"><span class="from num">${s.engagement_before||''}</span><span class="arrow">←</span><span class="to num">${s.engagement_after||''}</span></div>
+    </div>
+    <div class="stats-mini">
+      <div class="stat-card single-stat">
+        <div class="stat-label" style="margin-bottom:10px;">رشد فالوور</div>
+        <div class="to num">${s.followers_growth||''}</div>
+        <div class="stat-mult" style="margin-top:10px; display:inline-block;">${s.followers_percent||''}</div>
+      </div>
+      <div class="stat-card single-stat">
+        <div class="stat-label" style="margin-bottom:10px;">ریپلای استوری</div>
+        <div class="to num">${s.replies||''}</div>
+      </div>
+    </div>
+  `;
+
+  const proofWrap = document.getElementById('proof-grid');
+  const proofImages = data.proofImages || [];
+  if(proofImages.length === 0){
+    proofWrap.innerHTML = '<div class="empty-note">اسکرین‌شات آمار هنوز اضافه نشده — از پنل مدیریت اضافه‌اش کن.</div>';
+  } else {
+    proofImages.forEach(img=>{
+      const el = document.createElement('img');
+      el.src = img.image || img;
+      el.className='proof-slot';
+      proofWrap.appendChild(el);
+    });
+  }
+
+  // Story series
+  const storyWrap = document.getElementById('story-groups');
+  const series = data.storySeries || [];
+  if(series.length === 0){
+    storyWrap.innerHTML = '<div class="empty-note">هنوز رشته‌ای اضافه نشده — از پنل مدیریت اضافه‌اش کن.</div>';
+  } else {
+    series.forEach(group=>{
+      const g = document.createElement('div');
+      g.className = 'month-group';
+      const imgs = (group.images||[]).map(im => `<img class="story-slot" src="${im.image||im}" alt="${group.title||''}">`).join('');
+      g.innerHTML = `
+        <div class="month-title"><span class="wick"></span>${group.title||''} ${group.month? '— '+group.month : ''}</div>
+        <div class="story-grid">${imgs || '<div class="empty-note">عکسی اضافه نشده</div>'}</div>
+      `;
+      storyWrap.appendChild(g);
+    });
+  }
+
+  // Calendar
+  const calWrap = document.getElementById('calendar-grid');
+  const days = data.calendar || [];
+  days.forEach(d=>{
+    const head = document.createElement('div');
+    head.className='cal-day-head';
+    head.textContent = (d.day||'').slice(0,1);
+    calWrap.appendChild(head);
+  });
+  days.forEach(d=>{
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell' + (d.content ? ' filled' : '');
+    cell.textContent = d.content || '—';
+    calWrap.appendChild(cell);
+  });
+
+  // Contact
+  const insta = document.getElementById('insta-link');
+  insta.href = data.contact?.instagram_url || '#';
+  insta.textContent = data.contact?.instagram_handle || '';
+
+  // Reveal on scroll
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:0.15});
+  els.forEach(el=>io.observe(el));
+}
+loadSite();
+</script>
+
+</body>
+</html>

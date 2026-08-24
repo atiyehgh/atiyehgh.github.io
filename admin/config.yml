@@ -1,0 +1,103 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: simple
+locale: "en"
+
+collections:
+  - name: "site"
+    label: "سایت من"
+    files:
+      - file: "content/site.json"
+        label: "محتوای سایت"
+        name: "home"
+        fields:
+          - label: "معرفی (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "عنوان کوچیک", name: "role", widget: "string" }
+              - { label: "اسم", name: "name", widget: "string" }
+              - { label: "جمله معرفی", name: "tagline", widget: "text" }
+
+          - label: "درباره من"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "تیتر", name: "heading", widget: "string" }
+              - { label: "متن", name: "body", widget: "text" }
+              - label: "برچسب‌های مهارت"
+                name: "tags"
+                widget: "list"
+                field: { label: "برچسب", name: "tag", widget: "string" }
+
+          - label: "پروژه ویژه"
+            name: "project"
+            widget: "object"
+            fields:
+              - { label: "عنوان پروژه", name: "title", widget: "string" }
+              - { label: "بازه زمانی", name: "duration", widget: "string" }
+              - { label: "توضیح کوتاه", name: "lead", widget: "text" }
+              - label: "کارهای انجام‌شده"
+                name: "scope"
+                widget: "list"
+                field: { label: "مورد", name: "item", widget: "string" }
+
+          - label: "آمار قبل/بعد"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "ویوز - قبل", name: "views_before", widget: "string" }
+              - { label: "ویوز - بعد", name: "views_after", widget: "string" }
+              - { label: "ویوز - ضریب رشد", name: "views_mult", widget: "string" }
+              - { label: "تعامل - قبل", name: "engagement_before", widget: "string" }
+              - { label: "تعامل - بعد", name: "engagement_after", widget: "string" }
+              - { label: "تعامل - ضریب رشد", name: "engagement_mult", widget: "string" }
+              - { label: "رشد فالوور", name: "followers_growth", widget: "string" }
+              - { label: "رشد فالوور - درصد", name: "followers_percent", widget: "string" }
+              - { label: "ریپلای استوری", name: "replies", widget: "string" }
+
+          - label: "اسکرین‌شات‌های آمار (Insights)"
+            name: "proofImages"
+            widget: "list"
+            field: { label: "عکس", name: "image", widget: "image" }
+
+          - label: "رشته‌های استوری"
+            name: "storySeries"
+            widget: "list"
+            summary: "{{title}} — {{month}}"
+            fields:
+              - { label: "عنوان رشته", name: "title", widget: "string" }
+              - { label: "ماه", name: "month", widget: "string" }
+              - label: "عکس‌های رشته"
+                name: "images"
+                widget: "list"
+                field: { label: "عکس", name: "image", widget: "image" }
+
+          - label: "تقویم محتوایی (هفتگی)"
+            name: "calendar"
+            widget: "list"
+            fields:
+              - { label: "روز", name: "day", widget: "string" }
+              - { label: "نوع محتوا", name: "content", widget: "string", required: false }
+
+          - label: "تماس"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "آیدی اینستاگرام", name: "instagram_handle", widget: "string" }
+              - { label: "لینک اینستاگرام", name: "instagram_url", widget: "string" }
+
+          - label: "ظاهر سایت (رنگ‌ها)"
+            name: "appearance"
+            widget: "object"
+            fields:
+              - { label: "رنگ پس‌زمینه", name: "bg_color", widget: "color" }
+              - { label: "رنگ کارت‌ها", name: "card_color", widget: "color" }
+              - { label: "رنگ متن", name: "text_color", widget: "color" }
+              - { label: "رنگ اصلی (طلایی)", name: "accent_color", widget: "color" }
+              - { label: "رنگ دوم (شرابی)", name: "accent2_color", widget: "color" }
