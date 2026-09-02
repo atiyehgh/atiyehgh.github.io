@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "role": "تلثاعرریتکک",
+    "name": "عطیه قیومی پور",
+    "tagline": "ذببلدتبسغننربل"
+  },
+  "about": {
+    "heading": "تلبففلپا",
+    "body": "تابثفنوک",
+    "tags": [
+      "خالب",
+      "فبدنق",
+      "لث6ندل"
+    ]
+  },
+  "contact": {
+    "instagram_handle": "97532",
+    "instagram_url": "@sacjihfd_yh"
+  },
+  "appearance": {
+    "bg_color": "#ffff00",
+    "card_color": "#ffff00",
+    "text_color": "#ff00ff",
+    "accent_color": "#0000ff",
+    "accent2_color": "#ff0000"
+  }
+}
