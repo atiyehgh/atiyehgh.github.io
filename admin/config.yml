@@ -4,123 +4,457 @@ backend:
   branch: main
 
 media_folder: "images/uploads"
-public_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 publish_mode: simple
-locale: "en"
+locale: "fa"
 
 collections:
-  # ===== تنظیمات ثابت صفحه اصلی (Hero, About, Contact, Appearance) =====
+
+  # =========================
+  # تنظیمات اصلی سایت
+  # =========================
   - name: "settings"
-    label: "تنظیمات کلی"
+    label: "⚙️ تنظیمات سایت"
     files:
+
       - file: "content/settings.json"
-        label: "معرفی، درباره من، تماس، ظاهر"
-        name: "settings"
+        label: "اطلاعات و ظاهر سایت"
+        name: "site_settings"
+
         fields:
-          - label: "معرفی (Hero)"
+
+          # ---------- Hero ----------
+          - label: "🏠 صفحه اصلی"
             name: "hero"
             widget: "object"
             fields:
-              - { label: "عنوان کوچیک", name: "role", widget: "string" }
-              - { label: "اسم", name: "name", widget: "string" }
-              - { label: "جمله معرفی", name: "tagline", widget: "text" }
 
-          - label: "درباره من"
+              - label: "نام"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "عنوان شغلی"
+                name: "role"
+                widget: "string"
+
+              - label: "توضیح کوتاه"
+                name: "tagline"
+                widget: "text"
+
+              - label: "عکس اصلی"
+                name: "image"
+                widget: "image"
+                required: false
+
+              - label: "متن دکمه اصلی"
+                name: "primaryButton"
+                widget: "string"
+                required: false
+
+              - label: "لینک دکمه اصلی"
+                name: "primaryButtonUrl"
+                widget: "string"
+                required: false
+
+              - label: "متن دکمه دوم"
+                name: "secondaryButton"
+                widget: "string"
+                required: false
+
+              - label: "لینک دکمه دوم"
+                name: "secondaryButtonUrl"
+                widget: "string"
+                required: false
+
+
+          # ---------- About ----------
+          - label: "👩🏻 درباره من"
             name: "about"
             widget: "object"
             fields:
-              - { label: "تیتر", name: "heading", widget: "string" }
-              - { label: "متن", name: "body", widget: "text" }
-              - label: "برچسب‌های مهارت"
-                name: "tags"
-                widget: "list"
-                field: { label: "برچسب", name: "tag", widget: "string" }
 
-          - label: "تماس"
+              - label: "عنوان"
+                name: "heading"
+                widget: "string"
+
+              - label: "متن معرفی"
+                name: "body"
+                widget: "text"
+
+              - label: "خدمات"
+                name: "services"
+                widget: "list"
+                required: false
+                field:
+                  label: "خدمت"
+                  name: "service"
+                  widget: "string"
+
+
+          # ---------- Contact ----------
+          - label: "📞 اطلاعات تماس"
             name: "contact"
             widget: "object"
             fields:
-              - { label: "آیدی اینستاگرام", name: "instagram_handle", widget: "string" }
-              - { label: "لینک اینستاگرام", name: "instagram_url", widget: "string" }
 
-          - label: "ظاهر سایت (رنگ‌ها)"
+              - label: "ایمیل"
+                name: "email"
+                widget: "string"
+                required: false
+
+              - label: "اینستاگرام"
+                name: "instagram"
+                widget: "string"
+                required: false
+
+              - label: "لینکدین"
+                name: "linkedin"
+                widget: "string"
+                required: false
+
+              - label: "تلگرام"
+                name: "telegram"
+                widget: "string"
+                required: false
+
+
+          # ---------- Appearance ----------
+          - label: "🎨 ظاهر سایت"
             name: "appearance"
             widget: "object"
             fields:
-              - { label: "رنگ پس‌زمینه", name: "bg_color", widget: "color" }
-              - { label: "رنگ کارت‌ها", name: "card_color", widget: "color" }
-              - { label: "رنگ متن", name: "text_color", widget: "color" }
-              - { label: "رنگ اصلی (طلایی)", name: "accent_color", widget: "color" }
-              - { label: "رنگ دوم (شرابی)", name: "accent2_color", widget: "color" }
 
-  # ===== پروژه‌ها — هر پروژه یک فایل جدا، دکمه‌ی + افزودن پروژه =====
+              - label: "رنگ اصلی"
+                name: "primaryColor"
+                widget: "color"
+                required: false
+
+              - label: "رنگ پس‌زمینه"
+                name: "backgroundColor"
+                widget: "color"
+                required: false
+
+              - label: "رنگ کارت‌ها"
+                name: "cardColor"
+                widget: "color"
+                required: false
+
+              - label: "رنگ متن"
+                name: "textColor"
+                widget: "color"
+                required: false
+
+              - label: "رنگ متن فرعی"
+                name: "mutedColor"
+                widget: "color"
+                required: false
+
+              - label: "گردی گوشه کارت‌ها"
+                name: "cardRadius"
+                widget: "number"
+                required: false
+                value_type: "int"
+                min: 0
+                max: 50
+
+              - label: "حالت نمایش"
+                name: "layout"
+                widget: "select"
+                options:
+                  - "modern"
+                  - "minimal"
+                  - "editorial"
+                required: false
+
+
+  # =========================
+  # پروژه‌ها
+  # =========================
   - name: "projects"
-    label: "پروژه‌ها"
+    label: "📁 پروژه‌ها"
     folder: "content/projects"
     create: true
-    slug: "{{slug}}"
     extension: "json"
     format: "json"
-    label_singular: "پروژه"
-    summary: "{{title}} — {{duration}}"
+    slug: "{{slug}}"
+
     fields:
-      - { label: "عنوان پروژه", name: "title", widget: "string" }
-      - { label: "بازه زمانی", name: "duration", widget: "string" }
-      - { label: "توضیح کوتاه", name: "lead", widget: "text" }
-      - label: "کارهای انجام‌شده"
+
+      - label: "اطلاعات پروژه"
+        name: "project_info"
+        widget: "object"
+        fields:
+
+          - label: "نام پروژه"
+            name: "title"
+            widget: "string"
+            required: true
+
+          - label: "برند / مشتری"
+            name: "brand"
+            widget: "string"
+            required: false
+
+          - label: "مدت همکاری"
+            name: "duration"
+            widget: "string"
+            required: false
+
+          - label: "نقش من"
+            name: "lead"
+            widget: "string"
+            required: false
+
+          - label: "تصویر کاور"
+            name: "cover"
+            widget: "image"
+            required: false
+
+          - label: "لینک پروژه"
+            name: "url"
+            widget: "string"
+            required: false
+
+
+      - label: "🎯 حوزه‌های فعالیت"
         name: "scope"
         widget: "list"
-        field: { label: "مورد", name: "item", widget: "string" }
-      - label: "آمار قبل/بعد"
-        name: "stats"
-        widget: "object"
         required: false
-        fields:
-          - { label: "ویوز - قبل", name: "views_before", widget: "string", required: false }
-          - { label: "ویوز - بعد", name: "views_after", widget: "string", required: false }
-          - { label: "ویوز - ضریب رشد", name: "views_mult", widget: "string", required: false }
-          - { label: "تعامل - قبل", name: "engagement_before", widget: "string", required: false }
-          - { label: "تعامل - بعد", name: "engagement_after", widget: "string", required: false }
-          - { label: "تعامل - ضریب رشد", name: "engagement_mult", widget: "string", required: false }
-          - { label: "رشد فالوور", name: "followers_growth", widget: "string", required: false }
-          - { label: "رشد فالوور - درصد", name: "followers_percent", widget: "string", required: false }
-          - { label: "ریپلای استوری", name: "replies", widget: "string", required: false }
-      - label: "اسکرین‌شات‌های آمار (Insights)"
-        name: "proofImages"
+        field:
+          label: "حوزه"
+          name: "item"
+          widget: "string"
+
+
+      - label: "📊 آمار و نتایج"
+        name: "stats"
         widget: "list"
         required: false
-        field: { label: "عکس", name: "image", widget: "image" }
+        fields:
 
-  # ===== رشته‌های استوری — هر رشته یک فایل جدا، دکمه‌ی + افزودن رشته =====
+          - label: "عنوان"
+            name: "label"
+            widget: "string"
+
+          - label: "مقدار"
+            name: "value"
+            widget: "string"
+
+
+      - label: "🖼️ تصاویر و فایل‌ها"
+        name: "media"
+        widget: "object"
+        fields:
+
+          - label: "تصاویر نمونه کار"
+            name: "proofImages"
+            widget: "list"
+            required: false
+            field:
+              label: "تصویر"
+              name: "image"
+              widget: "image"
+
+          - label: "گالری پروژه"
+            name: "gallery"
+            widget: "list"
+            required: false
+            field:
+              label: "تصویر"
+              name: "image"
+              widget: "image"
+
+          - label: "PDF پروژه"
+            name: "report_pdf"
+            widget: "file"
+            required: false
+            media_library:
+              config:
+                multiple: false
+
+          - label: "فایل ضمیمه"
+            name: "attachment"
+            widget: "file"
+            required: false
+            media_library:
+              config:
+                multiple: false
+
+
+      - label: "📝 توضیحات پروژه"
+        name: "details"
+        widget: "object"
+        fields:
+
+          - label: "چالش"
+            name: "challenge"
+            widget: "text"
+            required: false
+
+          - label: "راهکار"
+            name: "solution"
+            widget: "text"
+            required: false
+
+          - label: "نتیجه"
+            name: "result"
+            widget: "text"
+            required: false
+
+
+  # =========================
+  # استوری‌ها
+  # =========================
   - name: "story_series"
-    label: "رشته‌های استوری"
+    label: "📱 رشته‌های استوری"
     folder: "content/story-series"
     create: true
-    slug: "{{slug}}"
     extension: "json"
     format: "json"
-    label_singular: "رشته"
-    summary: "{{title}} — {{month}}"
+    slug: "{{slug}}"
+
     fields:
-      - { label: "عنوان رشته", name: "title", widget: "string" }
-      - { label: "ماه", name: "month", widget: "string" }
-      - label: "عکس‌های رشته"
+
+      - label: "عنوان رشته استوری"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "ماه / تاریخ"
+        name: "month"
+        widget: "string"
+        required: false
+
+      - label: "توضیحات"
+        name: "description"
+        widget: "text"
+        required: false
+
+      - label: "تصویر کاور"
+        name: "cover"
+        widget: "image"
+        required: false
+
+      - label: "🖼️ تصاویر استوری"
         name: "images"
         widget: "list"
-        field: { label: "عکس", name: "image", widget: "image" }
+        required: false
+        field:
+          label: "تصویر"
+          name: "image"
+          widget: "image"
 
-  # ===== تقویم محتوایی هفتگی =====
-  - name: "calendar"
-    label: "تقویم محتوایی"
-    files:
-      - file: "content/calendar.json"
-        label: "چیدمان هفتگی"
-        name: "calendar"
+      - label: "📎 فایل‌های استوری"
+        name: "files"
+        widget: "list"
+        required: false
         fields:
-          - label: "روزهای هفته"
+
+          - label: "نام فایل"
+            name: "name"
+            widget: "string"
+
+          - label: "فایل"
+            name: "file"
+            widget: "file"
+
+
+  # =========================
+  # تقویم محتوایی
+  # =========================
+  - name: "calendar"
+    label: "📅 تقویم محتوایی"
+    files:
+
+      - file: "content/calendar.json"
+        label: "تقویم محتوایی"
+        name: "content_calendar"
+
+        fields:
+
+          - label: "عنوان تقویم"
+            name: "title"
+            widget: "string"
+            required: false
+
+          - label: "بازه زمانی"
+            name: "period"
+            widget: "string"
+            required: false
+
+          - label: "توضیحات"
+            name: "description"
+            widget: "text"
+            required: false
+
+
+          # ---------- روزهای تقویم ----------
+          - label: "🗓️ برنامه محتوا"
             name: "days"
             widget: "list"
+            required: false
             fields:
-              - { label: "روز", name: "day", widget: "string" }
-              - { label: "نوع محتوا", name: "content", widget: "string", required: false }
+
+              - label: "روز / تاریخ"
+                name: "day"
+                widget: "string"
+
+              - label: "محتوا"
+                name: "content"
+                widget: "string"
+
+              - label: "فرمت"
+                name: "format"
+                widget: "select"
+                options:
+                  - "پست"
+                  - "ریل"
+                  - "استوری"
+                  - "کاروسل"
+                  - "لایو"
+                  - "سایر"
+
+              - label: "موضوع"
+                name: "topic"
+                widget: "string"
+                required: false
+
+              - label: "وضعیت"
+                name: "status"
+                widget: "select"
+                options:
+                  - "ایده"
+                  - "در حال آماده‌سازی"
+                  - "آماده انتشار"
+                  - "منتشر شده"
+                required: false
+
+
+          # ---------- فایل‌های تقویم ----------
+          - label: "📎 فایل‌های تقویم"
+            name: "visual"
+            widget: "object"
+            required: false
+            fields:
+
+              - label: "تصویر تقویم"
+                name: "image"
+                widget: "image"
+                required: false
+
+              - label: "PDF تقویم"
+                name: "pdf"
+                widget: "file"
+                required: false
+
+              - label: "فایل Excel"
+                name: "excel"
+                widget: "file"
+                required: false
+
+              - label: "فایل ضمیمه"
+                name: "attachment"
+                widget: "file"
+                required: false
