@@ -1,0 +1,62 @@
+{
+  "title": "تقویم محتوایی",
+  "period": "",
+  "description": "",
+  "days": [
+    {
+      "day": "شنبه",
+      "content": "",
+      "format": "استوری",
+      "topic": "",
+      "status": "ایده"
+    },
+    {
+      "day": "یکشنبه",
+      "content": "",
+      "format": "پست",
+      "topic": "",
+      "status": "ایده"
+    },
+    {
+      "day": "دوشنبه",
+      "content": "",
+      "format": "ریل",
+      "topic": "",
+      "status": "ایده"
+    },
+    {
+      "day": "سه‌شنبه",
+      "content": "",
+      "format": "کاروسل",
+      "topic": "",
+      "status": "ایده"
+    },
+    {
+      "day": "چهارشنبه",
+      "content": "",
+      "format": "استوری",
+      "topic": "",
+      "status": "ایده"
+    },
+    {
+      "day": "پنجشنبه",
+      "content": "",
+      "format": "پست",
+      "topic": "",
+      "status": "ایده"
+    },
+    {
+      "day": "جمعه",
+      "content": "",
+      "format": "ریل",
+      "topic": "",
+      "status": "ایده"
+    }
+  ],
+  "visual": {
+    "image": "",
+    "pdf": "",
+    "excel": "",
+    "attachment": ""
+  }
+}
