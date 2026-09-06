@@ -1,12 +1,18 @@
 {
   "hero": {
-    "role": "تلثاعرریتکک",
     "name": "عطیه قیومی پور",
-    "tagline": "ذببلدتبسغننربل"
+    "role": "ادمین و گرافیست",
+    "tagline": "دیجیتال مارکتینگ",
+    "image": "",
+    "primaryButton": "",
+    "primaryButtonUrl": "",
+    "secondaryButton": "",
+    "secondaryButtonUrl": ""
   },
   "about": {
-    "heading": "تلبففلپا",
+    "heading": "ادمین هستم",
     "body": "تابثفنوک",
+    "services": [],
     "tags": [
       "خالب",
       "فبدنق",
@@ -14,14 +20,25 @@
     ]
   },
   "contact": {
+    "email": "",
+    "instagram": "",
+    "linkedin": "",
+    "telegram": "",
     "instagram_handle": "97532",
     "instagram_url": "@sacjihfd_yh"
   },
   "appearance": {
+    "primaryColor": "",
+    "backgroundColor": "",
+    "cardColor": "",
+    "textColor": "",
+    "mutedColor": "",
+    "cardRadius": null,
+    "layout": "",
+    "accent_color": "#0000ff",
+    "accent2_color": "#ff0000",
     "bg_color": "#ffff00",
     "card_color": "#ffff00",
-    "text_color": "#ff00ff",
-    "accent_color": "#0000ff",
-    "accent2_color": "#ff0000"
+    "text_color": "#ff00ff"
   }
 }
