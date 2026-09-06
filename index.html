@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>عطیه قیومی‌پور — طراح گرافیک و دیجیتال مارکتینگ</title>
+<title>عطیه قیومی‌پور | طراح گرافیک و دیجیتال مارکتینگ</title>
 
-<meta name="description" content="پورتفولیوی عطیه قیومی‌پور، طراح گرافیک و مدیر دیجیتال مارکتینگ — نمونه‌کار، آمار رشد واقعی و رشته‌های استوری">
+<meta name="description" content="پورتفولیوی عطیه قیومی‌پور، طراح گرافیک و مدیر دیجیتال مارکتینگ">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,12 +53,12 @@ body::before{
   background:
     radial-gradient(
       ellipse 800px 500px at 15% -5%,
-      rgba(232,163,61,0.10),
+      rgba(232,163,61,.10),
       transparent 60%
     ),
     radial-gradient(
       ellipse 700px 500px at 100% 30%,
-      rgba(140,59,51,0.14),
+      rgba(140,59,51,.14),
       transparent 60%
     );
   pointer-events:none;
@@ -121,532 +121,341 @@ section{
   text-align:center;
 }
 
+.hero .role{
+  color:var(--amber);
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(3rem,10vw,6rem);
+  line-height:1.25;
+  margin-bottom:18px;
+}
+
+.hero p{
+  max-width:680px;
+  margin:0 auto;
+  color:var(--text-dim);
+  font-size:16px;
+}
+
 .flame{
-  width:14px;
-  height:20px;
-  margin:0 auto 26px;
+  width:38px;
+  height:52px;
+  margin:0 auto 25px;
   position:relative;
 }
 
 .flame::before{
   content:"";
   position:absolute;
-  inset:0;
-  background:
-    radial-gradient(
-      circle at 50% 65%,
-      var(--flame),
-      var(--amber) 55%,
-      transparent 75%
-    );
-  border-radius:50% 50% 50% 50% / 65% 65% 35% 35%;
-  animation:flicker 2.6s ease-in-out infinite;
+  width:22px;
+  height:38px;
+  left:8px;
+  top:5px;
+  background:var(--flame);
+  border-radius:70% 30% 70% 30%;
+  transform:rotate(45deg);
+  box-shadow:0 0 35px rgba(255,138,76,.35);
 }
 
-@keyframes flicker{
-  0%,100%{
-    transform:scaleY(1) scaleX(1) rotate(0deg);
-    opacity:1;
-  }
-
-  30%{
-    transform:scaleY(1.08) scaleX(0.94) rotate(-2deg);
-    opacity:0.92;
-  }
-
-  55%{
-    transform:scaleY(0.92) scaleX(1.05) rotate(2deg);
-    opacity:1;
-  }
-
-  80%{
-    transform:scaleY(1.05) scaleX(0.97) rotate(-1deg);
-    opacity:0.95;
-  }
-}
-
-.hero .role{
-  font-size:14px;
-  letter-spacing:1px;
-  color:var(--text-dim);
-  margin-bottom:18px;
-}
-
-.hero h1{
-  font-size:clamp(2.6rem,9vw,4.6rem);
-  line-height:1.25;
-  margin-bottom:22px;
-}
-
-.hero p{
-  color:var(--text-dim);
-  font-size:17px;
-  max-width:520px;
-  margin:0 auto 34px;
+.flame::after{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:18px;
+  left:14px;
+  top:16px;
+  background:#ffd27d;
+  border-radius:70% 30% 70% 30%;
+  transform:rotate(45deg);
 }
 
 .cta-row{
   display:flex;
-  gap:14px;
   justify-content:center;
+  gap:12px;
   flex-wrap:wrap;
+  margin-top:30px;
 }
 
 .btn{
-  border:1px solid rgba(244,235,221,0.25);
-  color:var(--text);
-  padding:14px 26px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:150px;
+  padding:11px 22px;
+  border:1px solid var(--amber);
   border-radius:999px;
-  font-size:14px;
-  letter-spacing:0.5px;
-  transition:
-    border-color .25s,
-    background .25s,
-    transform .25s;
-  display:inline-block;
+  color:var(--amber);
+  transition:.25s ease;
+  font-weight:600;
 }
 
-.btn:hover,
-.btn:focus-visible{
-  border-color:var(--amber);
-  background:rgba(232,163,61,0.08);
-  transform:translateY(-2px);
+.btn:hover{
+  background:var(--amber);
+  color:var(--bg);
 }
 
 .btn.solid{
-  background:linear-gradient(
-    135deg,
-    var(--amber),
-    var(--flame)
-  );
-  color:#1b130f;
-  border:none;
-  font-weight:700;
-}
-
-a:focus-visible,
-button:focus-visible{
-  outline:2px solid var(--amber);
-  outline-offset:3px;
+  background:var(--amber);
+  color:var(--bg);
 }
 
 .scroll-cue{
-  margin-top:56px;
-  font-size:12px;
+  margin-top:55px;
   color:var(--text-mute);
-  letter-spacing:1px;
+  font-size:12px;
 }
 
 .drip{
-  height:34px;
   width:100%;
-  z-index:1;
+  overflow:hidden;
+  line-height:0;
+  position:relative;
+  z-index:2;
 }
 
 .drip svg{
   width:100%;
-  height:100%;
+  height:34px;
   display:block;
-}
-
-.reveal{
-  opacity:0;
-  transform:translateY(24px);
-  transition:
-    opacity .8s ease,
-    transform .8s ease;
-}
-
-.reveal.in{
-  opacity:1;
-  transform:translateY(0);
 }
 
 .about-card{
   background:var(--bg-card);
-  border:1px solid rgba(244,235,221,0.06);
+  border:1px solid rgba(201,162,39,.18);
   border-radius:var(--radius);
-  padding:34px;
+  padding:35px;
 }
 
 .about-card h2{
-  font-size:2rem;
+  font-size:2.2rem;
   margin-bottom:18px;
 }
 
 .about-card p{
   color:var(--text-dim);
-  font-size:16px;
-  margin-bottom:14px;
   white-space:pre-line;
 }
 
 .tags{
   display:flex;
+  gap:8px;
   flex-wrap:wrap;
-  gap:10px;
-  margin-top:22px;
+  margin-top:25px;
 }
 
 .tag{
-  font-size:13px;
-  padding:8px 16px;
-  border-radius:999px;
-  border:1px solid rgba(232,163,61,0.35);
+  border:1px solid rgba(232,163,61,.3);
   color:var(--amber);
-  background:rgba(232,163,61,0.06);
+  border-radius:999px;
+  padding:5px 13px;
+  font-size:12px;
 }
 
 .project-head{
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  align-items:flex-end;
-  flex-wrap:wrap;
-  gap:16px;
-  margin-bottom:10px;
+  gap:15px;
+  margin-bottom:16px;
 }
 
 .project-head h2{
-  font-size:2.2rem;
+  font-size:2.3rem;
 }
 
 .duration{
-  font-family:'Space Grotesk',sans-serif;
-  direction:ltr;
+  color:var(--amber);
   font-size:13px;
-  color:var(--text-mute);
-  background:rgba(244,235,221,0.05);
-  padding:8px 14px;
-  border-radius:999px;
   white-space:nowrap;
 }
 
 .project-lead{
   color:var(--text-dim);
-  font-size:16px;
-  max-width:640px;
-  margin-bottom:34px;
+  margin-bottom:25px;
 }
 
 .scope-grid{
   display:grid;
-  grid-template-columns:repeat(
-    auto-fit,
-    minmax(210px,1fr)
-  );
-  gap:14px;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
 }
 
 .scope-item{
   background:var(--bg-card);
-  border:1px solid rgba(244,235,221,0.06);
-  border-radius:14px;
-  padding:20px;
-  font-size:15px;
+  border:1px solid rgba(201,162,39,.12);
+  border-radius:12px;
+  padding:14px 16px;
   color:var(--text-dim);
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 
-.scope-item .dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
+.dot{
+  width:7px;
+  height:7px;
   background:var(--amber);
-  flex-shrink:0;
+  border-radius:50%;
+  flex:none;
 }
 
 .stats-wrap{
   display:grid;
-  gap:20px;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
 }
 
 .stat-card{
   background:var(--bg-card);
-  border:1px solid rgba(244,235,221,0.06);
+  border:1px solid rgba(201,162,39,.16);
   border-radius:var(--radius);
-  padding:26px 28px;
+  padding:25px;
 }
 
 .stat-top{
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  align-items:baseline;
-  margin-bottom:16px;
-  flex-wrap:wrap;
-  gap:8px;
+  gap:10px;
 }
 
 .stat-label{
-  font-size:15px;
   color:var(--text-dim);
+  font-size:13px;
 }
 
 .stat-mult{
-  font-family:'Space Grotesk',sans-serif;
-  direction:ltr;
+  color:var(--amber);
   font-size:13px;
-  color:var(--flame);
-  background:rgba(255,138,76,0.1);
-  padding:4px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,138,76,0.3);
+  font-weight:700;
 }
 
 .stat-values{
   display:flex;
   align-items:center;
-  gap:14px;
-  margin-bottom:14px;
-  flex-wrap:wrap;
-  direction:ltr;
+  gap:15px;
+  margin-top:18px;
 }
 
-.stat-values .from{
-  font-size:1.1rem;
+.from{
   color:var(--text-mute);
-  font-family:'Space Grotesk',sans-serif;
+  font-size:25px;
 }
 
-.stat-values .to{
-  font-size:2.1rem;
-  font-weight:700;
+.to{
   color:var(--amber);
-  font-family:'Space Grotesk',sans-serif;
+  font-size:32px;
+  font-weight:700;
+}
+
+.arrow{
+  color:var(--text-mute);
+}
+
+.stats-mini{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
 }
 
 .single-stat{
   text-align:center;
-  padding:22px 16px;
-}
-
-.single-stat .to{
-  font-size:1.9rem;
-}
-
-.stats-mini{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:20px;
 }
 
 .proof-grid{
   display:grid;
-  grid-template-columns:repeat(
-    auto-fit,
-    minmax(130px,1fr)
-  );
+  grid-template-columns:repeat(3,1fr);
   gap:12px;
-  margin-top:24px;
+  margin-top:25px;
 }
 
-.proof-slot img,
-.story-slot img{
+.proof-slot{
   width:100%;
-  border-radius:14px;
   display:block;
-  object-fit:cover;
-  aspect-ratio:9/16;
-  border:1px solid rgba(244,235,221,0.1);
-}
-
-.proof-image{
-  width:100%;
   border-radius:14px;
-  display:block;
+  border:1px solid rgba(201,162,39,.15);
   object-fit:cover;
-  aspect-ratio:9/16;
-  border:1px solid rgba(244,235,221,0.1);
-}
-
-.empty-note{
-  color:var(--text-mute);
-  font-size:13px;
-  text-align:center;
-  padding:20px;
-  border:1.5px dashed rgba(232,163,61,0.25);
-  border-radius:14px;
-}
-
-.month-group{
-  margin-bottom:44px;
-}
-
-.month-title{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:1.3rem;
-  margin-bottom:18px;
-}
-
-.month-title .wick{
-  width:26px;
-  height:1px;
-  background:var(--gold-line);
-}
-
-.story-description{
-  color:var(--text-dim);
-  font-size:14px;
-  margin:-8px 0 18px;
 }
 
 .story-grid{
   display:grid;
-  grid-template-columns:repeat(
-    auto-fit,
-    minmax(140px,1fr)
-  );
-  gap:14px;
-}
-
-.story-files,
-.project-files,
-.calendar-files{
-  display:flex;
-  flex-wrap:wrap;
+  grid-template-columns:repeat(4,1fr);
   gap:10px;
-  margin-top:16px;
 }
 
-.file-link{
-  display:inline-flex;
+.month-group{
+  margin-bottom:35px;
+}
+
+.month-title{
+  color:var(--amber);
+  font-weight:700;
+  margin-bottom:14px;
+  display:flex;
   align-items:center;
-  gap:7px;
-  padding:9px 14px;
-  border-radius:999px;
-  border:1px solid rgba(232,163,61,0.28);
-  background:rgba(232,163,61,0.05);
-  color:var(--amber);
-  font-size:12px;
+  gap:9px;
 }
 
-.file-link:hover{
-  background:rgba(232,163,61,0.12);
+.wick{
+  width:8px;
+  height:22px;
+  background:var(--amber);
+  display:inline-block;
+  border-radius:5px;
 }
 
-.project-cover{
+.story-slot{
   width:100%;
-  max-height:480px;
+  aspect-ratio:9 / 16;
   object-fit:cover;
-  border-radius:18px;
-  margin-bottom:28px;
-  border:1px solid rgba(244,235,221,0.08);
-}
-
-.project-brand{
-  color:var(--amber);
-  font-size:13px;
-  margin-bottom:5px;
-}
-
-.project-details{
-  display:grid;
-  gap:14px;
-  margin-top:28px;
-}
-
-.detail-card{
+  border-radius:12px;
   background:var(--bg-card);
-  border:1px solid rgba(244,235,221,0.06);
-  border-radius:14px;
-  padding:20px;
-}
-
-.detail-card h3{
-  font-size:1.2rem;
-  margin-bottom:7px;
-}
-
-.detail-card p{
-  color:var(--text-dim);
-  white-space:pre-line;
-}
-
-.project-gallery{
-  display:grid;
-  grid-template-columns:repeat(
-    auto-fit,
-    minmax(150px,1fr)
-  );
-  gap:12px;
-  margin-top:22px;
-}
-
-.project-gallery img{
-  width:100%;
-  aspect-ratio:4/3;
-  object-fit:cover;
-  border-radius:14px;
-  border:1px solid rgba(244,235,221,0.08);
-}
-
-.project-url{
-  margin-top:20px;
-}
-
-.calendar-description{
-  color:var(--text-dim);
-  margin-bottom:20px;
+  border:1px solid rgba(201,162,39,.14);
 }
 
 .calendar-grid{
   display:grid;
   grid-template-columns:repeat(7,1fr);
-  gap:6px;
+  gap:7px;
+  overflow-x:auto;
 }
 
 .cal-day-head{
-  font-size:11px;
-  color:var(--text-mute);
   text-align:center;
-  padding-bottom:6px;
+  color:var(--amber);
+  font-size:12px;
+  font-weight:700;
+  padding:10px 4px;
 }
 
 .cal-cell{
-  min-height:90px;
-  border:1px dashed rgba(244,235,221,0.12);
-  border-radius:8px;
-  font-size:10px;
+  min-height:75px;
+  background:var(--bg-card);
+  border:1px solid rgba(201,162,39,.12);
+  border-radius:10px;
+  padding:10px;
+  font-size:11px;
   color:var(--text-mute);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:7px;
-  gap:4px;
 }
 
 .cal-cell.filled{
-  border-style:solid;
-  border-color:rgba(232,163,61,0.3);
-  background:rgba(232,163,61,0.06);
-  color:var(--amber);
+  color:var(--text-dim);
+  border-color:rgba(232,163,61,.25);
 }
 
-.cal-content{
-  font-size:11px;
-}
-
-.cal-format{
-  font-size:9px;
-  opacity:.7;
-}
-
-.calendar-visual{
-  margin-top:24px;
-}
-
-.calendar-visual img{
-  width:100%;
-  max-height:500px;
-  object-fit:contain;
-  border-radius:16px;
-  border:1px solid rgba(244,235,221,0.08);
+.empty-note{
+  color:var(--text-mute);
+  font-size:13px;
+  padding:20px;
+  background:var(--bg-card);
+  border-radius:14px;
+  border:1px dashed rgba(201,162,39,.15);
 }
 
 footer{
@@ -683,6 +492,40 @@ footer p{
   color:var(--text-mute);
 }
 
+.reveal{
+  opacity:1;
+  transform:none;
+}
+
+@media (max-width:700px){
+
+  .stats-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .stats-mini{
+    grid-template-columns:1fr;
+  }
+
+  .proof-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .story-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .scope-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+}
+
 @media (max-width:520px){
 
   section{
@@ -694,27 +537,8 @@ footer p{
     padding:22px;
   }
 
-  .calendar-grid{
-    gap:4px;
-  }
-
-  .cal-cell{
-    min-height:75px;
-    font-size:9px;
-  }
-
-}
-
-@media (prefers-reduced-motion:reduce){
-
-  *{
-    animation:none !important;
-    transition:none !important;
-  }
-
-  .reveal{
-    opacity:1;
-    transform:none;
+  .hero h1{
+    font-size:3rem;
   }
 
 }
@@ -728,9 +552,13 @@ footer p{
 
   <div class="flame" aria-hidden="true"></div>
 
-  <div class="role" id="hero-role"></div>
+  <div class="role" id="hero-role">
+    طراح گرافیک · ادمین · مدیر دیجیتال مارکتینگ
+  </div>
 
-  <h1 id="hero-name"></h1>
+  <h1 id="hero-name">
+    عطیه قیومی‌پور
+  </h1>
 
   <p id="hero-tagline"></p>
 
@@ -754,19 +582,12 @@ footer p{
 
 
 <div class="drip" aria-hidden="true">
-
-  <svg
-    viewBox="0 0 500 34"
-    preserveAspectRatio="none"
-  >
-
-    <path
-      d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
-      fill="#1b130f"
-    ></path>
-
-  </svg>
-
+<svg viewBox="0 0 500 34" preserveAspectRatio="none">
+<path
+d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
+fill="#1b130f">
+</path>
+</svg>
 </div>
 
 
@@ -782,10 +603,7 @@ footer p{
 
     <p id="about-body"></p>
 
-    <div
-      class="tags"
-      id="about-tags"
-    ></div>
+    <div class="tags" id="about-tags"></div>
 
   </div>
 
@@ -793,53 +611,52 @@ footer p{
 
 
 <div class="drip" aria-hidden="true">
-
-  <svg
-    viewBox="0 0 500 34"
-    preserveAspectRatio="none"
-  >
-
-    <path
-      d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
-      fill="#1b130f"
-    ></path>
-
-  </svg>
-
+<svg viewBox="0 0 500 34" preserveAspectRatio="none">
+<path
+d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
+fill="#1b130f">
+</path>
+</svg>
 </div>
 
 
 <section class="reveal" id="project">
 
   <div class="eyebrow">
-    پروژه‌ها
+    پروژه ویژه
   </div>
 
-  <div id="projects-container">
+  <div class="project-head">
 
-    <div class="empty-note">
-      در حال بارگذاری پروژه‌ها...
-    </div>
+    <h2 id="project-title"></h2>
 
+    <span
+      class="duration"
+      id="project-duration">
+    </span>
+
+  </div>
+
+  <p
+    class="project-lead"
+    id="project-lead">
+  </p>
+
+  <div
+    class="scope-grid"
+    id="project-scope">
   </div>
 
 </section>
 
 
 <div class="drip" aria-hidden="true">
-
-  <svg
-    viewBox="0 0 500 34"
-    preserveAspectRatio="none"
-  >
-
-    <path
-      d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
-      fill="#1b130f"
-    ></path>
-
-  </svg>
-
+<svg viewBox="0 0 500 34" preserveAspectRatio="none">
+<path
+d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
+fill="#1b130f">
+</path>
+</svg>
 </div>
 
 
@@ -849,79 +666,55 @@ footer p{
     نتیجه، با عدد
   </div>
 
-  <h2
-    style="font-size:2.2rem; margin-bottom:30px;"
-  >
+  <h2 style="font-size:2.2rem;margin-bottom:30px;">
     قبل و بعد از این همکاری
   </h2>
 
   <div
     class="stats-wrap"
-    id="stats-wrap"
-  ></div>
+    id="stats-wrap">
+  </div>
 
   <div
     class="proof-grid"
-    id="proof-grid"
-  ></div>
+    id="proof-grid">
+  </div>
 
 </section>
 
 
 <div class="drip" aria-hidden="true">
-
-  <svg
-    viewBox="0 0 500 34"
-    preserveAspectRatio="none"
-  >
-
-    <path
-      d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
-      fill="#1b130f"
-    ></path>
-
-  </svg>
-
+<svg viewBox="0 0 500 34" preserveAspectRatio="none">
+<path
+d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
+fill="#1b130f">
+</path>
+</svg>
 </div>
 
 
 <section class="reveal" id="stories">
 
   <div class="eyebrow">
-    نمونه استوری‌ها
+    رشته‌های استوری
   </div>
 
-  <h2
-    style="font-size:2.2rem; margin-bottom:8px;"
-  >
-    رشته‌های استوری
+  <h2 style="font-size:2.2rem;margin-bottom:28px;">
+    استوری‌ها
   </h2>
 
-  <div id="story-groups">
-
-    <div class="empty-note">
-      در حال بارگذاری استوری‌ها...
-    </div>
-
-  </div>
+  <div id="story-groups"></div>
 
 </section>
 
 
 <div class="drip" aria-hidden="true">
-
-  <svg
-    viewBox="0 0 500 34"
-    preserveAspectRatio="none"
-  >
-
-    <path
-      d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
-      fill="#1b130f"
-    ></path>
-
-  </svg>
-
+<svg viewBox="0 0 500 34" preserveAspectRatio="none">
+<path
+d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
+fill="#1b130f">
+</path>
+</svg>
 </div>
 
 
@@ -931,62 +724,37 @@ footer p{
     تقویم محتوایی
   </div>
 
-  <h2
-    style="font-size:2.2rem; margin-bottom:8px;"
-  >
+  <h2 style="font-size:2.2rem;margin-bottom:28px;">
     نمونه چیدمان هفتگی
   </h2>
 
   <div
-    id="calendar-description"
-    class="calendar-description"
-  ></div>
-
-  <div
     class="calendar-grid"
-    id="calendar-grid"
-  ></div>
-
-  <div
-    class="calendar-visual"
-    id="calendar-visual"
-  ></div>
-
-  <div
-    class="calendar-files"
-    id="calendar-files"
-  ></div>
+    id="calendar-grid">
+  </div>
 
 </section>
 
 
 <div class="drip" aria-hidden="true">
-
-  <svg
-    viewBox="0 0 500 34"
-    preserveAspectRatio="none"
-  >
-
-    <path
-      d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
-      fill="#1b130f"
-    ></path>
-
-  </svg>
-
+<svg viewBox="0 0 500 34" preserveAspectRatio="none">
+<path
+d="M0,0 L500,0 L500,10 Q470,10 465,24 Q460,34 452,24 Q448,14 440,10 L120,10 Q112,10 108,20 Q104,30 97,20 Q93,12 85,10 L0,10 Z"
+fill="#1b130f">
+</path>
+</svg>
 </div>
 
 
 <footer
-  id="contact"
-  class="reveal"
->
+id="contact"
+class="reveal">
 
   <div
     class="flame"
     aria-hidden="true"
-    style="margin-bottom:22px;"
-  ></div>
+    style="margin-bottom:22px;">
+  </div>
 
   <h2>
     بریم پروژه بعدی رو شروع کنیم؟
@@ -1001,171 +769,149 @@ footer p{
     id="insta-link"
     href="#"
     target="_blank"
-    rel="noopener"
-  ></a>
+    rel="noopener">
+  </a>
 
   <div
     class="foot-note"
-    id="footer-name"
-  ></div>
+    id="footer-name">
+  </div>
 
 </footer>
 
 
 <script>
 
-/* =========================================================
-   تنظیمات اتصال به GitHub
-========================================================= */
-
-const GITHUB_API =
+const API =
   'https://api.github.com/repos/atiyehgh/atiyehgh.github.io/contents';
 
 const BRANCH = 'main';
 
 
-/* =========================================================
-   ابزارهای کمکی
-========================================================= */
+async function getJSON(path){
 
-function escapeHTML(value){
-
-  if(value === null || value === undefined){
-    return '';
-  }
-
-  return String(value)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;')
-    .replace(/'/g,'&#039;');
-}
-
-
-function mediaURL(path){
-
-  if(!path){
-    return '';
-  }
-
-  if(typeof path === 'object'){
-    path =
-      path.image ||
-      path.url ||
-      path.path ||
-      path.src ||
-      '';
-  }
-
-  if(!path){
-    return '';
-  }
-
-  if(
-    String(path).startsWith('http://') ||
-    String(path).startsWith('https://') ||
-    String(path).startsWith('data:')
-  ){
-    return path;
-  }
-
-  return '/' + String(path).replace(/^\/+/,'');
-}
-
-
-/* =========================================================
-   خواندن JSON از GitHub
-========================================================= */
-
-async function githubJSON(path){
-
-  const url =
-    `${GITHUB_API}/${path}?ref=${BRANCH}`;
-
-  const response = await fetch(url,{
-    cache:'no-store'
-  });
+  const response =
+    await fetch(
+      `${API}/${path}?ref=${BRANCH}`,
+      {
+        cache:'no-store'
+      }
+    );
 
   if(!response.ok){
     throw new Error(
-      `GitHub request failed: ${response.status} - ${path}`
+      `${path} → ${response.status}`
     );
   }
 
-  const data = await response.json();
+  const data =
+    await response.json();
 
-  if(!data.content){
-    throw new Error(
-      `No content found for ${path}`
+  const binary =
+    atob(
+      data.content.replace(/\n/g,'')
     );
-  }
 
-  const binary = atob(
-    data.content.replace(/\n/g,'')
-  );
-
-  const bytes = Uint8Array.from(
-    binary,
-    char => char.charCodeAt(0)
-  );
+  const bytes =
+    Uint8Array.from(
+      binary,
+      c => c.charCodeAt(0)
+    );
 
   const text =
     new TextDecoder('utf-8').decode(bytes);
 
   return JSON.parse(text);
+
 }
 
 
-/* =========================================================
-   خواندن همه JSON های یک پوشه
-========================================================= */
+async function getFolder(path){
 
-async function githubFolder(folder){
+  try{
 
-  const url =
-    `${GITHUB_API}/${folder}?ref=${BRANCH}`;
+    const response =
+      await fetch(
+        `${API}/${path}?ref=${BRANCH}`,
+        {
+          cache:'no-store'
+        }
+      );
 
-  const response = await fetch(url,{
-    cache:'no-store'
-  });
+    if(!response.ok){
+      return [];
+    }
 
-  if(!response.ok){
-    throw new Error(
-      `GitHub folder request failed: ${response.status} - ${folder}`
+    const files =
+      await response.json();
+
+    const jsonFiles =
+      files.filter(
+        file =>
+          file.type === 'file' &&
+          file.name.endsWith('.json')
+      );
+
+    const results =
+      await Promise.all(
+        jsonFiles.map(
+          file =>
+            getJSON(
+              `${path}/${file.name}`
+            )
+        )
+      );
+
+    return results;
+
+  }catch(error){
+
+    console.error(
+      'Folder error:',
+      path,
+      error
     );
-  }
 
-  const files = await response.json();
-
-  if(!Array.isArray(files)){
     return [];
+
   }
 
-  const jsonFiles =
-    files.filter(file =>
-      file.type === 'file' &&
-      file.name.toLowerCase().endsWith('.json')
-    );
-
-  const results = await Promise.all(
-    jsonFiles.map(file =>
-      githubJSON(`${folder}/${file.name}`)
-    )
-  );
-
-  return results;
 }
 
 
-/* =========================================================
-   ظاهر سایت
-========================================================= */
+function setText(id,value){
 
-function renderAppearance(settings){
+  const element =
+    document.getElementById(id);
+
+  if(element){
+    element.textContent =
+      value || '';
+  }
+
+}
+
+
+function setLink(id,url,text){
+
+  const element =
+    document.getElementById(id);
+
+  if(!element) return;
+
+  element.href =
+    url || '#';
+
+  element.textContent =
+    text || '';
+
+}
+
+
+function applyAppearance(settings){
 
   const appearance =
-    settings?.appearance || {};
+    settings.appearance || {};
 
   const root =
     document.documentElement.style;
@@ -1205,755 +951,208 @@ function renderAppearance(settings){
     );
   }
 
-  if(appearance.radius){
-
-    root.setProperty(
-      '--radius',
-      String(appearance.radius).includes('px')
-        ? appearance.radius
-        : appearance.radius + 'px'
-    );
-
-  }
-
 }
 
 
-/* =========================================================
-   Hero
-========================================================= */
+function renderSettings(settings){
 
-function renderHero(settings){
+  applyAppearance(settings);
 
   const hero =
-    settings?.hero || {};
+    settings.hero || {};
 
-  document.getElementById(
-    'hero-role'
-  ).textContent =
-    hero.role || '';
+  setText(
+    'hero-role',
+    hero.role
+  );
 
-  document.getElementById(
-    'hero-name'
-  ).textContent =
-    hero.name || '';
+  setText(
+    'hero-name',
+    hero.name
+  );
 
-  document.getElementById(
-    'hero-tagline'
-  ).textContent =
-    hero.tagline || '';
+  setText(
+    'hero-tagline',
+    hero.tagline
+  );
 
-  const buttons =
-    document.querySelectorAll(
-      '.cta-row .btn'
-    );
+  setText(
+    'footer-name',
+    hero.name
+  );
 
-  if(buttons[0]){
-
-    buttons[0].textContent =
-      hero.primary_button ||
-      'نمونه‌کار اصلی';
-
-    buttons[0].href =
-      hero.primary_button_url ||
-      '#project';
-
-  }
-
-  if(buttons[1]){
-
-    buttons[1].textContent =
-      hero.secondary_button ||
-      'تماس با من';
-
-    buttons[1].href =
-      hero.secondary_button_url ||
-      '#contact';
-
-  }
-
-  document.getElementById(
-    'footer-name'
-  ).textContent =
-    hero.name || '';
-
-}
-
-
-/* =========================================================
-   About
-========================================================= */
-
-function renderAbout(settings){
 
   const about =
-    settings?.about || {};
+    settings.about || {};
 
-  document.getElementById(
-    'about-heading'
-  ).textContent =
-    about.heading || '';
+  setText(
+    'about-heading',
+    about.heading
+  );
 
-  document.getElementById(
-    'about-body'
-  ).textContent =
-    about.body || '';
+  setText(
+    'about-body',
+    about.body
+  );
 
-  const tagsWrap =
+
+  const tags =
     document.getElementById(
       'about-tags'
     );
 
-  tagsWrap.innerHTML = '';
+  if(tags){
 
-  const tags =
-    about.tags || [];
+    tags.innerHTML = '';
 
-  tags.forEach(tag => {
+    const list =
+      Array.isArray(about.tags)
+        ? about.tags
+        : [];
 
-    const span =
-      document.createElement('span');
+    list.forEach(tag => {
 
-    span.className = 'tag';
+      const span =
+        document.createElement('span');
 
-    span.textContent =
-      typeof tag === 'object'
-        ? (
-            tag.title ||
-            tag.name ||
-            tag.text ||
-            ''
-          )
-        : tag;
+      span.className =
+        'tag';
 
-    tagsWrap.appendChild(span);
+      span.textContent =
+        typeof tag === 'string'
+          ? tag
+          : tag.tag || '';
 
-  });
+      tags.appendChild(span);
 
-}
+    });
 
-
-/* =========================================================
-   خدمات
-========================================================= */
-
-function renderServices(settings){
-
-  const services =
-    settings?.about?.services ||
-    settings?.services ||
-    [];
-
-  if(!services.length){
-    return;
   }
 
+
+  const contact =
+    settings.contact || {};
+
+  let instagramURL =
+    contact.instagram_url || '';
+
+  if(
+    instagramURL &&
+    !instagramURL.startsWith('http')
+  ){
+
+    instagramURL =
+      'https://instagram.com/' +
+      instagramURL
+        .replace(/^@/,'')
+        .trim();
+
+  }
+
+  setLink(
+    'insta-link',
+    instagramURL,
+    contact.instagram_handle
+      ? '@' + contact.instagram_handle.replace(/^@/,'')
+      : ''
+  );
+
 }
 
-
-/* =========================================================
-   پروژه‌ها
-========================================================= */
 
 function renderProjects(projects){
 
-  const container =
-    document.getElementById(
-      'projects-container'
-    );
+  if(!projects.length){
 
-  container.innerHTML = '';
+    const scope =
+      document.getElementById(
+        'project-scope'
+      );
 
-  if(!projects || !projects.length){
-
-    container.innerHTML = `
-      <div class="empty-note">
-        هنوز پروژه‌ای اضافه نشده.
-        از پنل مدیریت پروژه جدید اضافه کن.
-      </div>
-    `;
+    if(scope){
+      scope.innerHTML = '';
+    }
 
     return;
   }
 
 
-  projects.forEach((project,index) => {
+  const project =
+    projects[0] || {};
 
-    const info =
-      project.project_info ||
-      {};
+  const info =
+    project.project_info ||
+    project;
 
-    const scope =
-      project.scope ||
-      [];
 
-    const stats =
-      project.stats ||
-      {};
+  setText(
+    'project-title',
+    info.title ||
+    project.title
+  );
 
-    const details =
-      project.details ||
-      {};
+  setText(
+    'project-duration',
+    info.duration ||
+    project.duration
+  );
 
-    const media =
-      project.media ||
-      {};
+  setText(
+    'project-lead',
+    info.lead ||
+    project.lead
+  );
 
-    const title =
-      info.title ||
-      project.title ||
-      `پروژه ${index + 1}`;
 
-    const brand =
-      info.brand ||
-      project.brand ||
-      '';
+  const scopeWrap =
+    document.getElementById(
+      'project-scope'
+    );
 
-    const duration =
-      info.duration ||
-      project.duration ||
-      '';
+  if(!scopeWrap) return;
 
-    const lead =
-      info.lead ||
-      project.lead ||
-      '';
+  scopeWrap.innerHTML = '';
 
-    const cover =
-      media.cover ||
-      info.cover ||
-      project.cover ||
-      '';
 
-    const section =
+  const scope =
+    project.scope ||
+    info.scope ||
+    [];
+
+
+  if(!Array.isArray(scope)) return;
+
+
+  scope.forEach(item => {
+
+    const div =
       document.createElement('div');
 
-    section.className =
-      'project-item';
+    div.className =
+      'scope-item';
 
-    let html = '';
+    const dot =
+      document.createElement('span');
 
+    dot.className =
+      'dot';
 
-    if(brand){
+    div.appendChild(dot);
 
-      html += `
-        <div class="project-brand">
-          ${escapeHTML(brand)}
-        </div>
-      `;
+    div.appendChild(
+      document.createTextNode(
+        typeof item === 'string'
+          ? item
+          : item.title || item.name || ''
+      )
+    );
 
-    }
-
-
-    html += `
-      <div class="project-head">
-
-        <h2>
-          ${escapeHTML(title)}
-        </h2>
-
-        ${
-          duration
-            ? `
-              <span class="duration">
-                ${escapeHTML(duration)}
-              </span>
-            `
-            : ''
-        }
-
-      </div>
-    `;
-
-
-    if(cover){
-
-      html += `
-        <img
-          class="project-cover"
-          src="${escapeHTML(mediaURL(cover))}"
-          alt="${escapeHTML(title)}"
-          loading="lazy"
-        >
-      `;
-
-    }
-
-
-    if(lead){
-
-      html += `
-        <p class="project-lead">
-          ${escapeHTML(lead)}
-        </p>
-      `;
-
-    }
-
-
-    if(scope.length){
-
-      html += `
-        <div class="scope-grid">
-      `;
-
-      scope.forEach(item => {
-
-        const text =
-          typeof item === 'object'
-            ? (
-                item.title ||
-                item.name ||
-                item.text ||
-                ''
-              )
-            : item;
-
-        html += `
-          <div class="scope-item">
-
-            <span class="dot"></span>
-
-            ${escapeHTML(text)}
-
-          </div>
-        `;
-
-      });
-
-      html += `
-        </div>
-      `;
-
-    }
-
-
-    if(
-      stats.views_before ||
-      stats.views_after ||
-      stats.engagement_before ||
-      stats.engagement_after ||
-      stats.followers_growth ||
-      stats.replies
-    ){
-
-      html += `
-        <div
-          class="stats-wrap"
-          style="margin-top:28px;"
-        >
-      `;
-
-
-      if(
-        stats.views_before ||
-        stats.views_after
-      ){
-
-        html += `
-          <div class="stat-card">
-
-            <div class="stat-top">
-
-              <span class="stat-label">
-                ویوز استوری
-              </span>
-
-              ${
-                stats.views_mult
-                  ? `
-                    <span class="stat-mult">
-                      ${escapeHTML(stats.views_mult)}
-                    </span>
-                  `
-                  : ''
-              }
-
-            </div>
-
-            <div class="stat-values">
-
-              <span class="from num">
-                ${escapeHTML(stats.views_before || '')}
-              </span>
-
-              <span>
-                ←
-              </span>
-
-              <span class="to num">
-                ${escapeHTML(stats.views_after || '')}
-              </span>
-
-            </div>
-
-          </div>
-        `;
-
-      }
-
-
-      if(
-        stats.engagement_before ||
-        stats.engagement_after
-      ){
-
-        html += `
-          <div class="stat-card">
-
-            <div class="stat-top">
-
-              <span class="stat-label">
-                تعامل (Engagement)
-              </span>
-
-              ${
-                stats.engagement_mult
-                  ? `
-                    <span class="stat-mult">
-                      ${escapeHTML(stats.engagement_mult)}
-                    </span>
-                  `
-                  : ''
-              }
-
-            </div>
-
-            <div class="stat-values">
-
-              <span class="from num">
-                ${escapeHTML(stats.engagement_before || '')}
-              </span>
-
-              <span>
-                ←
-              </span>
-
-              <span class="to num">
-                ${escapeHTML(stats.engagement_after || '')}
-              </span>
-
-            </div>
-
-          </div>
-        `;
-
-      }
-
-
-      if(
-        stats.followers_growth ||
-        stats.replies
-      ){
-
-        html += `
-          <div class="stats-mini">
-        `;
-
-
-        if(stats.followers_growth){
-
-          html += `
-            <div class="stat-card single-stat">
-
-              <div
-                class="stat-label"
-                style="margin-bottom:10px;"
-              >
-                رشد فالوور
-              </div>
-
-              <div class="to num">
-                ${escapeHTML(stats.followers_growth)}
-              </div>
-
-              ${
-                stats.followers_percent
-                  ? `
-                    <div
-                      class="stat-mult"
-                      style="margin-top:10px; display:inline-block;"
-                    >
-                      ${escapeHTML(stats.followers_percent)}
-                    </div>
-                  `
-                  : ''
-              }
-
-            </div>
-          `;
-
-        }
-
-
-        if(stats.replies){
-
-          html += `
-            <div class="stat-card single-stat">
-
-              <div
-                class="stat-label"
-                style="margin-bottom:10px;"
-              >
-                ریپلای استوری
-              </div>
-
-              <div class="to num">
-                ${escapeHTML(stats.replies)}
-              </div>
-
-            </div>
-          `;
-
-        }
-
-
-        html += `
-          </div>
-        `;
-
-      }
-
-
-      html += `
-        </div>
-      `;
-
-    }
-
-
-    if(
-      details.challenge ||
-      details.solution ||
-      details.result
-    ){
-
-      html += `
-        <div class="project-details">
-      `;
-
-
-      if(details.challenge){
-
-        html += `
-          <div class="detail-card">
-
-            <h3>
-              چالش
-            </h3>
-
-            <p>
-              ${escapeHTML(details.challenge)}
-            </p>
-
-          </div>
-        `;
-
-      }
-
-
-      if(details.solution){
-
-        html += `
-          <div class="detail-card">
-
-            <h3>
-              راهکار
-            </h3>
-
-            <p>
-              ${escapeHTML(details.solution)}
-            </p>
-
-          </div>
-        `;
-
-      }
-
-
-      if(details.result){
-
-        html += `
-          <div class="detail-card">
-
-            <h3>
-              نتیجه
-            </h3>
-
-            <p>
-              ${escapeHTML(details.result)}
-            </p>
-
-          </div>
-        `;
-
-      }
-
-
-      html += `
-        </div>
-      `;
-
-    }
-
-
-    const gallery =
-      media.gallery ||
-      media.images ||
-      [];
-
-    if(gallery.length){
-
-      html += `
-        <div class="project-gallery">
-      `;
-
-      gallery.forEach(image => {
-
-        const src =
-          typeof image === 'object'
-            ? (
-                image.image ||
-                image.url ||
-                image.path ||
-                ''
-              )
-            : image;
-
-        if(!src){
-          return;
-        }
-
-        html += `
-          <img
-            src="${escapeHTML(mediaURL(src))}"
-            alt="${escapeHTML(title)}"
-            loading="lazy"
-          >
-        `;
-
-      });
-
-      html += `
-        </div>
-      `;
-
-    }
-
-
-    const files = [];
-
-    if(media.report_pdf){
-
-      files.push({
-        title:'مشاهده گزارش پروژه',
-        path:media.report_pdf
-      });
-
-    }
-
-    if(media.attachment){
-
-      files.push({
-        title:'فایل پروژه',
-        path:media.attachment
-      });
-
-    }
-
-
-    if(files.length){
-
-      html += `
-        <div class="project-files">
-      `;
-
-      files.forEach(file => {
-
-        const path =
-          typeof file.path === 'object'
-            ? (
-                file.path.url ||
-                file.path.path ||
-                file.path.file ||
-                ''
-              )
-            : file.path;
-
-        if(!path){
-          return;
-        }
-
-        html += `
-          <a
-            class="file-link"
-            href="${escapeHTML(mediaURL(path))}"
-            target="_blank"
-            rel="noopener"
-          >
-            📎
-            ${escapeHTML(file.title)}
-          </a>
-        `;
-
-      });
-
-      html += `
-        </div>
-      `;
-
-    }
-
-
-    const projectURL =
-      info.url ||
-      project.url ||
-      '';
-
-    if(projectURL){
-
-      html += `
-        <div class="project-url">
-
-          <a
-            class="btn"
-            href="${escapeHTML(projectURL)}"
-            target="_blank"
-            rel="noopener"
-          >
-            مشاهده پروژه ↗
-          </a>
-
-        </div>
-      `;
-
-    }
-
-
-    section.innerHTML = html;
-
-    container.appendChild(section);
-
-
-    if(index < projects.length - 1){
-
-      const separator =
-        document.createElement('div');
-
-      separator.style.height = '50px';
-
-      container.appendChild(separator);
-
-    }
+    scopeWrap.appendChild(div);
 
   });
 
 }
 
-
-/* =========================================================
-   آمار کلی
-========================================================= */
 
 function renderStats(projects){
 
@@ -1967,213 +1166,178 @@ function renderStats(projects){
       'proof-grid'
     );
 
-  statsWrap.innerHTML = '';
+  if(!statsWrap) return;
+
+
+  if(!projects.length){
+
+    statsWrap.innerHTML = '';
+
+    if(proofWrap){
+      proofWrap.innerHTML = '';
+    }
+
+    return;
+  }
+
+
+  const project =
+    projects[0] || {};
+
+  const stats =
+    project.stats ||
+    {};
+
+
+  statsWrap.innerHTML = `
+
+    <div class="stat-card">
+
+      <div class="stat-top">
+
+        <span class="stat-label">
+          ویوز استوری
+        </span>
+
+        <span class="stat-mult">
+          ${stats.views_mult || ''}
+        </span>
+
+      </div>
+
+      <div class="stat-values">
+
+        <span class="from num">
+          ${stats.views_before || ''}
+        </span>
+
+        <span class="arrow">
+          ←
+        </span>
+
+        <span class="to num">
+          ${stats.views_after || ''}
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-top">
+
+        <span class="stat-label">
+          تعامل (Engagement)
+        </span>
+
+        <span class="stat-mult">
+          ${stats.engagement_mult || ''}
+        </span>
+
+      </div>
+
+      <div class="stat-values">
+
+        <span class="from num">
+          ${stats.engagement_before || ''}
+        </span>
+
+        <span class="arrow">
+          ←
+        </span>
+
+        <span class="to num">
+          ${stats.engagement_after || ''}
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="stats-mini">
+
+      <div class="stat-card single-stat">
+
+        <div
+          class="stat-label"
+          style="margin-bottom:10px;"
+        >
+          رشد فالوور
+        </div>
+
+        <div class="to num">
+          ${stats.followers_growth || ''}
+        </div>
+
+        <div
+          class="stat-mult"
+          style="margin-top:10px;display:inline-block;"
+        >
+          ${stats.followers_percent || ''}
+        </div>
+
+      </div>
+
+
+      <div class="stat-card single-stat">
+
+        <div
+          class="stat-label"
+          style="margin-bottom:10px;"
+        >
+          ریپلای استوری
+        </div>
+
+        <div class="to num">
+          ${stats.replies || ''}
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  if(!proofWrap) return;
+
   proofWrap.innerHTML = '';
 
 
-  let foundStats = false;
-  let proofImages = [];
+  const images =
+    project.proofImages || [];
 
 
-  (projects || []).forEach(project => {
-
-    const stats =
-      project.stats ||
-      {};
-
-    const media =
-      project.media ||
-      {};
-
-    if(
-      stats.views_before ||
-      stats.views_after ||
-      stats.engagement_before ||
-      stats.engagement_after ||
-      stats.followers_growth ||
-      stats.replies
-    ){
-
-      foundStats = true;
-
-      const card =
-        document.createElement('div');
-
-      card.className =
-        'stat-card';
+  if(!Array.isArray(images)) return;
 
 
-      if(
-        stats.views_before ||
-        stats.views_after
-      ){
-
-        card.innerHTML = `
-          <div class="stat-top">
-
-            <span class="stat-label">
-              ویوز استوری
-            </span>
-
-            ${
-              stats.views_mult
-                ? `
-                  <span class="stat-mult">
-                    ${escapeHTML(stats.views_mult)}
-                  </span>
-                `
-                : ''
-            }
-
-          </div>
-
-          <div class="stat-values">
-
-            <span class="from num">
-              ${escapeHTML(stats.views_before || '')}
-            </span>
-
-            <span>
-              ←
-            </span>
-
-            <span class="to num">
-              ${escapeHTML(stats.views_after || '')}
-            </span>
-
-          </div>
-        `;
-
-        statsWrap.appendChild(card);
-
-      }
-
-
-      if(
-        stats.engagement_before ||
-        stats.engagement_after
-      ){
-
-        const engagementCard =
-          document.createElement('div');
-
-        engagementCard.className =
-          'stat-card';
-
-        engagementCard.innerHTML = `
-          <div class="stat-top">
-
-            <span class="stat-label">
-              تعامل (Engagement)
-            </span>
-
-            ${
-              stats.engagement_mult
-                ? `
-                  <span class="stat-mult">
-                    ${escapeHTML(stats.engagement_mult)}
-                  </span>
-                `
-                : ''
-            }
-
-          </div>
-
-          <div class="stat-values">
-
-            <span class="from num">
-              ${escapeHTML(stats.engagement_before || '')}
-            </span>
-
-            <span>
-              ←
-            </span>
-
-            <span class="to num">
-              ${escapeHTML(stats.engagement_after || '')}
-            </span>
-
-          </div>
-        `;
-
-        statsWrap.appendChild(
-          engagementCard
-        );
-
-      }
-
-    }
-
-
-    const projectProofs =
-      media.proofImages ||
-      media.proof_images ||
-      project.proofImages ||
-      [];
-
-    if(Array.isArray(projectProofs)){
-
-      proofImages =
-        proofImages.concat(projectProofs);
-
-    }
-
-  });
-
-
-  if(!foundStats){
-
-    statsWrap.innerHTML = `
-      <div class="empty-note">
-        هنوز آماری اضافه نشده.
-        از پنل مدیریت اطلاعات آماری پروژه‌ها را وارد کن.
-      </div>
-    `;
-
-  }
-
-
-  if(!proofImages.length){
-
-    proofWrap.innerHTML = `
-      <div class="empty-note">
-        اسکرین‌شات آمار هنوز اضافه نشده.
-        از پنل مدیریت اضافه‌اش کن.
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  proofImages.forEach(item => {
+  images.forEach(item => {
 
     const src =
-      typeof item === 'object'
-        ? (
-            item.image ||
-            item.url ||
-            item.path ||
-            ''
-          )
-        : item;
+      typeof item === 'string'
+        ? item
+        : item.image || '';
 
-    if(!src){
-      return;
-    }
+    if(!src) return;
+
 
     const img =
       document.createElement('img');
 
-    img.className =
-      'proof-image';
-
     img.src =
-      mediaURL(src);
+      src.startsWith('http')
+        ? src
+        : '/' +
+          src.replace(/^\/+/,'');
 
-    img.loading =
-      'lazy';
+    img.className =
+      'proof-slot';
+
+    img.alt =
+      'آمار پروژه';
 
     proofWrap.appendChild(img);
 
@@ -2182,533 +1346,183 @@ function renderStats(projects){
 }
 
 
-/* =========================================================
-   استوری‌ها
-========================================================= */
-
 function renderStories(series){
 
-  const storyWrap =
+  const wrap =
     document.getElementById(
       'story-groups'
     );
 
-  storyWrap.innerHTML = '';
+  if(!wrap) return;
+
+  wrap.innerHTML = '';
 
 
-  if(!series || !series.length){
+  if(!series.length){
 
-    storyWrap.innerHTML = `
-      <div class="empty-note">
-        هنوز رشته‌ای اضافه نشده.
-        از پنل مدیریت رشته استوری جدید اضافه کن.
-      </div>
-    `;
+    wrap.innerHTML =
+      '<div class="empty-note">هنوز رشته‌ای اضافه نشده.</div>';
 
     return;
-
   }
 
 
   series.forEach(group => {
 
-    const title =
-      group.title ||
-      'رشته استوری';
-
-    const month =
-      group.month ||
-      '';
-
-    const description =
-      group.description ||
-      '';
-
-    const images =
-      group.images ||
-      [];
-
-
-    const g =
+    const section =
       document.createElement('div');
 
-    g.className =
+    section.className =
       'month-group';
 
 
-    let html = `
+    const title =
+      document.createElement('div');
 
-      <div class="month-title">
-
-        <span class="wick"></span>
-
-        ${escapeHTML(title)}
-
-        ${
-          month
-            ? `
-              <span>
-                — ${escapeHTML(month)}
-              </span>
-            `
-            : ''
-        }
-
-      </div>
-
-    `;
+    title.className =
+      'month-title';
 
 
-    if(description){
+    const wick =
+      document.createElement('span');
 
-      html += `
-        <div class="story-description">
-          ${escapeHTML(description)}
-        </div>
-      `;
-
-    }
+    wick.className =
+      'wick';
 
 
-    html += `
-      <div class="story-grid">
-    `;
+    title.appendChild(wick);
+
+    title.appendChild(
+      document.createTextNode(
+        (group.title || '') +
+        (group.month
+          ? ' — ' + group.month
+          : '')
+      )
+    );
 
 
-    if(images.length){
-
-      images.forEach(item => {
-
-        const src =
-          typeof item === 'object'
-            ? (
-                item.image ||
-                item.url ||
-                item.path ||
-                ''
-              )
-            : item;
-
-        if(!src){
-          return;
-        }
-
-        html += `
-          <img
-            class="story-slot"
-            src="${escapeHTML(mediaURL(src))}"
-            alt="${escapeHTML(title)}"
-            loading="lazy"
-          >
-        `;
-
-      });
-
-    }else{
-
-      html += `
-        <div class="empty-note">
-          عکسی اضافه نشده
-        </div>
-      `;
-
-    }
+    section.appendChild(title);
 
 
-    html += `
-      </div>
-    `;
+    const grid =
+      document.createElement('div');
+
+    grid.className =
+      'story-grid';
 
 
-    const files =
-      group.files ||
-      [];
+    const images =
+      Array.isArray(group.images)
+        ? group.images
+        : [];
 
 
-    if(files.length){
+    images.forEach(item => {
 
-      html += `
-        <div class="story-files">
-      `;
+      const src =
+        typeof item === 'string'
+          ? item
+          : item.image || '';
 
-
-      files.forEach(file => {
-
-        const path =
-          typeof file === 'object'
-            ? (
-                file.file ||
-                file.pdf ||
-                file.url ||
-                file.path ||
-                ''
-              )
-            : file;
-
-        const title =
-          typeof file === 'object'
-            ? (
-                file.title ||
-                file.name ||
-                'فایل'
-              )
-            : 'فایل';
+      if(!src) return;
 
 
-        if(!path){
-          return;
-        }
+      const img =
+        document.createElement('img');
+
+      img.src =
+        src.startsWith('http')
+          ? src
+          : '/' +
+            src.replace(/^\/+/,'');
+
+      img.className =
+        'story-slot';
+
+      img.alt =
+        group.title || 'استوری';
+
+      grid.appendChild(img);
+
+    });
 
 
-        html += `
-          <a
-            class="file-link"
-            href="${escapeHTML(mediaURL(path))}"
-            target="_blank"
-            rel="noopener"
-          >
-            📎
-            ${escapeHTML(title)}
-          </a>
-        `;
+    if(!grid.children.length){
 
-      });
-
-
-      html += `
-        </div>
-      `;
+      grid.innerHTML =
+        '<div class="empty-note">عکسی اضافه نشده</div>';
 
     }
 
 
-    g.innerHTML =
-      html;
+    section.appendChild(grid);
 
-    storyWrap.appendChild(g);
+    wrap.appendChild(section);
 
   });
 
 }
 
 
-/* =========================================================
-   تقویم محتوایی
-========================================================= */
-
 function renderCalendar(calendar){
 
-  const calWrap =
+  const wrap =
     document.getElementById(
       'calendar-grid'
     );
 
-  const description =
-    document.getElementById(
-      'calendar-description'
-    );
+  if(!wrap) return;
 
-  const visual =
-    document.getElementById(
-      'calendar-visual'
-    );
-
-  const filesWrap =
-    document.getElementById(
-      'calendar-files'
-    );
-
-
-  calWrap.innerHTML = '';
-  description.innerHTML = '';
-  visual.innerHTML = '';
-  filesWrap.innerHTML = '';
-
-
-  if(!calendar){
-
-    calWrap.innerHTML = `
-      <div
-        class="empty-note"
-        style="grid-column:1/-1;"
-      >
-        هنوز تقویم محتوایی اضافه نشده.
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  if(calendar.description){
-
-    description.textContent =
-      calendar.description;
-
-  }
+  wrap.innerHTML = '';
 
 
   const days =
     calendar.days ||
-    calendar ||
+    calendar.calendar ||
     [];
 
 
   if(!Array.isArray(days) || !days.length){
 
-    calWrap.innerHTML = `
-      <div
-        class="empty-note"
-        style="grid-column:1/-1;"
-      >
-        هنوز روزهای تقویم اضافه نشده.
-      </div>
-    `;
-
-  }else{
-
-
-    const headers = [
-      'ش',
-      'ی',
-      'د',
-      'س',
-      'چ',
-      'پ',
-      'ج'
-    ];
-
-
-    headers.forEach(day => {
-
-      const head =
-        document.createElement('div');
-
-      head.className =
-        'cal-day-head';
-
-      head.textContent =
-        day;
-
-      calWrap.appendChild(head);
-
-    });
-
-
-    days.forEach(day => {
-
-      const cell =
-        document.createElement('div');
-
-      const content =
-        typeof day === 'object'
-          ? (
-              day.content ||
-              day.topic ||
-              day.title ||
-              ''
-            )
-          : day;
-
-      const format =
-        typeof day === 'object'
-          ? (
-              day.format ||
-              ''
-            )
-          : '';
-
-      cell.className =
-        'cal-cell' +
-        (content ? ' filled' : '');
-
-
-      cell.innerHTML = `
-
-        <div class="cal-content">
-          ${escapeHTML(content || '—')}
-        </div>
-
-        ${
-          format
-            ? `
-              <div class="cal-format">
-                ${escapeHTML(format)}
-              </div>
-            `
-            : ''
-        }
-
-      `;
-
-      calWrap.appendChild(cell);
-
-    });
-
+    return;
   }
 
 
-  const visualImage =
-    calendar.visual?.image ||
-    calendar.visual?.cover ||
-    calendar.image ||
-    '';
+  days.forEach(day => {
+
+    const head =
+      document.createElement('div');
+
+    head.className =
+      'cal-day-head';
+
+    head.textContent =
+      (day.day || '').slice(0,1);
+
+    wrap.appendChild(head);
+
+  });
 
 
-  if(visualImage){
+  days.forEach(day => {
 
-    visual.innerHTML = `
-      <img
-        src="${escapeHTML(mediaURL(visualImage))}"
-        alt="تقویم محتوایی"
-        loading="lazy"
-      >
-    `;
+    const cell =
+      document.createElement('div');
 
-  }
+    cell.className =
+      'cal-cell' +
+      (day.content ? ' filled' : '');
 
+    cell.textContent =
+      day.content || '—';
 
-  const fileList = [];
+    wrap.appendChild(cell);
 
-
-  if(calendar.visual?.pdf){
-
-    fileList.push({
-      title:'PDF تقویم',
-      path:calendar.visual.pdf
-    });
-
-  }
-
-
-  if(calendar.visual?.excel){
-
-    fileList.push({
-      title:'فایل Excel تقویم',
-      path:calendar.visual.excel
-    });
-
-  }
-
-
-  if(calendar.visual?.attachment){
-
-    fileList.push({
-      title:'فایل تقویم',
-      path:calendar.visual.attachment
-    });
-
-  }
-
-
-  if(calendar.pdf){
-
-    fileList.push({
-      title:'PDF تقویم',
-      path:calendar.pdf
-    });
-
-  }
-
-
-  if(calendar.excel){
-
-    fileList.push({
-      title:'Excel تقویم',
-      path:calendar.excel
-    });
-
-  }
-
-
-  if(fileList.length){
-
-    fileList.forEach(file => {
-
-      const path =
-        typeof file.path === 'object'
-          ? (
-              file.path.url ||
-              file.path.path ||
-              file.path.file ||
-              ''
-            )
-          : file.path;
-
-      if(!path){
-        return;
-      }
-
-
-      const link =
-        document.createElement('a');
-
-      link.className =
-        'file-link';
-
-      link.href =
-        mediaURL(path);
-
-      link.target =
-        '_blank';
-
-      link.rel =
-        'noopener';
-
-      link.textContent =
-        '📎 ' + file.title;
-
-      filesWrap.appendChild(link);
-
-    });
-
-  }
+  });
 
 }
 
-
-/* =========================================================
-   تماس
-========================================================= */
-
-function renderContact(settings){
-
-  const contact =
-    settings?.contact ||
-    {};
-
-  const insta =
-    document.getElementById(
-      'insta-link'
-    );
-
-
-  const instagramURL =
-    contact.instagram_url ||
-    contact.instagram ||
-    '';
-
-
-  const instagramHandle =
-    contact.instagram_handle ||
-    contact.handle ||
-    instagramURL ||
-    '';
-
-
-  insta.href =
-    instagramURL || '#';
-
-  insta.textContent =
-    instagramHandle;
-
-}
-
-
-/* =========================================================
-   Reveal Animation
-========================================================= */
 
 function setupReveal(){
 
@@ -2717,30 +1531,28 @@ function setupReveal(){
       '.reveal'
     );
 
+  if(
+    !('IntersectionObserver' in window)
+  ){
 
-  if(!('IntersectionObserver' in window)){
-
-    elements.forEach(el =>
-      el.classList.add('in')
+    elements.forEach(
+      el => el.classList.add('in')
     );
 
     return;
-
   }
 
 
   const observer =
     new IntersectionObserver(
-      (entries) => {
+      entries => {
 
         entries.forEach(entry => {
 
           if(entry.isIntersecting){
 
-            entry.target.classList.add('in');
-
-            observer.unobserve(
-              entry.target
+            entry.target.classList.add(
+              'in'
             );
 
           }
@@ -2749,158 +1561,118 @@ function setupReveal(){
 
       },
       {
-        threshold:0.15
+        threshold:.15
       }
     );
 
 
-  elements.forEach(el =>
-    observer.observe(el)
+  elements.forEach(
+    el => observer.observe(el)
   );
 
 }
 
 
-/* =========================================================
-   اجرای اصلی سایت
-========================================================= */
-
 async function loadSite(){
+
+  console.log(
+    'Portfolio loading...'
+  );
+
+
+  /*
+    هر بخش مستقل لود می‌شود.
+    خراب بودن یک فایل نباید
+    کل سایت را از کار بیندازد.
+  */
+
 
   try{
 
-    const [
-      settings,
-      projects,
-      stories,
-      calendar
-    ] = await Promise.all([
-
-      githubJSON(
+    const settings =
+      await getJSON(
         'content/settings.json'
-      ),
+      );
 
-      githubFolder(
-        'content/projects'
-      ),
-
-      githubFolder(
-        'content/story-series'
-      ),
-
-      githubJSON(
-        'content/calendar.json'
-      )
-
-    ]);
-
-
-    /* ظاهر */
-
-    renderAppearance(
-      settings
-    );
-
-
-    /* Hero */
-
-    renderHero(
-      settings
-    );
-
-
-    /* About */
-
-    renderAbout(
-      settings
-    );
-
-
-    /* Services */
-
-    renderServices(
-      settings
-    );
-
-
-    /* Projects */
-
-    renderProjects(
-      projects
-    );
-
-
-    /* Stats */
-
-    renderStats(
-      projects
-    );
-
-
-    /* Stories */
-
-    renderStories(
-      stories
-    );
-
-
-    /* Calendar */
-
-    renderCalendar(
-      calendar
-    );
-
-
-    /* Contact */
-
-    renderContact(
-      settings
-    );
-
-
-    /* Animation */
-
-    setupReveal();
-
-
-    console.log(
-      'Portfolio content loaded successfully.'
-    );
-
+    renderSettings(settings);
 
   }catch(error){
 
     console.error(
-      'Could not load portfolio content:',
+      'Settings error:',
       error
     );
 
+  }
 
-    document.querySelectorAll(
-      '.empty-note'
-    ).forEach(el => {
 
-      if(
-        el.textContent.includes(
-          'در حال بارگذاری'
-        )
-      ){
+  try{
 
-        el.textContent =
-          'بارگذاری اطلاعات انجام نشد.';
+    const projects =
+      await getFolder(
+        'content/projects'
+      );
 
-      }
+    renderProjects(projects);
 
-    });
+    renderStats(projects);
+
+  }catch(error){
+
+    console.error(
+      'Projects error:',
+      error
+    );
 
   }
 
+
+  try{
+
+    const stories =
+      await getFolder(
+        'content/story-series'
+      );
+
+    renderStories(stories);
+
+  }catch(error){
+
+    console.error(
+      'Stories error:',
+      error
+    );
+
+  }
+
+
+  try{
+
+    const calendar =
+      await getJSON(
+        'content/calendar.json'
+      );
+
+    renderCalendar(calendar);
+
+  }catch(error){
+
+    console.error(
+      'Calendar error:',
+      error
+    );
+
+  }
+
+
+  setupReveal();
+
+  console.log(
+    'Portfolio loaded.'
+  );
+
 }
 
-
-/* =========================================================
-   شروع
-========================================================= */
 
 loadSite();
 
