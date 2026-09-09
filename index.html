@@ -1,4 +1,1499 @@
-.alt =
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Atiyeh | Alka Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+rel="stylesheet"
+>
+
+<style>
+
+:root{
+--ink:#171512;
+--paper:#f5f1e9;
+--white:#fffdf9;
+--muted:#756f66;
+--line:#d9d1c5;
+--accent:#a47b50;
+--dark:#1d1b18;
+}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:Vazirmatn,sans-serif;
+line-height:1.9;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+display:block;
+max-width:100%;
+}
+
+.container{
+width:min(1240px,calc(100% - 48px));
+margin:auto;
+}
+
+
+/* NAV */
+
+.topbar{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:20;
+background:rgba(245,241,233,.92);
+backdrop-filter:blur(16px);
+border-bottom:1px solid #17151214;
+}
+
+nav{
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.brand{
+font:600 27px "Playfair Display",serif;
+}
+
+.navlinks{
+display:flex;
+gap:28px;
+font-size:13px;
+color:#504a43;
+}
+
+.navlinks a:hover{
+color:var(--accent);
+}
+
+.nav-cta{
+border:1px solid var(--ink);
+padding:7px 15px;
+border-radius:999px;
+font-size:12px;
+}
+
+
+/* HERO */
+
+.hero{
+min-height:760px;
+padding-top:76px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+}
+
+.hero-copy{
+display:flex;
+align-items:center;
+padding:80px 6vw 80px 5vw;
+}
+
+.eyebrow{
+font-size:11px;
+letter-spacing:.08em;
+color:var(--accent);
+font-weight:600;
+margin-bottom:16px;
+}
+
+h1{
+font-size:clamp(48px,6vw,86px);
+line-height:1.1;
+margin:0 0 14px;
+letter-spacing:-.05em;
+}
+
+.hero-title{
+font-size:21px;
+font-weight:500;
+}
+
+.hero-slogan{
+font-size:19px;
+color:var(--accent);
+margin:7px 0 18px;
+}
+
+.hero-text{
+max-width:600px;
+color:var(--muted);
+font-size:15px;
+}
+
+.actions{
+display:flex;
+gap:11px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+gap:8px;
+border:1px solid var(--ink);
+border-radius:999px;
+padding:11px 18px;
+font-size:12px;
+transition:.25s;
+}
+
+.btn.dark{
+background:var(--ink);
+color:var(--paper);
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.hero-image{
+min-height:684px;
+background:#ddd4c7;
+overflow:hidden;
+position:relative;
+}
+
+.hero-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.profile-placeholder{
+position:absolute;
+inset:0;
+display:none;
+place-items:center;
+text-align:center;
+background:linear-gradient(135deg,#ddd5c9,#b9afa2);
+color:#5b554e;
+padding:30px;
+}
+
+.profile-placeholder span{
+border:1px solid #0003;
+padding:14px 20px;
+border-radius:12px;
+background:#fff3;
+}
+
+
+/* GENERAL */
+
+section{
+padding:100px 0;
+}
+
+.section-head{
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:30px;
+margin-bottom:40px;
+}
+
+.section-head h2{
+font-size:37px;
+line-height:1.3;
+margin:0;
+letter-spacing:-.03em;
+}
+
+.section-head p{
+max-width:520px;
+color:var(--muted);
+font-size:13px;
+margin:0;
+}
+
+
+/* SERVICES */
+
+.services{
+background:var(--white);
+border-block:1px solid var(--line);
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+border-top:1px solid var(--line);
+}
+
+.service{
+padding:30px 23px;
+border-left:1px solid var(--line);
+}
+
+.service:first-child{
+border-left:0;
+}
+
+.service-num{
+font:22px "Playfair Display",serif;
+color:var(--accent);
+}
+
+.service h3{
+font-size:17px;
+margin:20px 0 8px;
+}
+
+.service p{
+font-size:12px;
+color:var(--muted);
+margin:0;
+}
+
+
+/* CASE STUDY */
+
+.case{
+background:var(--dark);
+color:var(--paper);
+padding:0;
+}
+
+.case-grid{
+display:grid;
+grid-template-columns:.85fr 1.15fr;
+min-height:620px;
+}
+
+.case-copy{
+padding:70px 60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.case-copy .eyebrow{
+color:#c7a77e;
+}
+
+.case-copy h2{
+font:600 62px "Playfair Display",serif;
+direction:ltr;
+text-align:left;
+line-height:1;
+margin:0 0 18px;
+}
+
+.case-copy h3{
+font-size:24px;
+margin:0 0 15px;
+}
+
+.case-copy>p{
+color:#c4beb4;
+font-size:13px;
+}
+
+.steps{
+display:grid;
+}
+
+.step{
+display:grid;
+grid-template-columns:55px 1fr;
+gap:12px;
+padding:16px 0;
+border-top:1px solid #f5f1e926;
+}
+
+.step b{
+color:#c7a77e;
+}
+
+.step strong{
+font-size:13px;
+}
+
+.step span{
+display:block;
+color:#aaa39a;
+font-size:11px;
+}
+
+
+/* RESULTS */
+
+.results{
+background:var(--white);
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+}
+
+.stat{
+padding:27px;
+border:1px solid var(--line);
+background:#faf7f1;
+border-radius:16px;
+}
+
+.stat-value{
+font-size:27px;
+font-weight:600;
+letter-spacing:-.03em;
+}
+
+.stat-label{
+font-size:11px;
+color:var(--muted);
+}
+
+.stat-note{
+font-size:10px;
+color:var(--accent);
+margin-top:9px;
+}
+
+
+/* EVIDENCE */
+
+.evidence{
+background:#ebe3d6;
+}
+
+.evidence-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+}
+
+.evidence-card{
+background:var(--white);
+border:1px solid var(--line);
+border-radius:16px;
+overflow:hidden;
+}
+
+.evidence-image{
+min-height:260px;
+display:grid;
+place-items:center;
+background:#ded6ca;
+padding:25px;
+text-align:center;
+color:#71695f;
+font-size:12px;
+}
+
+.evidence-image img{
+width:100%;
+height:100%;
+max-height:430px;
+object-fit:contain;
+}
+
+.evidence-info{
+padding:18px;
+}
+
+.evidence-info h3{
+font-size:15px;
+margin:0 0 5px;
+}
+
+.evidence-info p{
+font-size:11px;
+color:var(--muted);
+margin:0;
+}
+
+
+/* STORY */
+
+.story{
+display:grid;
+grid-template-columns:.7fr 1.3fr;
+gap:60px;
+}
+
+.story-copy{
+position:sticky;
+top:110px;
+height:max-content;
+}
+
+.story-copy h2{
+font-size:38px;
+line-height:1.4;
+margin:0 0 14px;
+}
+
+.story-copy p{
+font-size:13px;
+color:var(--muted);
+}
+
+.story-list{
+display:grid;
+gap:15px;
+}
+
+.story-card{
+background:var(--white);
+border:1px solid var(--line);
+padding:21px;
+border-radius:16px;
+}
+
+.story-card h3{
+font-size:16px;
+margin:0 0 6px;
+}
+
+.story-card p{
+font-size:12px;
+color:var(--muted);
+margin:0;
+}
+
+
+/* GALLERY */
+
+.gallery{
+background:#f5f1e9;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(12,1fr);
+gap:13px;
+}
+
+.gallery-item{
+grid-column:span 4;
+min-height:250px;
+border-radius:14px;
+overflow:hidden;
+background:#ddd5c9;
+position:relative;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.gallery-empty{
+grid-column:1/-1;
+border:1px dashed var(--line);
+border-radius:16px;
+padding:45px;
+text-align:center;
+color:var(--muted);
+font-size:12px;
+}
+
+
+/* STORIES */
+
+.stories{
+background:var(--dark);
+color:var(--paper);
+}
+
+.stories .section-head p{
+color:#aaa39a;
+}
+
+.story-gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+}
+
+.story-item{
+background:#292622;
+border:1px solid #ffffff14;
+border-radius:14px;
+overflow:hidden;
+min-height:360px;
+cursor:pointer;
+}
+
+.story-item img{
+width:100%;
+height:100%;
+min-height:360px;
+object-fit:cover;
+transition:.4s;
+}
+
+.story-item:hover img{
+transform:scale(1.025);
+}
+
+.story-empty{
+grid-column:1/-1;
+border:1px dashed #ffffff30;
+border-radius:16px;
+padding:55px 25px;
+text-align:center;
+color:#aaa39a;
+font-size:12px;
+}
+
+
+/* TIMELINE */
+
+.timeline{
+background:var(--white);
+}
+
+.timeline-list{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+}
+
+.timeline-item{
+padding:23px;
+border-top:1px solid var(--line);
+border-left:1px solid var(--line);
+}
+
+.timeline-item:last-child{
+border-left:0;
+}
+
+.timeline-item span{
+font-size:11px;
+color:var(--accent);
+}
+
+.timeline-item h3{
+font-size:15px;
+margin:10px 0 5px;
+}
+
+.timeline-item p{
+font-size:11px;
+color:var(--muted);
+margin:0;
+}
+
+
+/* TOOLS */
+
+.tools{
+display:flex;
+gap:9px;
+flex-wrap:wrap;
+}
+
+.tool{
+border:1px solid var(--line);
+border-radius:999px;
+padding:7px 13px;
+font-size:11px;
+}
+
+
+/* CONTACT */
+
+.contact{
+background:var(--dark);
+color:var(--paper);
+text-align:center;
+padding:105px 0;
+}
+
+.contact h2{
+font-size:45px;
+margin:0 0 10px;
+}
+
+.contact p{
+max-width:560px;
+margin:auto;
+color:#bcb5ab;
+font-size:13px;
+}
+
+.contact .actions{
+justify-content:center;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#151411;
+color:#aaa39a;
+padding:20px 0;
+font-size:10px;
+}
+
+footer .container{
+display:flex;
+justify-content:space-between;
+}
+
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+inset:0;
+background:#000e;
+z-index:50;
+display:none;
+place-items:center;
+padding:25px;
+}
+
+.lightbox.open{
+display:grid;
+}
+
+.lightbox img{
+max-width:92vw;
+max-height:90vh;
+object-fit:contain;
+}
+
+.close{
+position:absolute;
+top:15px;
+left:22px;
+color:white;
+font-size:32px;
+cursor:pointer;
+}
+
+
+/* ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(18px);
+transition:.7s;
+}
+
+.reveal.show{
+opacity:1;
+transform:none;
+}
+
+
+/* TABLET */
+
+@media(max-width:900px){
+
+.navlinks{
+display:none;
+}
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero-copy{
+padding:65px 0;
+}
+
+.hero-image{
+min-height:520px;
+}
+
+.service-grid,
+.stats,
+.timeline-list{
+grid-template-columns:1fr 1fr;
+}
+
+.service{
+border-top:1px solid var(--line);
+}
+
+.case-grid,
+.story{
+grid-template-columns:1fr;
+}
+
+.case-copy{
+padding:60px 25px;
+}
+
+.case-image{
+display:none;
+}
+
+.story-copy{
+position:static;
+}
+
+.evidence-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.story-gallery{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.container{
+width:calc(100% - 28px);
+}
+
+nav{
+height:68px;
+}
+
+.nav-cta{
+display:none;
+}
+
+.hero{
+padding-top:68px;
+}
+
+h1{
+font-size:48px;
+}
+
+.hero-image{
+min-height:430px;
+}
+
+section{
+padding:75px 0;
+}
+
+.section-head{
+display:block;
+}
+
+.section-head h2{
+font-size:31px;
+margin-bottom:10px;
+}
+
+.service-grid,
+.stats,
+.timeline-list,
+.evidence-grid{
+grid-template-columns:1fr;
+}
+
+.case-copy h2{
+font-size:50px;
+}
+
+.story-gallery{
+grid-template-columns:repeat(2,1fr);
+}
+
+.story-item{
+min-height:300px;
+}
+
+.story-item img{
+min-height:300px;
+}
+
+.gallery-item{
+grid-column:span 12;
+min-height:280px;
+}
+
+.contact h2{
+font-size:36px;
+}
+
+footer .container{
+display:block;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+<div class="container">
+
+<nav>
+
+<a class="brand" href="#top">
+Atiyeh
+</a>
+
+<div class="navlinks">
+
+<a href="#services">خدمات</a>
+<a href="#case">پروژه Alka</a>
+<a href="#results">نتایج</a>
+<a href="#evidence">مدارک نتایج</a>
+<a href="#stories">استوری‌ها</a>
+<a href="#gallery">خروجی‌ها</a>
+<a href="#about">درباره من</a>
+
+</div>
+
+<a class="nav-cta" href="#contact">
+تماس با من ↗
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main id="top">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-copy">
+
+<div class="container">
+
+<div class="eyebrow">
+DIGITAL MARKETING · BRAND · CONTENT
+</div>
+
+<h1 id="name">
+عطیه قیومی‌پور
+</h1>
+
+<div class="hero-title" id="title">
+مدیر دیجیتال مارکتینگ برند Alka
+</div>
+
+<p class="hero-slogan" id="slogan">
+از هویت بصری تا رشد واقعی.
+</p>
+
+<p class="hero-text" id="heroText"></p>
+
+<div class="actions">
+
+<a class="btn dark" href="#case">
+مشاهده Case Study ↗
+</a>
+
+<a class="btn" href="#contact">
+ارتباط با من
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<img
+id="profileImage"
+src="images/uploads/profile.jpg"
+alt="عطیه قیومی‌پور"
+>
+
+<div
+id="profilePlaceholder"
+class="profile-placeholder"
+>
+
+<span>
+عکس پروفایل پیدا نشد
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section
+id="services"
+class="services reveal"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+
+<div class="eyebrow">
+WHAT I DO
+</div>
+
+<h2>
+خدمات من
+</h2>
+
+</div>
+
+<p>
+نقش من فقط اجرای چند خروجی نبود؛ برای Alka یک مسیر منسجم از هویت بصری، محتوا، تعامل و رشد طراحی و اجرا شد.
+</p>
+
+</div>
+
+<div
+class="service-grid"
+id="servicesGrid"
+></div>
+
+</div>
+
+</section>
+
+
+
+<!-- CASE -->
+
+<section
+id="case"
+class="case"
+>
+
+<div class="case-grid">
+
+<div class="case-copy reveal">
+
+<div class="eyebrow">
+CASE STUDY · 01
+</div>
+
+<h2>
+ALKA
+</h2>
+
+<h3 id="caseTitle"></h3>
+
+<p id="caseLead"></p>
+
+<div class="steps">
+
+<div class="step">
+<b>01</b>
+<div>
+<strong>چالش</strong>
+<span>
+نبود هویت بصری یکپارچه و نیاز به رشد تعامل
+</span>
+</div>
+</div>
+
+<div class="step">
+<b>02</b>
+<div>
+<strong>استراتژی</strong>
+<span>
+ترکیب طراحی، محتوای فروش، آموزش و تعامل
+</span>
+</div>
+</div>
+
+<div class="step">
+<b>03</b>
+<div>
+<strong>اجرا</strong>
+<span>
+محتوا، استوری، سناریو، AI و دایرکت مارکتینگ
+</span>
+</div>
+</div>
+
+<div class="step">
+<b>04</b>
+<div>
+<strong>نتیجه</strong>
+<span>
+افزایش قابل‌اندازه‌گیری بازدید و تعامل
+</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="case-image">
+
+<!--
+فعلاً عکس کاور نداریم.
+وقتی عکس Alka اضافه شد، اینجا قرار می‌گیرد.
+-->
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- RESULTS -->
+
+<section
+id="results"
+class="results reveal"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+
+<div class="eyebrow">
+MEASURABLE RESULTS
+</div>
+
+<h2>
+نتایج همکاری
+</h2>
+
+</div>
+
+<p>
+اعداد واقعی پروژه در بازه همکاری؛ داده به‌جای ادعا.
+</p>
+
+</div>
+
+<div
+class="stats"
+id="statsGrid"
+></div>
+
+</div>
+
+</section>
+
+
+
+<!-- EVIDENCE -->
+
+<section
+id="evidence"
+class="evidence reveal"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+
+<div class="eyebrow">
+PROOF OF PERFORMANCE
+</div>
+
+<h2>
+مدارک نتایج
+</h2>
+
+</div>
+
+<p>
+اسکرین‌شات‌های واقعی Insights و آمار پیج در این بخش قرار می‌گیرند تا نتایج پروژه قابل بررسی و مشاهده باشند.
+</p>
+
+</div>
+
+<div
+class="evidence-grid"
+id="evidenceGrid"
+></div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROCESS -->
+
+<section
+id="about"
+class="reveal"
+>
+
+<div class="container story">
+
+<div class="story-copy">
+
+<div class="eyebrow">
+THE PROCESS
+</div>
+
+<h2>
+از ایده تا اجرای Alka
+</h2>
+
+<p id="aboutText"></p>
+
+</div>
+
+<div
+class="story-list"
+id="processList"
+></div>
+
+</div>
+
+</section>
+
+
+
+<!-- DESIGN GALLERY -->
+
+<section
+id="gallery"
+class="gallery reveal"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+
+<div class="eyebrow">
+SELECTED WORK
+</div>
+
+<h2>
+خروجی‌های طراحی
+</h2>
+
+</div>
+
+<p>
+نمونه‌های هویت بصری، طراحی محصول، پست و سایر خروجی‌های پروژه Alka در این بخش قرار می‌گیرند.
+</p>
+
+</div>
+
+<div
+class="gallery-grid"
+id="galleryGrid"
+></div>
+
+</div>
+
+</section>
+
+
+
+<!-- STORIES -->
+
+<section
+id="stories"
+class="stories reveal"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+
+<div class="eyebrow">
+INSTAGRAM STORIES
+</div>
+
+<h2>
+استوری‌های Alka
+</h2>
+
+</div>
+
+<p>
+نمونه‌ای از رشته‌استوری‌ها، استوری‌های فروش، آموزشی و تعاملی که برای پیج طراحی و اجرا شدند.
+</p>
+
+</div>
+
+<div
+class="story-gallery"
+id="storyGallery"
+></div>
+
+</div>
+
+</section>
+
+
+
+<!-- TIMELINE -->
+
+<section
+class="timeline reveal"
+>
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+
+<div class="eyebrow">
+PROJECT TIMELINE
+</div>
+
+<h2>
+روند همکاری
+</h2>
+
+</div>
+
+</div>
+
+<div
+class="timeline-list"
+id="timeline"
+></div>
+
+
+<div style="margin-top:50px">
+
+<div class="eyebrow">
+TOOLS
+</div>
+
+<div
+class="tools"
+id="tools"
+></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section
+id="contact"
+class="contact"
+>
+
+<div class="container">
+
+<div class="eyebrow">
+LET'S TALK
+</div>
+
+<h2>
+بیایید با هم کار کنیم.
+</h2>
+
+<p>
+برای همکاری در پروژه‌های دیجیتال مارکتینگ، طراحی هویت بصری و تولید محتوای هدفمند با من در ارتباط باشید.
+</p>
+
+<div class="actions">
+
+<a
+id="instagram"
+class="btn"
+href="#"
+target="_blank"
+rel="noopener"
+>
+اینستاگرام ↗
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<div class="container">
+
+<span>
+© 2026 Atiyeh Ghayoumipour
+</span>
+
+<span>
+Portfolio · Alka Case Study
+</span>
+
+</div>
+
+</footer>
+
+
+
+<!-- LIGHTBOX -->
+
+<div
+class="lightbox"
+id="lightbox"
+>
+
+<div
+class="close"
+id="closeLightbox"
+>
+×
+</div>
+
+<img
+id="lightboxImage"
+alt=""
+>
+
+</div>
+
+
+
+<script src="data.js"></script>
+
+<script>
+
+
+const $ = id => document.getElementById(id);
+
+
+/* PROFILE */
+
+const profileImage =
+$("profileImage");
+
+const profilePlaceholder =
+$("profilePlaceholder");
+
+profileImage.onload = function(){
+
+profilePlaceholder.style.display = "none";
+
+};
+
+profileImage.onerror = function(){
+
+profileImage.style.display = "grid";
+
+profilePlaceholder.style.display = "grid";
+
+};
+
+
+/* LIGHTBOX */
+
+function openLightbox(src){
+
+$("lightboxImage").src = src;
+
+$("lightbox").classList.add("open");
+
+}
+
+
+/* DESIGN GALLERY */
+
+function renderGallery(){
+
+const grid =
+$("galleryGrid");
+
+grid.innerHTML = "";
+
+if(
+!portfolio.gallery ||
+portfolio.gallery.length === 0
+){
+
+grid.innerHTML = `
+<div class="gallery-empty">
+نمونه‌های طراحی Alka بعداً در این بخش اضافه می‌شوند.
+</div>
+`;
+
+return;
+
+}
+
+portfolio.gallery.forEach(item => {
+
+const wrap =
+document.createElement("div");
+
+wrap.className =
+"gallery-item";
+
+const img =
+document.createElement("img");
+
+img.src =
+item.src;
+
+img.alt =
 item.alt || "";
 
 img.loading =
@@ -419,6 +1914,8 @@ observer.observe(el)
 /* START */
 
 render();
-</body>
-</html>
+
 </script>
+
+</body>
+  </html>
