@@ -12,13 +12,13 @@ locale: "fa"
 collections:
 
   # =========================
-  # تنظیمات اصلی سایت
+  # تنظیمات سایت
   # =========================
   - name: "settings"
     label: "⚙️ تنظیمات سایت"
     files:
 
-      - file: "content/settings.json"
+      - file: "content/site.json"
         label: "اطلاعات و ظاهر سایت"
         name: "site_settings"
 
@@ -92,6 +92,15 @@ collections:
                   name: "service"
                   widget: "string"
 
+              - label: "برچسب‌ها"
+                name: "tags"
+                widget: "list"
+                required: false
+                field:
+                  label: "برچسب"
+                  name: "tag"
+                  widget: "string"
+
 
           # ---------- Contact ----------
           - label: "📞 اطلاعات تماس"
@@ -126,46 +135,29 @@ collections:
             widget: "object"
             fields:
 
-              - label: "رنگ اصلی"
-                name: "primaryColor"
-                widget: "color"
-                required: false
-
               - label: "رنگ پس‌زمینه"
-                name: "backgroundColor"
+                name: "bg_color"
                 widget: "color"
                 required: false
 
               - label: "رنگ کارت‌ها"
-                name: "cardColor"
+                name: "card_color"
                 widget: "color"
                 required: false
 
               - label: "رنگ متن"
-                name: "textColor"
+                name: "text_color"
                 widget: "color"
                 required: false
 
-              - label: "رنگ متن فرعی"
-                name: "mutedColor"
+              - label: "رنگ اصلی"
+                name: "accent_color"
                 widget: "color"
                 required: false
 
-              - label: "گردی گوشه کارت‌ها"
-                name: "cardRadius"
-                widget: "number"
-                required: false
-                value_type: "int"
-                min: 0
-                max: 50
-
-              - label: "حالت نمایش"
-                name: "layout"
-                widget: "select"
-                options:
-                  - "modern"
-                  - "minimal"
-                  - "editorial"
+              - label: "رنگ اصلی دوم"
+                name: "accent2_color"
+                widget: "color"
                 required: false
 
 
@@ -182,41 +174,25 @@ collections:
 
     fields:
 
-      - label: "اطلاعات پروژه"
-        name: "project_info"
-        widget: "object"
-        fields:
+      - label: "نام پروژه"
+        name: "title"
+        widget: "string"
+        required: true
 
-          - label: "نام پروژه"
-            name: "title"
-            widget: "string"
-            required: true
+      - label: "برند / مشتری"
+        name: "brand"
+        widget: "string"
+        required: false
 
-          - label: "برند / مشتری"
-            name: "brand"
-            widget: "string"
-            required: false
+      - label: "مدت همکاری"
+        name: "duration"
+        widget: "string"
+        required: false
 
-          - label: "مدت همکاری"
-            name: "duration"
-            widget: "string"
-            required: false
-
-          - label: "نقش من"
-            name: "lead"
-            widget: "string"
-            required: false
-
-          - label: "تصویر کاور"
-            name: "cover"
-            widget: "image"
-            required: false
-
-          - label: "لینک پروژه"
-            name: "url"
-            widget: "string"
-            required: false
-
+      - label: "توضیحات پروژه"
+        name: "lead"
+        widget: "text"
+        required: false
 
       - label: "🎯 حوزه‌های فعالیت"
         name: "scope"
@@ -228,80 +204,93 @@ collections:
           widget: "string"
 
 
+      # ---------- Stats ----------
       - label: "📊 آمار و نتایج"
         name: "stats"
+        widget: "object"
+        fields:
+
+          - label: "بازدید قبل"
+            name: "views_before"
+            widget: "string"
+            required: false
+
+          - label: "بازدید بعد"
+            name: "views_after"
+            widget: "string"
+            required: false
+
+          - label: "ضریب رشد بازدید"
+            name: "views_mult"
+            widget: "string"
+            required: false
+
+          - label: "تعامل قبل"
+            name: "engagement_before"
+            widget: "string"
+            required: false
+
+          - label: "تعامل بعد"
+            name: "engagement_after"
+            widget: "string"
+            required: false
+
+          - label: "ضریب رشد تعامل"
+            name: "engagement_mult"
+            widget: "string"
+            required: false
+
+          - label: "رشد فالوور"
+            name: "followers_growth"
+            widget: "string"
+            required: false
+
+          - label: "درصد رشد فالوور"
+            name: "followers_percent"
+            widget: "string"
+            required: false
+
+          - label: "ریپلای استوری"
+            name: "replies"
+            widget: "string"
+            required: false
+
+
+      # ---------- Media ----------
+      - label: "🖼️ تصاویر"
+        name: "proofImages"
         widget: "list"
         required: false
-        fields:
+        field:
+          label: "تصویر"
+          name: "image"
+          widget: "image"
 
-          - label: "عنوان"
-            name: "label"
-            widget: "string"
-
-          - label: "مقدار"
-            name: "value"
-            widget: "string"
-
-
-      - label: "🖼️ تصاویر و فایل‌ها"
-        name: "media"
-        widget: "object"
-        fields:
-
-          - label: "تصاویر نمونه کار"
-            name: "proofImages"
-            widget: "list"
-            required: false
-            field:
-              label: "تصویر"
-              name: "image"
-              widget: "image"
-
-          - label: "گالری پروژه"
-            name: "gallery"
-            widget: "list"
-            required: false
-            field:
-              label: "تصویر"
-              name: "image"
-              widget: "image"
-
-          - label: "PDF پروژه"
-            name: "report_pdf"
-            widget: "file"
-            required: false
-            media_library:
-              config:
-                multiple: false
-
-          - label: "فایل ضمیمه"
-            name: "attachment"
-            widget: "file"
-            required: false
-            media_library:
-              config:
-                multiple: false
+      - label: "🖼️ گالری پروژه"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field:
+          label: "تصویر"
+          name: "image"
+          widget: "image"
 
 
-      - label: "📝 توضیحات پروژه"
-        name: "details"
-        widget: "object"
-        fields:
+      # ---------- Details ----------
+      - label: "📝 چالش"
+        name: "challenge"
+        widget: "text"
+        required: false
 
-          - label: "چالش"
-            name: "challenge"
-            widget: "text"
-            required: false
+      - label: "📝 راهکار"
+        name: "solution"
+        widget: "text"
+        required: false
 
-          - label: "راهکار"
-            name: "solution"
-            widget: "text"
-            required: false
-
-          - label: "نتیجه"
-            name: "result"
-            widget: "text"
-            required: false
+      - label: "📝 نتیجه"
+        name: "result"
+        widget: "text"
+        required: false
 
 
   # =========================
@@ -317,7 +306,7 @@ collections:
 
     fields:
 
-      - label: "عنوان رشته استوری"
+      - label: "عنوان"
         name: "title"
         widget: "string"
         required: true
@@ -337,7 +326,7 @@ collections:
         widget: "image"
         required: false
 
-      - label: "🖼️ تصاویر استوری"
+      - label: "🖼️ تصاویر"
         name: "images"
         widget: "list"
         required: false
@@ -346,7 +335,7 @@ collections:
           name: "image"
           widget: "image"
 
-      - label: "📎 فایل‌های استوری"
+      - label: "📎 فایل‌ها"
         name: "files"
         widget: "list"
         required: false
@@ -362,7 +351,7 @@ collections:
 
 
   # =========================
-  # تقویم محتوایی
+  # تقویم
   # =========================
   - name: "calendar"
     label: "📅 تقویم محتوایی"
@@ -389,8 +378,6 @@ collections:
             widget: "text"
             required: false
 
-
-          # ---------- روزهای تقویم ----------
           - label: "🗓️ برنامه محتوا"
             name: "days"
             widget: "list"
@@ -431,25 +418,23 @@ collections:
                   - "منتشر شده"
                 required: false
 
-
-          # ---------- فایل‌های تقویم ----------
           - label: "📎 فایل‌های تقویم"
             name: "visual"
             widget: "object"
             required: false
             fields:
 
-              - label: "تصویر تقویم"
+              - label: "تصویر"
                 name: "image"
                 widget: "image"
                 required: false
 
-              - label: "PDF تقویم"
+              - label: "PDF"
                 name: "pdf"
                 widget: "file"
                 required: false
 
-              - label: "فایل Excel"
+              - label: "Excel"
                 name: "excel"
                 widget: "file"
                 required: false
