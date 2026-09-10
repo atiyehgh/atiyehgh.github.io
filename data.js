@@ -105,39 +105,31 @@ const portfolio = {
 
   ],
 
-
+//خروجی های طراحی
   gallery:[
-
     {
-      src:"images/alka/identity-01.jpg",
+    src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt:"هویت بصری Alka"
-    },
-
-    {
-      src:"images/alka/product-01.jpg",
-      alt:"طراحی محصول Alka"
-    },
-
-    {
-      src:"images/alka/product-02.jpg",
-      alt:"تصویر محصول Alka"
-    },
-
-    {
-      src:"images/alka/story-01.jpg",
-      alt:"استوری Alka"
-    },
-
-    {
-      src:"images/alka/story-02.jpg",
-      alt:"رشته استوری Alka"
     }
-
   ],
 
+  //مدارک
+  evidence: [
+  {
+    src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+    alt: "استوری Alka"
+  }
+  ],
+
+  //استوری
+  stories: [
+  {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  }
+  ],
 
   timeline:[
-
     {
       date:"مهر ۱۴۰۴",
       title:"شروع همکاری",
@@ -167,13 +159,7 @@ const portfolio = {
 
   tools:[
     "Photoshop",
-    "Illustrator",
     "Canva",
-    "Premiere Pro",
-    "Notion",
-    "ChatGPT",
-    "Meta Ads",
-    "Google Analytics",
     "AI Tools"
   ],
 
