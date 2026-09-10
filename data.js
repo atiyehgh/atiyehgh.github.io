@@ -110,12 +110,20 @@ const portfolio = {
     {
     src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt:"هویت بصری Alka"
+    },
+        {
+    src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      alt:"هویت بصری Alka"
     }
   ],
 
-  //مدارک
+  //نتایج
   evidence: [
   {
+    src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+    alt: "استوری Alka"
+  },
+    {
     src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
     alt: "استوری Alka"
   }
@@ -124,6 +132,62 @@ const portfolio = {
   //استوری
   stories: [
   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
+    src: "images/uploads/IMG_20260107_002246_438.jpg",
+    alt: " Alkas"
+  },
+   {
     src: "images/uploads/IMG_20260107_002246_438.jpg",
     alt: " Alkas"
   }
