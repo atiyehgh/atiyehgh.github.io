@@ -131,6 +131,12 @@ const portfolio = {
 
   //استوری
   stories: [
+    {
+    src: "images/uploads/Screenshot_2026-02-18-17-41-09-337_com.instagram.android",
+    alt: " Alkas"
+  },
+          
+    
   ],
 
   timeline:[
