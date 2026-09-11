@@ -131,66 +131,6 @@ const portfolio = {
 
   //استوری
   stories: [
-  {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  },
-   {
-    src: "images/uploads/IMG_20260107_002246_438.jpg",
-    alt: " Alkas"
-  }
   ],
 
   timeline:[
