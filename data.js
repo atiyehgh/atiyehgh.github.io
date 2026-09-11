@@ -131,9 +131,8 @@ const portfolio = {
 
   //استوری
   stories: [
-    },
     {
-    src: "images/uploads/https://github.com/atiyehgh/atiyehgh.github.io/blob/main/images/uploads/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
+    src: "images/uploads/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
     alt: " Alkas"
   },
           
