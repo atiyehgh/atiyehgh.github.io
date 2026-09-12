@@ -108,35 +108,33 @@ const portfolio = {
 //خروجی های طراحی
   gallery:[
     {
-    src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      src: "images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt:"هویت بصری Alka"
     },
-        {
-    src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+    {
+      src: "images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt:"هویت بصری Alka"
     }
   ],
 
   //نتایج
   evidence: [
-  {
-    src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
-    alt: "استوری Alka"
-  },
     {
-    src: "images/uploads/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
-    alt: "استوری Alka"
-  }
+      src: "images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      alt: "استوری Alka"
+    },
+    {
+      src: "images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      alt: "استوری Alka"
+    }
   ],
 
   //استوری
   stories: [
     {
-    src: "images/uploads/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
-    alt: " Alkas"
-  },
-          
-    
+      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
+      alt: "Alka story"
+    }
   ],
 
   timeline:[
@@ -172,7 +170,6 @@ const portfolio = {
     "Canva",
     "AI Tools"
   ],
-
 
   instagramUrl:"https://instagram.com/atiyeh_ghayoumipour"
 
