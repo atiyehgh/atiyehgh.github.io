@@ -1,0 +1,27 @@
+name: Auto Update Gallery in data.js
+
+on:
+  push:
+    paths:
+      - 'images/uploads/**'
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run update script
+        run: python update_script.py
+
+      - name: Commit and push if changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update data.js with new uploaded images"
+          branch: main
