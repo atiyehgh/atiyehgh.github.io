@@ -1,44 +1,52 @@
 import os
 import re
 
-UPLOAD_DIR = "images/uploads"
 DATA_JS_PATH = "data.js"
 
-def get_uploaded_images():
-    if not os.path.exists(UPLOAD_DIR):
+# پوشه‌های مربوط به هر بخش
+FOLDERS = {
+    "gallery": "images/uploads/gallery",
+    "evidence": "images/uploads/evidence",
+    "stories": "images/uploads/stories"
+}
+
+def get_images_from_folder(folder_path):
+    if not os.path.exists(folder_path):
         return []
-    valid_extensions = ('.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG', '.JPG')
-    files = [f for f in os.listdir(UPLOAD_DIR) if f.endswith(valid_extensions)]
-    files.sort(reverse=True) # جدیدترین عکس‌ها بالاتر قرار بگیرند
+    valid_extensions = ('.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG')
+    files = [f for f in os.listdir(folder_path) if f.endswith(valid_extensions)]
+    files.sort(reverse=True) # جدیدترین عکس‌ها بالا باشند
     return files
 
 def update_data_file():
-    images = get_uploaded_images()
-    if not images:
-        print("هیچ عکسی پیدا نشد!")
-        return
-
     with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # ساختن ساختار جدید برای گالری
-    new_gallery_entries = ""
-    for img in images:
-        path = f"images/uploads/{img}"
-        new_gallery_entries += f'    {{\n      src: "{path}",\n      alt: "هویت بصری Alka"\n    }},\n'
+    # برای هر بخش، عکس‌های داخل پوشه‌اش را می‌خوانیم و جایگزین می‌کنیم
+    for section, folder in FOLDERS.items():
+        images = get_images_from_folder(folder)
+        if not images:
+            continue  # اگر پوشه‌ای خالی بود کاری به آن نداریم
 
-    # جایگزین کردن بخش gallery در فایل data.js
-    pattern = r"(gallery\s*:\s*\[).*?(\],)"
-    
-    if re.search(pattern, content, re.DOTALL):
-        replacement = r"\1\n" + new_gallery_entries.rstrip(",\n") + r"\n  \2"
-        new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+        new_entries = ""
+        for img in images:
+            path = f"{folder}/{img}"
+            # متن alt را بر اساس نام بخش تنظیم می‌کنیم
+            alt_text = "هویت بصری Alka" if section == "gallery" else ("نتیجه Alka" if section == "evidence" else "استوری Alka")
+            new_entries += f'    {{\n      src: "{path}",\n      alt: "{alt_text}"\n    }},\n'
+
+        # الگوی پیدا کردن بخش مورد نظر در فایل data.js (مثلا gallery یا evidence یا stories)
+        pattern = rf"({section}\s*:\s*\[).*?(\],)"
         
-        with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
-            f.write(new_content)
-        print("فایل data.js با موفقیت به‌روزرسانی شد!")
-    else:
-        print("خطا: بخش gallery پیدا نشد.")
+        if re.search(pattern, content, re.DOTALL):
+            replacement = rf"\1\n" + new_entries.rstrip(",\n") + f"\n  \\2"
+            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+    # ذخیره کردن فایل نهایی
+    with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
+        f.write(content)
+    
+    print("فایل data.js با موفقیت برای تمام بخش‌ها به‌روزرسانی شد!")
 
 if __name__ == "__main__":
     update_data_file()
