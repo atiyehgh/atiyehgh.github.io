@@ -10,9 +10,7 @@ const portfolio = {
 
   profileImage:"images/profile.jpg",
 
-
   about:"وقتی همکاری با Alka را شروع کردم، پیج هویت بصری منسجمی نداشت. از بازطراحی لوگو، کاور هایلایت و پالت رنگ شروع کردم، سبک تصویری محصولات را شکل دادم و بعد سراغ استراتژی محتوا، رشته‌استوری‌های تعاملی، دایرکت مارکتینگ و تحلیل Insights رفتم. هدف فقط تولید محتوا نبود؛ ساختن یک سیستم منسجم برای دیده‌شدن، تعامل و فروش بود.",
-
 
   services:[
 
@@ -38,7 +36,6 @@ const portfolio = {
 
   ],
 
-
   case:{
 
     title:"یک پروژه، از بازطراحی هویت تا ساختن سیستم رشد",
@@ -46,7 +43,6 @@ const portfolio = {
     lead:"سه ماه همکاری مستمر با Alka، از مدیریت روزانه پیج تا طراحی هویت بصری، استراتژی محتوا، سناریونویسی، دایرکت مارکتینگ و تحلیل داده."
 
   },
-
 
   stats:[
 
@@ -76,41 +72,32 @@ const portfolio = {
 
   ],
 
-
   process:[
 
     {
       title:"۱. شروع با یکپارچه‌سازی برند",
-
       text:"لوگو، کاور هایلایت‌ها، پالت رنگ و سبک تصویری از پایه بازطراحی شدند تا پیج قبل از هر چیز یک هویت مشخص داشته باشد."
     },
 
     {
       title:"۲. ساختن سیستم محتوا",
-
       text:"تقویم محتوا طوری چیده شد که معرفی محصول و آفر در کنار محتوای آموزشی، تعاملی و پشت‌صحنه قرار بگیرد."
     },
 
     {
       title:"۳. طراحی تعامل، نه فقط انتشار",
-
       text:"رشته‌استوری‌های چندقسمتی با CTA و سناریو طراحی شد تا مخاطب را به ادامه‌دادن، ریپلای و ورود به دایرکت تشویق کند."
     },
 
     {
       title:"۴. تصمیم‌گیری با داده",
-
       text:"Insights و رفتار مخاطب مرتب بررسی شد تا زمان انتشار، فرمت محتوا و نوع موضوعات بر اساس عملکرد واقعی اصلاح شوند."
     }
 
   ],
 
-//خروجی های طراحی
+  //خروجی های طراحی
   gallery:[
-    {
-      src: "images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
-      alt:"هویت بصری Alka"
-    },
     {
       src: "images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt:"هویت بصری Alka"
@@ -122,19 +109,11 @@ const portfolio = {
     {
       src: "images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt: "استوری Alka"
-    },
-    {
-      src: "images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
-      alt: "استوری Alka"
     }
   ],
 
   //استوری
   stories: [
-    {
-      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
-      alt: "استوری Alka"
-    },
     {
       src: "images/uploads/stories/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
       alt: "استوری Alka"
@@ -167,7 +146,6 @@ const portfolio = {
     }
 
   ],
-
 
   tools:[
     "Photoshop",
