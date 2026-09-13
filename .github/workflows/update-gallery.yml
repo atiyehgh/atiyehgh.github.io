@@ -5,9 +5,13 @@ on:
     paths:
       - 'images/uploads/**'
 
+permissions:
+  contents: write
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
