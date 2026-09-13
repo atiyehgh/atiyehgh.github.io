@@ -15,7 +15,10 @@ def get_images_from_folder(folder_path):
         return []
     valid_extensions = ('.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG')
     files = [f for f in os.listdir(folder_path) if f.endswith(valid_extensions)]
-    files.sort(reverse=True) # جدیدترین عکس‌ها بالا باشند
+    
+    # مرتب‌سازی بر اساس زمان آپلود: قدیمی‌ترین سمت راست، جدیدترین‌ها به ترتیب به سمت چپ اضافه می‌شوند
+    files.sort(key=lambda x: os.path.getmtime(os.path.join(folder_path, x)), reverse=False)
+    
     return files
 
 def update_data_file():
