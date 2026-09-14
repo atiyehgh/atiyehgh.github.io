@@ -30,7 +30,6 @@ def update_data_file():
 
         # استخراج عکس‌هایی که همین الان داخل data.js برای این بخش ثبت شده‌اند
         pattern = rf"({section}\s*:\s*\[)(.*?)(\],)"
-        match = re.search(pattern, content, content.__class__ if hasattr(content, '__class__') else 0) # روش امن برای پیدا کردن بخش
         
         # پیدا کردن مسیرهای موجود در فایل
         existing_paths = re.findall(rf'"{folder}/([^"]+)"', content)
@@ -38,8 +37,9 @@ def update_data_file():
         # پیدا کردن فایل‌هایی که جدید هستند و هنوز در data.js نیستند
         new_files = [f for f in all_files if f not in existing_paths]
         
-        # ترکیب: عکس‌های جدید اول قرار می‌گیرند، عکس‌های قبلی پشت سر آن‌ها حفظ می‌شوند
-        combined_files = new_files + [f for f in all_files if f in existing_paths]
+        # ترکیب معکوس: عکس‌های قبلی سر جای خود، عکس‌های جدید اضافه می‌شوند به سمت چپ (انتهای لیست)
+        combined_files = [f for f in all_files if f in existing_paths] + new_files
+        
         # اگر هیچ‌کدام با الگوی قبلی تطابق نداشتند، همان لیست پوشه را بگذار
         if not combined_files:
             combined_files = all_files
@@ -59,7 +59,7 @@ def update_data_file():
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
     
-    print("فایل data.js با موفقیت و بدون جابجایی عکس‌های قبلی به‌روزرسانی شد!")
+    print("فایل data.js با موفقیت و چیدمان صحیح راست به چپ به‌روزرسانی شد!")
 
 if __name__ == "__main__":
     update_data_file()
