@@ -100,6 +100,8 @@ const portfolio = {
   gallery:[
 
   
+
+  
     {
       src: "images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt:"هویت بصری Alka"
@@ -108,6 +110,8 @@ const portfolio = {
 
   //نتایج
   evidence: [
+
+  
 
   
     {
@@ -170,13 +174,13 @@ const portfolio = {
       text:"بررسی رشد بازدید، تعامل، فالوور و ریپلای."
     }
 
-  ],
+  
 
   tools:[
     "Photoshop",
     "Canva",
     "AI Tools"
-  ],
+  
 
   instagramUrl:"https://instagram.com/atiyeh_ghayoumipour"
 
