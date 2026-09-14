@@ -10,7 +10,11 @@ FOLDERS = {
     "stories": "images/uploads/stories"
 }
 
-def get_git_time(file_path):
+
+def get_git_timestamp(file_path):
+    """
+    زمان آخرین commit مربوط به فایل را از Git می‌گیرد.
+    """
     try:
         result = subprocess.run(
             ["git", "log", "-1", "--format=%ct", "--", file_path],
@@ -18,9 +22,16 @@ def get_git_time(file_path):
             text=True,
             check=True
         )
-        return int(result.stdout.strip()) if result.stdout.strip() else 0
-    except:
-        return 0
+
+        value = result.stdout.strip()
+
+        if value:
+            return int(value)
+
+    except Exception:
+        pass
+
+    return 0
 
 
 def get_images_from_folder(folder_path):
@@ -28,8 +39,14 @@ def get_images_from_folder(folder_path):
         return []
 
     valid_extensions = (
-        '.jpg', '.jpeg', '.png', '.webp',
-        '.JPG', '.JPEG', '.PNG', '.WEBP'
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".webp",
+        ".JPG",
+        ".JPEG",
+        ".PNG",
+        ".WEBP"
     )
 
     files = [
@@ -37,20 +54,24 @@ def get_images_from_folder(folder_path):
         if f.endswith(valid_extensions)
     ]
 
-    # قدیمی‌ترین → جدیدترین
-    # بنابراین عکس جدید همیشه به انتهای لیست اضافه می‌شود
+    # جدیدترین Commit اول
     files.sort(
-        key=lambda x: get_git_time(os.path.join(folder_path, x))
+        key=lambda f: get_git_timestamp(
+            os.path.join(folder_path, f)
+        ),
+        reverse=True
     )
 
     return files
 
 
 def update_data_file():
+
     with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
     for section, folder in FOLDERS.items():
+
         images = get_images_from_folder(folder)
 
         if not images:
@@ -59,29 +80,33 @@ def update_data_file():
         new_entries = ""
 
         for img in images:
+
             path = f"{folder}/{img}"
 
             if section == "gallery":
                 alt_text = "هویت بصری Alka"
+
             elif section == "evidence":
                 alt_text = "نتیجه Alka"
+
             else:
                 alt_text = "استوری Alka"
 
             new_entries += (
-                f'    {{\n'
+                "    {\n"
                 f'      src: "{path}",\n'
                 f'      alt: "{alt_text}"\n'
-                f'    }},\n'
+                "    },\n"
             )
 
         pattern = rf"({section}\s*:\s*\[).*?(\],)"
 
         if re.search(pattern, content, re.DOTALL):
+
             replacement = (
                 rf"\1\n"
                 + new_entries.rstrip(",\n")
-                + f"\n  \\2"
+                + "\n  \\2"
             )
 
             content = re.sub(
@@ -94,7 +119,7 @@ def update_data_file():
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت به‌روزرسانی شد!")
+    print("data.js با موفقیت به‌روزرسانی شد!")
 
 
 if __name__ == "__main__":
