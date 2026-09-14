@@ -9,7 +9,114 @@ FOLDERS = {
     "stories": "images/uploads/stories"
 }
 
+VALID_EXTENSIONS = (
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".JPG",
+    ".JPEG",
+    ".PNG",
+    ".WEBP"
+)
+
+
+def get_files(folder):
+    if not os.path.exists(folder):
+        return []
+
+    return [
+        f for f in os.listdir(folder)
+        if f.endswith(VALID_EXTENSIONS)
+    ]
+
+
+def update_section(content, section, folder):
+
+    all_files = get_files(folder)
+
+    if not all_files:
+        return content
+
+    # پیدا کردن بخش مربوط به gallery / evidence / stories
+    section_pattern = rf"({section}\s*:\s*\[)(.*?)(\n\s*\])"
+
+    match = re.search(section_pattern, content, re.DOTALL)
+
+    if not match:
+        print(f"بخش {section} در data.js پیدا نشد.")
+        return content
+
+    section_content = match.group(2)
+
+    # عکس‌هایی که همین الان داخل data.js هستند
+    existing_paths = re.findall(
+        rf'src\s*:\s*"{re.escape(folder)}/([^"]+)"',
+        section_content
+    )
+
+    # فقط عکس‌هایی که هنوز در data.js نیستند
+    new_files = [
+        f for f in all_files
+        if f not in existing_paths
+    ]
+
+    # اگر عکس جدیدی وجود ندارد، هیچ چیزی را جابه‌جا نکن
+    if not new_files:
+        print(f"{section}: عکس جدیدی پیدا نشد.")
+        return content
+
+    print(f"{section}: {len(new_files)} عکس جدید پیدا شد.")
+
+    # عکس‌های جدید باید اول لیست باشند
+    combined_files = new_files + existing_paths
+
+    # حذف موارد تکراری، بدون تغییر ترتیب
+    seen = set()
+    final_files = []
+
+    for file_name in combined_files:
+        if file_name not in seen:
+            seen.add(file_name)
+            final_files.append(file_name)
+
+    # ساختن آبجکت‌های جدید
+    entries = []
+
+    for img in final_files:
+
+        path = f"{folder}/{img}"
+
+        if section == "gallery":
+            alt_text = "هویت بصری Alka"
+
+        elif section == "evidence":
+            alt_text = "نتیجه Alka"
+
+        else:
+            alt_text = "استوری Alka"
+
+        entries.append(
+            f'''    {{
+      src: "{path}",
+      alt: "{alt_text}"
+    }}'''
+        )
+
+    new_section_content = "\n" + ",\n".join(entries) + "\n  "
+
+    # فقط محتوای همان آرایه را جایگزین می‌کنیم
+    content = (
+        content[:match.start(2)]
+        + new_section_content
+        + content[match.end(2):]
+    )
+
+    return content
+
+
 def update_data_file():
+
     if not os.path.exists(DATA_JS_PATH):
         print("فایل data.js پیدا نشد!")
         return
@@ -17,49 +124,19 @@ def update_data_file():
     with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
+    # هر سه بخش را بررسی کن
     for section, folder in FOLDERS.items():
-        if not os.path.exists(folder):
-            continue
-
-        # گرفتن تمام فایل‌های معتبر داخل پوشه
-        valid_extensions = ('.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG')
-        all_files = [f for f in os.listdir(folder) if f.endswith(valid_extensions)]
-        
-        # مرتب‌سازی ساده بر اساس نام فایل برای ثبات
-        all_files.sort()
-
-        # استخراج عکس‌هایی که همین الان داخل data.js برای این بخش ثبت شده‌اند
-        pattern = rf"({section}\s*:\s*\[)(.*?)(\],)"
-        
-        # پیدا کردن مسیرهای موجود در فایل
-        existing_paths = re.findall(rf'"{folder}/([^"]+)"', content)
-
-        # پیدا کردن فایل‌هایی که جدید هستند و هنوز در data.js نیستند
-        new_files = [f for f in all_files if f not in existing_paths]
-        
-        # ترکیب معکوس: عکس‌های قبلی سر جای خود، عکس‌های جدید اضافه می‌شوند به سمت چپ (انتهای لیست)
-        combined_files = [f for f in all_files if f in existing_paths] + new_files
-        
-        # اگر هیچ‌کدام با الگوی قبلی تطابق نداشتند، همان لیست پوشه را بگذار
-        if not combined_files:
-            combined_files = all_files
-
-        # ساختن متن جدید برای جایگذاری در آرایه
-        new_entries = ""
-        for img in combined_files:
-            path = f"{folder}/{img}"
-            alt_text = "هویت بصری Alka" if section == "gallery" else ("نتیجه Alka" if section == "evidence" else "استوری Alka")
-            new_entries += f'    {{\n      src: "{path}",\n      alt: "{alt_text}"\n    }},\n'
-
-        # جایگذاری در فایل data.js
-        if re.search(pattern, content, re.DOTALL):
-            replacement = rf"\1\n" + new_entries.rstrip(",\n") + f"\n  \\2"
-            content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+        content = update_section(
+            content,
+            section,
+            folder
+        )
 
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
-    
-    print("فایل data.js با موفقیت و چیدمان صحیح راست به چپ به‌روزرسانی شد!")
+
+    print("data.js با موفقیت به‌روزرسانی شد!")
+
 
 if __name__ == "__main__":
     update_data_file()
