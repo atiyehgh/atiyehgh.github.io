@@ -8,7 +8,7 @@ const portfolio = {
 
   heroText:"طراحی کردم، محتوا ساختم و با ترکیب استراتژی و ابزارهای AI، حضور دیجیتال Alka را توسعه دادم؛ نتیجه، افزایش ۱۳ برابری تعامل پیج بود.",
 
-  profileImage:"images/profile.jpg",
+  profileImage:"/images/profile.jpg",
 
   about:"وقتی همکاری با Alka را شروع کردم، پیج هویت بصری منسجمی نداشت. از بازطراحی لوگو، کاور هایلایت و پالت رنگ شروع کردم، سبک تصویری محصولات را شکل دادم و بعد سراغ استراتژی محتوا، رشته‌استوری‌های تعاملی، دایرکت مارکتینگ و تحلیل Insights رفتم. هدف فقط تولید محتوا نبود؛ ساختن یک سیستم منسجم برای دیده‌شدن، تعامل و فروش بود.",
 
@@ -100,7 +100,7 @@ const portfolio = {
   gallery:[
 
     {
-      src: "images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      src: "/images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt:"هویت بصری Alka"
     }
 
@@ -110,7 +110,7 @@ const portfolio = {
   evidence: [
 
     {
-      src: "images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      src: "/images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt: "استوری Alka"
     }
 
@@ -119,27 +119,27 @@ const portfolio = {
   //استوری
   stories: [
     {
-      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
+      src: "/images/uploads/stories/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
       alt: "استوری Alka"
     },
     {
-      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
+      src: "/images/uploads/stories/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
       alt: "استوری Alka"
     },
     {
-      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
+      src: "/images/uploads/stories/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
       alt: "استوری Alka"
     },
     {
-      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
+      src: "/images/uploads/stories/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
       alt: "استوری Alka"
     },
     {
-      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
+      src: "/images/uploads/stories/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
       alt: "استوری Alka"
     },
     {
-      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
+      src: "/images/uploads/stories/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
       alt: "استوری Alka"
     }
 
@@ -155,9 +155,12 @@ const portfolio = {
     {
       date:"آبان ۱۴۰۴",
       title:"اجرای سیستم محتوا",
-      text:"تقویم محتوا، سناریوها و اجرای محتوای هدفمند."
+      text:"تقویم محتوا، سناریوها و اجرای سیستم تعاملی."
     }
 
-  ]
+  ],
+
+  tools: ["Instagram", "InShot", "Leonardo.ai", "Directam"],
+  instagramUrl: "https://instagram.com"
 
 };
