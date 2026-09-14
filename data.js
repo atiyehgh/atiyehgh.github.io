@@ -125,10 +125,6 @@ const portfolio = {
     {
       src: "images/uploads/stories/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
       alt: "استوری Alka"
-    },
-    {
-      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-13-091_com.instagram.android.jpg",
-      alt: "استوری Alka"
     }
   ],
 
