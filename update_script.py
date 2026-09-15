@@ -31,56 +31,95 @@ def get_files(folder):
     ]
 
 
+def find_section(content, section):
+    """
+    پیدا کردن محدوده آرایه gallery / evidence / stories
+    """
+
+    pattern = rf"{section}\s*:\s*\["
+
+    match = re.search(pattern, content)
+
+    if not match:
+        return None
+
+    start = match.end()
+
+    bracket_count = 1
+    i = start
+
+    while i < len(content):
+
+        if content[i] == "[":
+            bracket_count += 1
+
+        elif content[i] == "]":
+            bracket_count -= 1
+
+            if bracket_count == 0:
+                return match.start(), start, i
+
+        i += 1
+
+    return None
+
+
 def update_section(content, section, folder):
+
+    section_info = find_section(content, section)
+
+    if not section_info:
+        print(f"بخش {section} پیدا نشد.")
+        return content
+
+    section_start, content_start, content_end = section_info
+
+    section_content = content[content_start:content_end]
 
     all_files = get_files(folder)
 
     if not all_files:
+        print(f"{section}: عکسی در پوشه پیدا نشد.")
         return content
 
-    # پیدا کردن بخش مربوط به gallery / evidence / stories
-    section_pattern = rf"({section}\s*:\s*\[)(.*?)(\n\s*\])"
-
-    match = re.search(section_pattern, content, re.DOTALL)
-
-    if not match:
-        print(f"بخش {section} در data.js پیدا نشد.")
-        return content
-
-    section_content = match.group(2)
-
-    # عکس‌هایی که همین الان داخل data.js هستند
+    # پیدا کردن فایل‌هایی که همین الان در data.js هستند
     existing_paths = re.findall(
-        rf'src\s*:\s*"{re.escape(folder)}/([^"]+)"',
+        rf'src\s*:\s*"?/?{re.escape(folder)}/([^"]+)"?',
         section_content
     )
 
-    # فقط عکس‌هایی که هنوز در data.js نیستند
+    # فایل‌هایی که در پوشه هستند ولی هنوز در data.js نیستند
     new_files = [
         f for f in all_files
         if f not in existing_paths
     ]
 
-    # اگر عکس جدیدی وجود ندارد، هیچ چیزی را جابه‌جا نکن
     if not new_files:
         print(f"{section}: عکس جدیدی پیدا نشد.")
         return content
 
     print(f"{section}: {len(new_files)} عکس جدید پیدا شد.")
 
-    # عکس‌های جدید باید اول لیست باشند
-    combined_files = new_files + existing_paths
+    # ---------------------------------------
+    # ترتیب مهم:
+    #
+    # عکس‌های قبلی همان جای خود می‌مانند
+    # عکس‌های جدید به انتهای لیست اضافه می‌شوند
+    # ---------------------------------------
 
-    # حذف موارد تکراری، بدون تغییر ترتیب
-    seen = set()
+    combined_files = existing_paths + new_files
+
+    # حذف تکراری‌ها بدون تغییر ترتیب
     final_files = []
+    seen = set()
 
     for file_name in combined_files:
+
         if file_name not in seen:
             seen.add(file_name)
             final_files.append(file_name)
 
-    # ساختن آبجکت‌های جدید
+    # ساخت آبجکت‌های data.js
     entries = []
 
     for img in final_files:
@@ -105,11 +144,11 @@ def update_section(content, section, folder):
 
     new_section_content = "\n" + ",\n".join(entries) + "\n  "
 
-    # فقط محتوای همان آرایه را جایگزین می‌کنیم
+    # جایگزینی فقط محتوای همان آرایه
     content = (
-        content[:match.start(2)]
+        content[:content_start]
         + new_section_content
-        + content[match.end(2):]
+        + content[content_end:]
     )
 
     return content
@@ -124,8 +163,9 @@ def update_data_file():
     with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # هر سه بخش را بررسی کن
+    # بررسی هر سه بخش
     for section, folder in FOLDERS.items():
+
         content = update_section(
             content,
             section,
