@@ -1,182 +1,155 @@
-import os
-import re
+const portfolio = {
 
-DATA_JS_PATH = "data.js"
+  name:"عطیه قیومی‌پور",
 
-FOLDERS = {
-    "gallery": "images/uploads/gallery",
-    "evidence": "images/uploads/evidence",
-    "stories": "images/uploads/stories"
-}
+  title:"مدیر دیجیتال مارکتینگ برند Alka",
 
-VALID_EXTENSIONS = (
-    ".jpg",
-    ".jpeg",
-    ".png",
-    ".webp",
-    ".JPG",
-    ".JPEG",
-    ".PNG",
-    ".WEBP"
-)
+  slogan:"از هویت بصری تا رشد واقعی.",
 
+  heroText:"طراحی کردم، محتوا ساختم و با ترکیب استراتژی و ابزارهای AI، حضور دیجیتال Alka را توسعه دادم؛ نتیجه، افزایش ۱۳ برابری تعامل پیج بود.",
 
-def get_files(folder):
-    if not os.path.exists(folder):
-        return []
+  profileImage:"/images/profile.jpg",
 
-    return [
-        f for f in os.listdir(folder)
-        if f.endswith(VALID_EXTENSIONS)
-    ]
+  about:"وقتی همکاری با Alka را شروع کردم، پیج هویت بصری منسجمی نداشت. از بازطراحی لوگو، کاور هایلایت و پالت رنگ شروع کردم، سبک تصویری محصولات را شکل دادم و بعد سراغ استراتژی محتوا، رشته‌استوری‌های تعاملی، دایرکت مارکتینگ و تحلیل Insights رفتم. هدف فقط تولید محتوا نبود؛ ساختن یک سیستم منسجم برای دیده‌شدن، تعامل و فروش بود.",
 
+  services:[
 
-def find_section(content, section):
-    """
-    پیدا کردن محدوده آرایه gallery / evidence / stories
-    """
+    {
+      title:"هویت بصری",
+      description:"بازطراحی هویت بصری پیج از لوگو و کاور هایلایت تا پالت رنگ و ایجاد یک زبان بصری یکپارچه و قابل تشخیص."
+    },
 
-    pattern = rf"{section}\s*:\s*\["
+    {
+      title:"استراتژی محتوا",
+      description:"ترکیب محتوای فروش، آموزشی، تعاملی و پشت‌صحنه برای اینکه پیج فقط تبلیغاتی نباشد و تعامل واقعی ایجاد کند."
+    },
 
-    match = re.search(pattern, content)
+    {
+      title:"تولید محتوای بصری",
+      description:"طراحی پست، کاروسل و استوری و ساخت سبک تصویری محصولات؛ با استفاده هدفمند از AI در جاهایی که عکاسی حرفه‌ای محدود بود."
+    },
 
-    if not match:
-        return None
+    {
+      title:"مدیریت و رشد پیج",
+      description:"مدیریت روزانه محتوا، بررسی Insights و رفتار مخاطب و اصلاح زمان انتشار و فرمت محتوا بر اساس داده."
+    }
 
-    start = match.end()
+  ],
 
-    bracket_count = 1
-    i = start
+  case:{
 
-    while i < len(content):
+    title:"یک پروژه، از بازطراحی هویت تا ساختن سیستم رشد",
 
-        if content[i] == "[":
-            bracket_count += 1
+    lead:"سه ماه همکاری مستمر با Alka، از مدیریت روزانه پیج تا طراحی هویت بصری، استراتژی محتوا، سناریونویسی، دایرکت مارکتینگ و تحلیل داده."
 
-        elif content[i] == "]":
-            bracket_count -= 1
+  },
 
-            if bracket_count == 0:
-                return match.start(), start, i
+  stats:[
 
-        i += 1
+    {
+      value:"35,902 → 312,427",
+      label:"بازدید محتوا",
+      note:"حدود ۸.۷ برابر"
+    },
 
-    return None
+    {
+      value:"2,191 → 29,365",
+      label:"تعامل",
+      note:"۱۳ برابر"
+    },
 
+    {
+      value:"+900",
+      label:"فالوور جدید",
+      note:"رشد خالص پروژه"
+    },
 
-def update_section(content, section, folder):
+    {
+      value:"3,636",
+      label:"ریپلای استوری",
+      note:"تعامل مستقیم مخاطب"
+    }
 
-    section_info = find_section(content, section)
+  ],
 
-    if not section_info:
-        print(f"بخش {section} پیدا نشد.")
-        return content
+  process:[
 
-    section_start, content_start, content_end = section_info
+    {
+      title:"۱. شروع با یکپارچه‌سازی برند",
+      text:"لوگو، کاور هایلایت‌ها، پالت رنگ و سبک تصویری از پایه بازطراحی شدند تا پیج قبل از هر چیز یک هویت مشخص داشته باشد."
+    },
 
-    section_content = content[content_start:content_end]
+    {
+      title:"۲. ساختن سیستم محتوا",
+      text:"تقویم محتوا طوری چیده شد که معرفی محصول و آفر در کنار محتوای آموزشی، تعاملی و پشت‌صحنه قرار بگیرد."
+    },
 
-    all_files = get_files(folder)
+    {
+      title:"۳. طراحی تعامل، نه فقط انتشار",
+      text:"رشته‌استوری‌های چندقسمتی با CTA و سناریو طراحی شد تا مخاطب را به ادامه‌دادن، ریپلای و ورود به دایرکت تشویق کند."
+    },
 
-    if not all_files:
-        print(f"{section}: عکسی در پوشه پیدا نشد.")
-        return content
+    {
+      title:"۴. تصمیم‌گیری با داده",
+      text:"Insights و رفتار مخاطب مرتب بررسی شد تا زمان انتشار، فرمت محتوا و نوع موضوعات بر اساس عملکرد واقعی اصلاح شوند."
+    }
 
-    # پیدا کردن فایل‌هایی که همین الان در data.js هستند
-    existing_paths = re.findall(
-        rf'src\s*:\s*"?/?{re.escape(folder)}/([^"]+)"?',
-        section_content
-    )
+  ],
 
-    # فایل‌هایی که در پوشه هستند ولی هنوز در data.js نیستند
-    new_files = [
-        f for f in all_files
-        if f not in existing_paths
-    ]
+  //خروجی های طراحی
+  gallery:[
 
-    if not new_files:
-        print(f"{section}: عکس جدیدی پیدا نشد.")
-        return content
+    {
+      src: "/images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      alt:"هویت بصری Alka"
+    }
 
-    print(f"{section}: {len(new_files)} عکس جدید پیدا شد.")
+  ],
 
-    # ---------------------------------------
-    # ترتیب مهم:
-    #
-    # عکس‌های قبلی همان جای خود می‌مانند
-    # عکس‌های جدید به انتهای لیست اضافه می‌شوند
-    # ---------------------------------------
+  //نتایج
+  evidence: [
 
-    combined_files = existing_paths + new_files
+    {
+      src: "/images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      alt: "استوری Alka"
+    }
 
-    # حذف تکراری‌ها بدون تغییر ترتیب
-    final_files = []
-    seen = set()
+  ],
 
-    for file_name in combined_files:
+  //استوری
+  stories: [
+    {
+      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
+      alt: "استوری Alka"
+    },
+    {
+      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
+      alt: "استوری Alka"
+    },
+    {
+      src: "images/uploads/stories/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
+      alt: "استوری Alka"
+    }
+  
 
-        if file_name not in seen:
-            seen.add(file_name)
-            final_files.append(file_name)
+  ],
 
-    # ساخت آبجکت‌های data.js
-    entries = []
+  timeline:[
+    {
+      date:"مهر ۱۴۰۴",
+      title:"شروع همکاری",
+      text:"بررسی وضعیت پیج و بازطراحی پایه هویت بصری."
+    },
 
-    for img in final_files:
+    {
+      date:"آبان ۱۴۰۴",
+      title:"اجرای سیستم محتوا",
+      text:"تقویم محتوا، سناریوها و اجرای سیستم تعاملی."
+    }
 
-        path = f"{folder}/{img}"
+  ],
 
-        if section == "gallery":
-            alt_text = "هویت بصری Alka"
+  tools: ["Instagram", "InShot", "Leonardo.ai", "Directam"],
+  instagramUrl: "https://instagram.com"
 
-        elif section == "evidence":
-            alt_text = "نتیجه Alka"
-
-        else:
-            alt_text = "استوری Alka"
-
-        entries.append(
-            f'''    {{
-      src: "{path}",
-      alt: "{alt_text}"
-    }}'''
-        )
-
-    new_section_content = "\n" + ",\n".join(entries) + "\n  "
-
-    # جایگزینی فقط محتوای همان آرایه
-    content = (
-        content[:content_start]
-        + new_section_content
-        + content[content_end:]
-    )
-
-    return content
-
-
-def update_data_file():
-
-    if not os.path.exists(DATA_JS_PATH):
-        print("فایل data.js پیدا نشد!")
-        return
-
-    with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    # بررسی هر سه بخش
-    for section, folder in FOLDERS.items():
-
-        content = update_section(
-            content,
-            section,
-            folder
-        )
-
-    with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
-        f.write(content)
-
-    print("data.js با موفقیت به‌روزرسانی شد!")
-
-
-if __name__ == "__main__":
-    update_data_file()
+};
