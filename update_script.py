@@ -21,47 +21,50 @@ def update_data_file():
     with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # --- 1. بروزرسانی بخش گالری ---
+    # --- 1. بروزرسانی گالری ---
     gallery_files = get_files(GALLERY_PATH)
     if gallery_files:
         entries = [f'    {{\n      src: "{GALLERY_PATH}/{img}",\n      alt: "هویت بصری Alka"\n    }}' for img in gallery_files]
         new_gallery = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(gallery\s*:\s*\[).*?(\])", rf"\1{new_gallery}\2", content, flags=re.DOTALL)
 
-    # --- 2. بروزرسانی بخش Evidence (نتایج) ---
+    # --- 2. بروزرسانی مدرک (Evidence) ---
     evidence_files = get_files(EVIDENCE_PATH)
     if evidence_files:
         entries = [f'    {{\n      src: "{EVIDENCE_PATH}/{img}",\n      alt: "نتیجه Alka"\n    }}' for img in evidence_files]
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. بروزرسانی هوشمند استوری‌ها بر اساس پوشه‌ها و فایل title.txt ---
+    # --- 3. بروزرسانی استوری‌ها با شماره‌گذاری ترتیبی عکس‌ها ---
     if os.path.exists(STORIES_ROOT):
-        # پیدا کردن تمام زیرپوشه‌های داخل پوشه stories
         subfolders = sorted([d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))])
         
         group_entries = []
-        for folder_name in subfolders:
+        for group_index, folder_name in enumerate(subfolders, start=1):
             subfolder_path = os.path.join(STORIES_ROOT, folder_name)
             images = get_files(subfolder_path)
             
             if not images:
                 continue
 
-            # خواندن عنوان فارسی از فایل title.txt داخل پوشه (اگر نبود از اسم خود پوشه استفاده می‌کند)
+            # خواندن عنوان فارسی از فایل title.txt
             title_file_path = os.path.join(subfolder_path, "title.txt")
             if os.path.exists(title_file_path):
                 with open(title_file_path, "r", encoding="utf-8") as tf:
-                    group_title = tf.read().strip()
+                    raw_title = tf.read().strip()
             else:
-                group_title = folder_name.replace("-", " ").replace("_", " ")
+                raw_title = folder_name.replace("-", " ").replace("_", " ")
+
+            group_title = f"{group_index:02d}. " + raw_title
 
             item_entries = []
-            for img in images:
+            # شماره‌گذاری ترتیبی برای هر عکس داخل این پوشه (از ۱ به بعد)
+            for img_index, img in enumerate(images, start=1):
                 path = f"{subfolder_path}/{img}".replace("\\", "/")
                 item_entries.append(f'''        {{
           src: "{path}",
-          alt: "استوری Alka"
+          alt: "استوری Alka",
+          index: "{img_index:02d}"
         }}''')
             
             items_str = ",\n".join(item_entries)
@@ -80,7 +83,7 @@ def update_data_file():
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت بر اساس پوشه‌ها و عناوین فارسی به‌روزرسانی شد!")
+    print("فایل data.js با موفقیت و همراه با شماره‌گذاری عکس‌ها به‌روزرسانی شد!")
 
 if __name__ == "__main__":
     update_data_file()
