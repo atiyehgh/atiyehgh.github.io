@@ -35,7 +35,7 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. بروزرسانی استوری‌ها با شماره‌گذاری ترتیبی عکس‌ها ---
+    # --- 3. خواندن دقیق تایتل از فایل title.txt و شماره‌گذاری عکس‌ها ---
     if os.path.exists(STORIES_ROOT):
         subfolders = sorted([d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))])
         
@@ -47,18 +47,24 @@ def update_data_file():
             if not images:
                 continue
 
-            # خواندن عنوان فارسی از فایل title.txt
+            # چک کردن دقیق فایل title.txt در داخل پوشه استوری
             title_file_path = os.path.join(subfolder_path, "title.txt")
+            raw_title = ""
             if os.path.exists(title_file_path):
-                with open(title_file_path, "r", encoding="utf-8") as tf:
-                    raw_title = tf.read().strip()
-            else:
+                try:
+                    with open(title_file_path, "r", encoding="utf-8") as tf:
+                        raw_title = tf.read().strip()
+                except Exception as e:
+                    print(f"خطا در خواندن فایل title.txt در پوشه {folder_name}: {e}")
+            
+            # اگر فایل title.txt خالی بود یا پیدا نشد، از نام پوشه استفاده می‌کند
+            if not raw_title:
                 raw_title = folder_name.replace("-", " ").replace("_", " ")
 
+            # ترکیب شماره گروه با عنوانی که داخل فایل متنی نوشته‌ای
             group_title = f"{group_index:02d}. " + raw_title
 
             item_entries = []
-            # شماره‌گذاری ترتیبی برای هر عکس داخل این پوشه (از ۱ به بعد)
             for img_index, img in enumerate(images, start=1):
                 path = f"{subfolder_path}/{img}".replace("\\", "/")
                 item_entries.append(f'''        {{
@@ -83,7 +89,7 @@ def update_data_file():
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت و همراه با شماره‌گذاری عکس‌ها به‌روزرسانی شد!")
+    print("فایل data.js با موفقیت و خواندن دقیق از title.txt به‌روزرسانی شد!")
 
 if __name__ == "__main__":
     update_data_file()
