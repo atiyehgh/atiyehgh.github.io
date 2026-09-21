@@ -119,6 +119,81 @@ const portfolio = {
   //استوری‌های دسته‌بندی شده
   storyGroups: [
     {
+      groupTitle: "01. kash story",
+      items: [
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-55-691_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-57-085_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-02-100_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-04-584_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-05-762_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-07-116_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-08-440_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-09-724_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-11-364_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "09"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-12-716_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "10"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-14-056_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "11"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-15-863_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "12"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-17-108_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "13"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-18-621_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "14"
+        }
+      ]
+    },
+    {
       groupTitle: "02. روبرو شدن با یک نقد، فرصتی برای شفافیت: بررسی فنی موم گیاهی در برابر پارافین",
       items: [
         {
@@ -197,6 +272,8 @@ const portfolio = {
           index: "15"
         }
       ]
+    }
+  ]
     }
   ]
     }
