@@ -119,7 +119,7 @@ const portfolio = {
   //استوری‌های دسته‌بندی شده
   storyGroups: [
     {
-      groupTitle: "01. روبرو شدن با یک نقد، فرصتی برای شفافیت: بررسی فنی موم گیاهی در برابر پارافین",
+      groupTitle: "02. روبرو شدن با یک نقد، فرصتی برای شفافیت: بررسی فنی موم گیاهی در برابر پارافین",
       items: [
         {
           src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
@@ -197,6 +197,8 @@ const portfolio = {
           index: "15"
         }
       ]
+    }
+  ]
     }
   ]
     }
