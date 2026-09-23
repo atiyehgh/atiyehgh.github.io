@@ -35,9 +35,14 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. خواندن خودکار title.txt از داخل پوشه و شماره‌گذاری عکس‌ها ---
+    # --- 3. خواندن خودکار title.txt و اعمال ترتیب جدیدترین به قدیمی‌ترین ---
     if os.path.exists(STORIES_ROOT):
-        subfolders = sorted([d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))])
+        # خواندن پوشه‌ها و مرتب‌سازی بر اساس زمان ایجاد یا نام معکوس (یا ترتیب سفارشی شما)
+        subfolders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
+        
+        # برای اینکه جدیدترین پوشه (مثلاً Hadieh_story یا بر اساس تاریخ ساخت) همیشه اول بیاید:
+        # اینجا پوشه‌ها را بر اساس تاریخ آخرین ویرایش مرتب می‌کنیم تا جدیدترین خودکار بالا قرار گیرد
+        subfolders.sort(key=lambda x: os.path.getmtime(os.path.join(STORIES_ROOT, x)), reverse=True)
         
         group_entries = []
         for group_index, folder_name in enumerate(subfolders, start=1):
@@ -47,7 +52,7 @@ def update_data_file():
             if not images:
                 continue
 
-            # خواندن دقیق متن از فایل title.txt داخل همان پوشه
+            # خواندن متن از فایل title.txt داخل پوشه
             title_file_path = os.path.join(subfolder_path, "title.txt")
             raw_title = ""
             if os.path.exists(title_file_path):
@@ -60,7 +65,6 @@ def update_data_file():
             if not raw_title:
                 raw_title = folder_name.replace("-", " ").replace("_", " ")
 
-            # ترکیب شماره با عنوانِ داخل فایل متنی
             group_title = f"{group_index:02d}. " + raw_title
 
             item_entries = []
@@ -83,12 +87,16 @@ def update_data_file():
         if group_entries:
             groups_str = ",\n".join(group_entries)
             story_groups_block = f"storyGroups: [\n{groups_str}\n  ]"
-            content = re.sub(r"storyGroups\s*:\s*\[.*?\]", story_groups_block, content, flags=re.DOTALL)
+            # استفاده از الگوی دقیق‌تر برای جایگزینی بدون خطا در ساختار فایل
+            if "storyGroups:" in content:
+                content = re.sub(r"storyGroups\s*:\s*\[.*?\](?=\s*,\s*(?:timeline|tools|instagramUrl|\}))", story_groups_block, content, flags=re.DOTALL)
+            else:
+                print("بخش storyGroups در فایل یافت نشد!")
 
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت بر اساس فایل title.txt و شماره‌گذاری عکس‌ها آپدیت شد!")
+    print("فایل data.js با موفقیت و بدون خطای ساختاری آپدیت شد!")
 
 if __name__ == "__main__":
     update_data_file()
