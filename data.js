@@ -113,7 +113,7 @@ const portfolio = {
   // ترتیب رشته‌استوری‌ها: قدیمی‌ترین (اولین) در بالا، جدیدترین (آخرین) در پایین
   storyGroups: [
     {
-      groupTitle: "01. Event story",
+      groupTitle: "01. روایت تصویری ایونت حلمان پلاس؛ حال‌وهوای یک دورهمی متفاوت و روز کاری آلکا",
       items: [
         {
           src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-23-916_com.instagram.android.jpg",
