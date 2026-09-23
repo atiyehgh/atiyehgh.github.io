@@ -35,14 +35,13 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. خواندن خودکار title.txt و اعمال ترتیب جدیدترین به قدیمی‌ترین ---
+    # --- 3. خواندن خودکار title.txt و اعمال ترتیب قدیمی‌ترین به جدیدترین (اضافه شدن به پایین) ---
     if os.path.exists(STORIES_ROOT):
-        # خواندن پوشه‌ها و مرتب‌سازی بر اساس زمان ایجاد یا نام معکوس (یا ترتیب سفارشی شما)
+        # خواندن پوشه‌ها
         subfolders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
         
-        # برای اینکه جدیدترین پوشه (مثلاً Hadieh_story یا بر اساس تاریخ ساخت) همیشه اول بیاید:
-        # اینجا پوشه‌ها را بر اساس تاریخ آخرین ویرایش مرتب می‌کنیم تا جدیدترین خودکار بالا قرار گیرد
-        subfolders.sort(key=lambda x: os.path.getmtime(os.path.join(STORIES_ROOT, x)), reverse=True)
+        # مرتب‌سازی بر اساس زمان: از قدیمی به جدید. این کار باعث می‌شود استوری‌های جدید همیشه بروند آخر (پایین) سایت
+        subfolders.sort(key=lambda x: os.path.getmtime(os.path.join(STORIES_ROOT, x)))
         
         group_entries = []
         for group_index, folder_name in enumerate(subfolders, start=1):
@@ -96,7 +95,7 @@ def update_data_file():
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت و بدون خطای ساختاری آپدیت شد!")
+    print("فایل data.js با موفقیت و با حفظ ترتیبِ (قدیمی به جدید در پایین) آپدیت شد!")
 
 if __name__ == "__main__":
     update_data_file()
