@@ -115,8 +115,26 @@ footer .container{display:flex;justify-content:space-between;}
 .lightbox.open{display:grid;}
 .lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;}
 .close{position:absolute;top:15px;left:22px;color:white;font-size:32px;cursor:pointer;}
-.reveal{opacity:0;transform:translateY(18px);transition:.7s;}
-.reveal.show{opacity:1;transform:none;}
+
+/* CHANGED: reveal دیگر به‌صورت پیش‌فرض محتوا را مخفی نمی‌کند */
+.reveal{
+  opacity:1;
+  transform:none;
+  transition:.7s;
+}
+
+/* CHANGED: فقط زمانی که JavaScript آماده شد، انیمیشن reveal فعال می‌شود */
+.reveal.reveal-hidden{
+  opacity:0;
+  transform:translateY(18px);
+}
+
+/* CHANGED: حالت نهایی بعد از ورود به viewport */
+.reveal.reveal-hidden.show{
+  opacity:1;
+  transform:none;
+}
+
 @media(max-width:900px){
 .navlinks{display:none;}
 .hero{grid-template-columns:1fr;}
@@ -131,6 +149,7 @@ footer .container{display:flex;justify-content:space-between;}
 .evidence-grid{grid-template-columns:1fr 1fr;}
 .story-gallery{grid-template-columns:repeat(3,1fr);}
 }
+
 @media(max-width:600px){
 .container{width:calc(100% - 28px);}
 nav{height:68px;}
@@ -168,6 +187,7 @@ footer .container{display:block;}
 </nav>
 </div>
 </header>
+
 <main id="top">
 <section class="hero">
 <div class="hero-copy">
@@ -183,11 +203,13 @@ footer .container{display:block;}
 </div>
 </div>
 </div>
+
 <div class="hero-image">
 <img id="profileImage" src="images/uploads/profile.jpg" alt="عطیه قیومی‌پور">
 <div id="profilePlaceholder" class="profile-placeholder"><span>عکس پروفایل پیدا نشد</span></div>
 </div>
 </section>
+
 <section id="services" class="services reveal">
 <div class="container">
 <div class="section-head">
@@ -197,6 +219,7 @@ footer .container{display:block;}
 <div class="service-grid" id="servicesGrid"></div>
 </div>
 </section>
+
 <section id="case" class="case">
 <div class="case-grid">
 <div class="case-copy reveal">
@@ -214,6 +237,7 @@ footer .container{display:block;}
 <div class="case-image"></div>
 </div>
 </section>
+
 <section id="results" class="results reveal">
 <div class="container">
 <div class="section-head">
@@ -223,6 +247,7 @@ footer .container{display:block;}
 <div class="stats" id="statsGrid"></div>
 </div>
 </section>
+
 <section id="evidence" class="evidence reveal">
 <div class="container">
 <div class="section-head">
@@ -232,6 +257,7 @@ footer .container{display:block;}
 <div class="evidence-grid" id="evidenceGrid"></div>
 </div>
 </section>
+
 <section id="about" class="reveal">
 <div class="container story">
 <div class="story-copy">
@@ -242,6 +268,7 @@ footer .container{display:block;}
 <div class="story-list" id="processList"></div>
 </div>
 </section>
+
 <section id="gallery" class="gallery reveal">
 <div class="container">
 <div class="section-head">
@@ -251,6 +278,7 @@ footer .container{display:block;}
 <div class="gallery-grid" id="galleryGrid"></div>
 </div>
 </section>
+
 <section id="stories" class="stories reveal">
 <div class="container">
 <div class="section-head">
@@ -260,6 +288,7 @@ footer .container{display:block;}
 <div id="storyGallery"></div>
 </div>
 </section>
+
 <section class="timeline reveal">
 <div class="container">
 <div class="section-head">
@@ -272,6 +301,7 @@ footer .container{display:block;}
 </div>
 </div>
 </section>
+
 <section id="contact" class="contact">
 <div class="container">
 <div class="eyebrow">LET'S TALK</div>
@@ -283,64 +313,94 @@ footer .container{display:block;}
 </div>
 </section>
 </main>
+
 <footer>
 <div class="container">
 <span>© 2026 Atiyeh Ghayoumipour</span>
 <span>Portfolio · Alka Case Study</span>
 </div>
 </footer>
+
 <div class="lightbox" id="lightbox">
 <div class="close" id="closeLightbox">×</div>
 <img id="lightboxImage" alt="">
 </div>
+
 <script src="data.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 const profileImage = $("profileImage");
 const profilePlaceholder = $("profilePlaceholder");
+
 profileImage.onload = function(){ profilePlaceholder.style.display = "none"; };
 profileImage.onerror = function(){ profileImage.style.display = "grid"; profilePlaceholder.style.display = "grid"; };
+
 function openLightbox(src){ $("lightboxImage").src = src; $("lightbox").classList.add("open"); }
+
 function renderGallery(){
 const grid = $("galleryGrid");
 grid.innerHTML = "";
+
 if(!portfolio.gallery || portfolio.gallery.length === 0){
 grid.innerHTML = `<div class="gallery-empty">نمونه‌های طراحی Alka بعداً در این بخش اضافه می‌شوند.</div>`;
 return;
 }
+
 portfolio.gallery.forEach(item => {
 const wrap = document.createElement("div");
 wrap.className = "gallery-item";
+
 const img = document.createElement("img");
-img.src = item.src; img.alt = item.alt || ""; img.loading = "lazy";
+img.src = item.src;
+img.alt = item.alt || "";
+img.loading = "lazy";
+
 img.onerror = function(){ wrap.remove(); };
+
 wrap.appendChild(img);
-wrap.onclick = function(){ if(img.naturalWidth){ openLightbox(item.src); } };
+
+wrap.onclick = function(){
+if(img.naturalWidth){
+openLightbox(item.src);
+}
+};
+
 grid.appendChild(wrap);
 });
 }
+
 function renderStories(){
 const container = $("storyGallery");
 container.innerHTML = "";
+
 if(!portfolio.storyGroups || portfolio.storyGroups.length === 0){
 container.innerHTML = `<div class="story-empty">استوری‌های پروژه هنوز اضافه نشده‌اند.</div>`;
 return;
 }
+
 portfolio.storyGroups.forEach(group => {
 const groupDiv = document.createElement("div");
 groupDiv.className = "story-group";
+
 const titleEl = document.createElement("h3");
 titleEl.className = "story-group-title";
 titleEl.textContent = group.groupTitle;
 groupDiv.appendChild(titleEl);
+
 const gridDiv = document.createElement("div");
 gridDiv.className = "story-gallery";
+
 group.items.forEach(item => {
 const wrap = document.createElement("div");
 wrap.className = "story-item";
+
 const img = document.createElement("img");
-img.src = item.src; img.alt = item.alt || ""; img.loading = "lazy";
+img.src = item.src;
+img.alt = item.alt || "";
+img.loading = "lazy";
+
 img.onerror = function(){ wrap.style.display = "none"; };
+
 wrap.appendChild(img);
 
 if(item.index){
@@ -350,37 +410,60 @@ numBadge.textContent = item.index;
 wrap.appendChild(numBadge);
 }
 
-wrap.onclick = function(){ if(img.naturalWidth){ openLightbox(item.src); } };
+wrap.onclick = function(){
+if(img.naturalWidth){
+openLightbox(item.src);
+}
+};
+
 gridDiv.appendChild(wrap);
 });
+
 groupDiv.appendChild(gridDiv);
 container.appendChild(groupDiv);
 });
 }
+
 function renderEvidence(){
 const grid = $("evidenceGrid");
 grid.innerHTML = "";
+
 if(!portfolio.evidence || portfolio.evidence.length === 0){
 grid.innerHTML = `<div class="evidence-card"><div class="evidence-image">اسکرین‌شات‌های واقعی Insights<br>بعداً در این بخش قرار می‌گیرند.</div><div class="evidence-info"><h3>Evidence · Insights</h3><p>مدرک تصویری عملکرد پروژه</p></div></div>`;
 return;
 }
+
 portfolio.evidence.forEach(item => {
 const card = document.createElement("article");
 card.className = "evidence-card";
+
 const imageBox = document.createElement("div");
 imageBox.className = "evidence-image";
+
 const img = document.createElement("img");
-img.src = item.src; img.alt = item.alt || ""; img.loading = "lazy";
-img.onerror = function(){ imageBox.innerHTML = "تصویر هنوز اضافه نشده است."; };
+img.src = item.src;
+img.alt = item.alt || "";
+img.loading = "lazy";
+
+img.onerror = function(){
+imageBox.innerHTML = "تصویر هنوز اضافه نشده است.";
+};
+
 imageBox.appendChild(img);
+
 const info = document.createElement("div");
 info.className = "evidence-info";
 info.innerHTML = `<h3>${item.title || "Insights"}</h3><p>${item.description || ""}</p>`;
-card.appendChild(imageBox); card.appendChild(info); grid.appendChild(card);
+
+card.appendChild(imageBox);
+card.appendChild(info);
+grid.appendChild(card);
 });
 }
+
 function render(){
 const d = portfolio;
+
 $("name").textContent = d.name;
 $("title").textContent = d.title;
 $("slogan").textContent = d.slogan;
@@ -388,21 +471,48 @@ $("heroText").textContent = d.heroText;
 $("caseTitle").textContent = d.case.title;
 $("caseLead").textContent = d.case.lead;
 $("aboutText").textContent = d.about;
+
 $("servicesGrid").innerHTML = d.services.map((s,i)=>`<article class="service"><div class="service-num">0${i+1}</div><h3>${s.title}</h3><p>${s.description}</p></article>`).join("");
+
 $("statsGrid").innerHTML = d.stats.map(s=>`<article class="stat"><div class="stat-value">${s.value}</div><div class="stat-label">${s.label}</div><div class="stat-note">${s.note}</div></article>`).join("");
+
 $("processList").innerHTML = d.process.map(p=>`<article class="story-card"><h3>${p.title}</h3><p>${p.text}</p></article>`).join("");
+
 $("timeline").innerHTML = d.timeline.map(t=>`<article class="timeline-item"><span>${t.date}</span><h3>${t.title}</h3><p>${t.text}</p></article>`).join("");
+
 $("tools").innerHTML = d.tools.map(t=>`<span class="tool">${t}</span>`).join("");
+
 $("instagram").href = d.instagramUrl;
+
 renderGallery();
 renderStories();
 renderEvidence();
 }
-$("closeLightbox").onclick = function(){ $("lightbox").classList.remove("open"); };
-$("lightbox").onclick = function(e){ if(e.target.id === "lightbox"){ $("lightbox").classList.remove("open"); } };
-const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add("show"); } }); }, {threshold:.08});
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+$("closeLightbox").onclick = function(){
+$("lightbox").classList.remove("open");
+};
+$("lightbox").onclick = function(e){
+if(e.target.id === "lightbox"){
+$("lightbox").classList.remove("open");
+}
+};
 render();
+const revealElements = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  revealElements.forEach(el => el.classList.add("reveal-hidden"));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.08});
+  revealElements.forEach(el => observer.observe(el));
+} else {
+  revealElements.forEach(el => el.classList.add("show"));
+}
 </script>
 </body>
 </html>
