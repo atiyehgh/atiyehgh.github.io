@@ -119,6 +119,76 @@ const portfolio = {
   //استوری‌های دسته‌بندی شده (رشته‌استوری جدیدتر در پایین قرار گرفته است)
   storyGroups: [
     {
+      groupTitle: "01. Hadieh story",
+      items: [
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-02-254_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-03-918_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-05-238_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-06-943_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-08-364_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-09-643_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-10-875_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-12-238_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-13-595_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "09"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-14-841_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "10"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-16-180_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "11"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-18-761_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "12"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-20-026_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "13"
+        }
+      ]
+    },
+    {
       groupTitle: "02. تبدیل حسرت به خرید: استراتژی ایجاد FOMO و ارزش‌آفرینی برای باکس‌های هدیه",
       items: [
         {
@@ -192,6 +262,88 @@ const portfolio = {
           index: "14"
         }
       ]
+    },
+    {
+      groupTitle: "03. روبرو شدن با یک نقد، فرصتی برای شفافیت: بررسی فنی موم گیاهی در برابر پارافین",
+      items: [
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-13-091_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-14-646_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-16-098_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-17-422_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-18-584_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-21-559_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "09"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-22-757_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "10"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-24-040_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "11"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-28-336_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "12"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-31-135_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "13"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-32-940_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "14"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-37-342_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "15"
+        }
+      ]
+    }
+  ]
     },
     {
       groupTitle: "03. روبرو شدن با یک نقد، فرصتی برای شفافیت: بررسی فنی موم گیاهی در برابر پارافین",
