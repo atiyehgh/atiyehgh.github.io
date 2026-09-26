@@ -586,7 +586,6 @@
           opacity: 0;
           transform: translateY(28px);
         }
-
         to {
           opacity: 1;
           transform: translateY(0);
@@ -693,8 +692,11 @@
           grid-template-columns: repeat(2, 1fr);
         }
         .story-item {
-          min-height: 300px;
-          height: 380px;
+          height: 520px; /* اصلاح ارتفاع در موبایل متناسب با تناسب ویندوز */
+        }
+        .story-item img {
+          object-fit: contain; /* فیکس کردن عکس دقیقا مشابه نسخه ویندوز بدون برش اضافی */
+          background: #1d1b18; /* پر کردن فضای خالی احتمالی بالا و پایین با رنگ پس‌زمینه یکدست */
         }
         .gallery-item {
           grid-column: span 12;
