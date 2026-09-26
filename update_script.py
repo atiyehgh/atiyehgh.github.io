@@ -8,14 +8,14 @@ EVIDENCE_PATH = "images/uploads/evidence"
 
 VALID_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP")
 
-# 📌 ترتیب دقیق و دلخواه پوشه‌های استوری شما
-# پوشه‌های جدیدی که در این لیست نباشند، به صورت خودکار می‌روند تهِ لیست قرار می‌گیرند.
+# 📌 ترتیب دقیق و درست مورد نظر شما (از اول به آخر)
+# پوشه‌های جدیدی که در این لیست نباشند، خودکار می‌روند تهِ لیست (شماره ۶ به بعد) قرار می‌گیرند.
 CUSTOM_FOLDER_ORDER = [
-    "Event_story",
-    "Hadieh_story",
-    "Kederi_story",
+    "paraffin-story",
     "kash_story",
-    "paraffin-story"
+    "Hadieh_story",
+    "Event_story",
+    "Kederi_story"
 ]
 
 def get_files(folder):
@@ -45,7 +45,7 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. خواندن خودکار title.txt و مرتب‌سازی دقیقاً بر اساس ترتیب دلخواه شما ---
+    # --- 3. خواندن خودکار title.txt و مرتب‌سازی دقیقاً بر اساس ترتیب درست شما ---
     if os.path.exists(STORIES_ROOT):
         subfolders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
         
@@ -108,7 +108,7 @@ def update_data_file():
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت و دقیقاً مطابق ترتیب سفارشی شما آپدیت شد!")
+    print("فایل data.js با موفقیت و دقیقاً مطابق ترتیب درست شما آپدیت شد!")
 
 if __name__ == "__main__":
     update_data_file()
