@@ -35,13 +35,11 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. خواندن خودکار title.txt و اعمال ترتیب قدیمی‌ترین به جدیدترین (اضافه شدن به پایین) ---
+    # --- 3. خواندن خودکار title.txt و مرتب‌سازی بر اساس نام پوشه (ثابت و بدون به‌هم‌ریختگی) ---
     if os.path.exists(STORIES_ROOT):
-        # خواندن پوشه‌ها
+        # خواندن پوشه‌ها و مرتب‌سازی الفبایی بر اساس نام پوشه
         subfolders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
-        
-        # مرتب‌سازی بر اساس زمان: از قدیمی به جدید. این کار باعث می‌شود استوری‌های جدید همیشه بروند آخر (پایین) سایت
-        subfolders.sort(key=lambda x: os.path.getmtime(os.path.join(STORIES_ROOT, x)))
+        subfolders.sort()
         
         group_entries = []
         for group_index, folder_name in enumerate(subfolders, start=1):
@@ -86,7 +84,6 @@ def update_data_file():
         if group_entries:
             groups_str = ",\n".join(group_entries)
             story_groups_block = f"storyGroups: [\n{groups_str}\n  ]"
-            # استفاده از الگوی دقیق‌تر برای جایگزینی بدون خطا در ساختار فایل
             if "storyGroups:" in content:
                 content = re.sub(r"storyGroups\s*:\s*\[.*?\](?=\s*,\s*(?:timeline|tools|instagramUrl|\}))", story_groups_block, content, flags=re.DOTALL)
             else:
@@ -95,7 +92,7 @@ def update_data_file():
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت و با حفظ ترتیبِ (قدیمی به جدید در پایین) آپدیت شد!")
+    print("فایل data.js با موفقیت و با حفظ ترتیب پایدار آپدیت شد!")
 
 if __name__ == "__main__":
     update_data_file()
