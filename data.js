@@ -310,7 +310,7 @@ const portfolio = {
       ]
     },
     {
-      groupTitle: "03. Kederi story",
+      groupTitle: "03. کمپین رفع اشکال شمع سازی و تعاملی (آموزش، اعتمادسازی و اتوماسیون دایرکت)",
       items: [
         {
           src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-05-235_com.instagram.android.jpg",
