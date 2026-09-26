@@ -692,11 +692,11 @@
           grid-template-columns: repeat(2, 1fr);
         }
         .story-item {
-          height: auto;
-          aspect-ratio: 9 / 16;
+          height: 520px; /* اصلاح ارتفاع در موبایل متناسب با تناسب ویندوز */
         }
         .story-item img {
-          object-fit: cover;
+          object-fit: contain; /* فیکس کردن عکس دقیقا مشابه نسخه ویندوز بدون برش اضافی */
+          background: #1d1b18; /* پر کردن فضای خالی احتمالی بالا و پایین با رنگ پس‌زمینه یکدست */
         }
         .gallery-item {
           grid-column: span 12;
