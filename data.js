@@ -95,106 +95,418 @@ const portfolio = {
   // ترتیب نهایی: پارافین -> کاش -> هدیه -> ایونت -> کدر شدن
   storyGroups: [
     {
-      groupTitle: "01. روبرو شدن با یک نقد، فرصتی برای شفافیت: بررسی فنی موم گیاهی در برابر پارافین",
+      groupTitle: "01. روایت تصویری ایونت حلمان پلاس؛ حال‌وهوای یک دورهمی متفاوت و روز کاری آلکا",
       items: [
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg", alt: "استوری Alka", index: "01" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg", alt: "استوری Alka", index: "02" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg", alt: "استوری Alka", index: "03" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-13-091_com.instagram.android.jpg", alt: "استوری Alka", index: "04" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-14-646_com.instagram.android.jpg", alt: "استوری Alka", index: "05" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-16-098_com.instagram.android.jpg", alt: "استوری Alka", index: "06" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-17-422_com.instagram.android.jpg", alt: "استوری Alka", index: "07" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-18-584_com.instagram.android.jpg", alt: "استوری Alka", index: "08" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-21-559_com.instagram.android.jpg", alt: "استوری Alka", index: "09" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-22-757_com.instagram.android.jpg", alt: "استوری Alka", index: "10" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-24-040_com.instagram.android.jpg", alt: "استوری Alka", index: "11" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-28-336_com.instagram.android.jpg", alt: "استوری Alka", index: "12" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-31-135_com.instagram.android.jpg", alt: "استوری Alka", index: "13" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-32-940_com.instagram.android.jpg", alt: "استوری Alka", index: "14" },
-        { src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-37-342_com.instagram.android.jpg", alt: "استوری Alka", index: "15" }
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-23-916_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-25-290_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-26-707_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-28-176_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-29-424_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-30-677_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-33-331_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-34-786_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-36-074_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "09"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-37-441_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "10"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-39-041_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "11"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-41-920_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "12"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-43-911_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "13"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-46-544_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "14"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-48-119_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "15"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-50-513_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "16"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-52-320_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "17"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-54-619_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "18"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-57-890_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "19"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-00-040_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "20"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-01-552_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "21"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-03-467_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "22"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-04-820_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "23"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-06-515_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "24"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-09-612_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "25"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-11-380_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "26"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-13-209_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "27"
+        },
+        {
+          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-20-091_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "28"
+        }
       ]
     },
     {
-      groupTitle: "02. تبدیل حسرت به خرید: استراتژی ایجاد FOMO و ارزش‌آفرینی برای باکس‌های هدیه",
+      groupTitle: "02. یادگاری تا ابد: ارزش‌گذاری و مقایسه باکس گل شمعی با هدایای مرسوم نامزدی و عروسی",
       items: [
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-55-691_com.instagram.android.jpg", alt: "استوری Alka", index: "01" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-57-085_com.instagram.android.jpg", alt: "استوری Alka", index: "02" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-02-100_com.instagram.android.jpg", alt: "استوری Alka", index: "03" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-04-584_com.instagram.android.jpg", alt: "استوری Alka", index: "04" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-05-762_com.instagram.android.jpg", alt: "استوری Alka", index: "05" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-07-116_com.instagram.android.jpg", alt: "استوری Alka", index: "06" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-08-440_com.instagram.android.jpg", alt: "استوری Alka", index: "07" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-09-724_com.instagram.android.jpg", alt: "استوری Alka", index: "08" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-11-364_com.instagram.android.jpg", alt: "استوری Alka", index: "09" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-12-716_com.instagram.android.jpg", alt: "استوری Alka", index: "10" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-14-056_com.instagram.android.jpg", alt: "استوری Alka", index: "11" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-15-863_com.instagram.android.jpg", alt: "استوری Alka", index: "12" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-17-108_com.instagram.android.jpg", alt: "استوری Alka", index: "13" },
-        { src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-18-621_com.instagram.android.jpg", alt: "استوری Alka", index: "14" }
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-02-254_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-03-918_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-05-238_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-06-943_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-08-364_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-09-643_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-10-875_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-12-238_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-13-595_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "09"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-14-841_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "10"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-16-180_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "11"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-18-761_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "12"
+        },
+        {
+          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-20-026_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "13"
+        }
       ]
     },
     {
-      groupTitle: "03. یادگاری تا ابد: ارزش‌گذاری و مقایسه باکس گل شمعی با هدایای مرسوم نامزدی و عروسی",
+      groupTitle: "03. کمپین رفع اشکال شمع سازی (آموزش، تعامل، اعتمادسازی و اتوماسیون سازی ابزار دایرکتم)",
       items: [
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-02-254_com.instagram.android.jpg", alt: "استوری Alka", index: "01" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-03-918_com.instagram.android.jpg", alt: "استوری Alka", index: "02" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-05-238_com.instagram.android.jpg", alt: "استوری Alka", index: "03" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-06-943_com.instagram.android.jpg", alt: "استوری Alka", index: "04" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-08-364_com.instagram.android.jpg", alt: "استوری Alka", index: "05" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-09-643_com.instagram.android.jpg", alt: "استوری Alka", index: "06" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-10-875_com.instagram.android.jpg", alt: "استوری Alka", index: "07" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-12-238_com.instagram.android.jpg", alt: "استوری Alka", index: "08" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-13-595_com.instagram.android.jpg", alt: "استوری Alka", index: "09" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-14-841_com.instagram.android.jpg", alt: "استوری Alka", index: "10" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-16-180_com.instagram.android.jpg", alt: "استوری Alka", index: "11" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-18-761_com.instagram.android.jpg", alt: "استوری Alka", index: "12" },
-        { src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-20-026_com.instagram.android.jpg", alt: "استوری Alka", index: "13" }
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-05-235_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-07-196_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-08-588_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-10-188_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-11-756_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-13-095_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-14-497_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-15-856_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        }
       ]
     },
     {
-      groupTitle: "04. روایت تصویری ایونت حلمان پلاس؛ حال‌وهوای یک دورهمی متفاوت و روز کاری آلکا",
+      groupTitle: "04. تبدیل حسرت به خرید: استراتژی ایجاد FOMO و ارزش‌آفرینی برای باکس‌های هدیه",
       items: [
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-23-916_com.instagram.android.jpg", alt: "استوری Alka", index: "01" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-25-290_com.instagram.android.jpg", alt: "استوری Alka", index: "02" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-26-707_com.instagram.android.jpg", alt: "استوری Alka", index: "03" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-28-176_com.instagram.android.jpg", alt: "استوری Alka", index: "04" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-29-424_com.instagram.android.jpg", alt: "استوری Alka", index: "05" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-30-677_com.instagram.android.jpg", alt: "استوری Alka", index: "06" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-33-331_com.instagram.android.jpg", alt: "استوری Alka", index: "07" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-34-786_com.instagram.android.jpg", alt: "استوری Alka", index: "08" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-36-074_com.instagram.android.jpg", alt: "استوری Alka", index: "09" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-37-441_com.instagram.android.jpg", alt: "استوری Alka", index: "10" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-39-041_com.instagram.android.jpg", alt: "استوری Alka", index: "11" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-41-920_com.instagram.android.jpg", alt: "استوری Alka", index: "12" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-43-911_com.instagram.android.jpg", alt: "استوری Alka", index: "13" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-46-544_com.instagram.android.jpg", alt: "استوری Alka", index: "14" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-48-119_com.instagram.android.jpg", alt: "استوری Alka", index: "15" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-50-513_com.instagram.android.jpg", alt: "استوری Alka", index: "16" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-52-320_com.instagram.android.jpg", alt: "استوری Alka", index: "17" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-54-619_com.instagram.android.jpg", alt: "استوری Alka", index: "18" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-57-890_com.instagram.android.jpg", alt: "استوری Alka", index: "19" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-00-040_com.instagram.android.jpg", alt: "استوری Alka", index: "20" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-01-552_com.instagram.android.jpg", alt: "استوری Alka", index: "21" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-03-467_com.instagram.android.jpg", alt: "استوری Alka", index: "22" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-04-820_com.instagram.android.jpg", alt: "استوری Alka", index: "23" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-06-515_com.instagram.android.jpg", alt: "استوری Alka", index: "24" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-09-612_com.instagram.android.jpg", alt: "استوری Alka", index: "25" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-11-380_com.instagram.android.jpg", alt: "استوری Alka", index: "26" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-13-209_com.instagram.android.jpg", alt: "استوری Alka", index: "27" },
-        { src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-20-091_com.instagram.android.jpg", alt: "استوری Alka", index: "28" }
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-55-691_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-57-085_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-02-100_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-04-584_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-05-762_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-07-116_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-08-440_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-09-724_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-11-364_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "09"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-12-716_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "10"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-14-056_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "11"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-15-863_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "12"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-17-108_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "13"
+        },
+        {
+          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-18-621_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "14"
+        }
       ]
     },
     {
-      groupTitle: "05. کمپین رفع اشکال شمع‌سازی و تعاملی (آموزش، اعتمادسازی و اتوماسیون دایرکت)",
+      groupTitle: "05. روبرو شدن با یک نقد، فرصتی برای شفافیت: بررسی فنی موم گیاهی در برابر پارافین",
       items: [
-        { src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-05-235_com.instagram.android.jpg", alt: "استوری Alka", index: "01" },
-        { src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-07-196_com.instagram.android.jpg", alt: "استوری Alka", index: "02" },
-        { src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-08-588_com.instagram.android.jpg", alt: "استوری Alka", index: "03" },
-        { src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-10-188_com.instagram.android.jpg", alt: "استوری Alka", index: "04" },
-        { src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-11-756_com.instagram.android.jpg", alt: "استوری Alka", index: "05" },
-        { src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-13-095_com.instagram.android.jpg", alt: "استوری Alka", index: "06" },
-        { src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-14-497_com.instagram.android.jpg", alt: "استوری Alka", index: "07" },
-        { src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-15-856_com.instagram.android.jpg", alt: "استوری Alka", index: "08" }
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-13-091_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-14-646_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-16-098_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-17-422_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-18-584_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-21-559_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "09"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-22-757_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "10"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-24-040_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "11"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-28-336_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "12"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-31-135_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "13"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-32-940_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "14"
+        },
+        {
+          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-37-342_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "15"
+        }
       ]
     }
   ],
