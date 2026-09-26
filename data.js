@@ -310,6 +310,51 @@ const portfolio = {
       ]
     },
     {
+      groupTitle: "03. Kederi story",
+      items: [
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-05-235_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-07-196_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-08-588_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-10-188_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-11-756_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-13-095_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-14-497_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-15-856_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        }
+      ]
+    },
+    {
       groupTitle: "04. تبدیل حسرت به خرید: استراتژی ایجاد FOMO و ارزش‌آفرینی برای باکس‌های هدیه",
       items: [
         {
