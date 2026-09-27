@@ -8,14 +8,15 @@ EVIDENCE_PATH = "images/uploads/evidence"
 
 VALID_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP")
 
-# 📌 ترتیب دقیق و درست مورد نظر شما (از اول به آخر)
-# پوشه‌های جدیدی که در این لیست نباشند، خودکار می‌روند تهِ لیست (شماره ۶ به بعد) قرار می‌گیرند.
+# 📌 این لیست ترتیب دقیق استوری‌های شماست.
+# اگر پوشه جدیدی مثل Tarak_story اضافه کردی، حتماً آن را بیاور اینجا بگذار تهِ این لیست:
 CUSTOM_FOLDER_ORDER = [
     "paraffin-story",
     "kash_story",
     "Hadieh_story",
     "Event_story",
-    "Kederi_story"
+    "Kederi_story",
+    "Tarak_story"  # <--- پوشه جدید اینجا قرار می‌گیرد تا برود ته لیست
 ]
 
 def get_files(folder):
@@ -45,15 +46,14 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. خواندن خودکار title.txt و مرتب‌سازی دقیقاً بر اساس ترتیب درست شما ---
+    # --- 3. خواندن خودکار title.txt و مرتب‌سازی دقیقاً بر اساس ترتیب دلخواه شما ---
     if os.path.exists(STORIES_ROOT):
         subfolders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
         
-        # مرتب‌سازی بر اساس لیست سفارشی
         def sort_key(folder):
             if folder in CUSTOM_FOLDER_ORDER:
                 return CUSTOM_FOLDER_ORDER.index(folder)
-            return 999  # پوشه‌های جدید می‌روند تهِ لیست
+            return 999  # هر پوشه ناشناخته‌ای برود تهِ لیست
 
         subfolders.sort(key=sort_key)
         
@@ -65,7 +65,6 @@ def update_data_file():
             if not images:
                 continue
 
-            # خواندن متن از فایل title.txt داخل پوشه
             title_file_path = os.path.join(subfolder_path, "title.txt")
             raw_title = ""
             if os.path.exists(title_file_path):
@@ -76,7 +75,7 @@ def update_data_file():
                     print(f"خطا در خواندن فایل title.txt: {e}")
             
             if not raw_title:
-                raw_title = folder_name.replace("-", " ").replace("_", " ")
+                raw_title = folder_name.parse("-", " ").replace("_", " ") if hasattr(folder_name, 'parse') else folder_name.replace("-", " ").replace("_", " ")
 
             group_title = f"{group_index:02d}. " + raw_title
 
@@ -102,13 +101,11 @@ def update_data_file():
             story_groups_block = f"storyGroups: [\n{groups_str}\n  ]"
             if "storyGroups:" in content:
                 content = re.sub(r"storyGroups\s*:\s*\[.*?\](?=\s*,\s*(?:timeline|tools|instagramUrl|\}))", story_groups_block, content, flags=re.DOTALL)
-            else:
-                print("بخش storyGroups در فایل یافت نشد!")
 
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت و دقیقاً مطابق ترتیب درست شما آپدیت شد!")
+    print("فایل data.js با موفقیت آپدیت شد!")
 
 if __name__ == "__main__":
     update_data_file()
