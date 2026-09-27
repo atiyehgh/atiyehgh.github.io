@@ -18,7 +18,7 @@ CUSTOM_FOLDER_ORDER = [
     "Dama_story",      # ۷. دما
 ]
 
-# اطلاعات ثابت شما که در هربار خروجی بدون تغییر بازنویسی می‌شوند
+# اطلاعات ثابت که در هربار خروجی بدون تغییر بازنویسی می‌شوند
 BASE_PORTFOLIO = {
     "name": "عطیه قیومی‌پور",
     "title": "مدیر دیجیتال مارکتینگ برند Alka",
@@ -125,13 +125,13 @@ def generate_data_file():
 
     portfolio["storyGroups"] = story_groups
 
-    # ۴. ساخت فایل استاندارد JS بدون هیچ خطای آکولاد/کروچه
-    js_content = f"const portfolio = {json.dumps(portfolio, ensure_ascii=False, indent=2)};\n"
+    # ۴. ساخت فایل استاندارد JS همراه با export default
+    js_content = f"const portfolio = {json.dumps(portfolio, ensure_ascii=False, indent=2)};\n\nexport default portfolio;\n"
 
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(js_content)
 
-    print("✅ فایل data.js با موفقیت کاملاً از نو و بدون هیچ خطایی ساخته شد!")
+    print("✅ فایل data.js با موفقیت کاملاً از نو، استاندارد و با export ساخته شد!")
 
 if __name__ == "__main__":
     generate_data_file()
