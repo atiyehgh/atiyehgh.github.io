@@ -1,5 +1,5 @@
 import os
-import re
+import json
 
 DATA_JS_PATH = "data.js"
 STORIES_ROOT = "images/uploads/stories"
@@ -8,7 +8,6 @@ EVIDENCE_PATH = "images/uploads/evidence"
 
 VALID_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP")
 
-# 📌 لیست دقیق و قطعی پوشه‌ها به ترتیب دلخواه شما
 CUSTOM_FOLDER_ORDER = [
     "paraffin-story",  # ۱. پارافین
     "kash_story",      # ۲. کاش
@@ -19,54 +18,76 @@ CUSTOM_FOLDER_ORDER = [
     "Dama_story",      # ۷. دما
 ]
 
+# اطلاعات ثابت شما که در هربار خروجی بدون تغییر بازنویسی می‌شوند
+BASE_PORTFOLIO = {
+    "name": "عطیه قیومی‌پور",
+    "title": "مدیر دیجیتال مارکتینگ برند Alka",
+    "slogan": "از هویت بصری تا رشد واقعی.",
+    "heroText": "طراحی کردم، محتوا ساختم و با ترکیب استراتژی و ابزارهای AI، حضور دیجیتال Alka را توسعه دادم؛ نتیجه، افزایش ۱۳ برابری تعامل پیج بود.",
+    "profileImage": "/images/profile.jpg",
+    "about": "وقتی همکاری با Alka را شروع کردم، پیج هویت بصری منسجمی نداشت. از بازطراحی لوگو، کاور هایلایت و پالت رنگ شروع کردم، سبک تصویری محصولات را شکل دادم و بعد سراغ استراتژی محتوا، رشته‌استوری‌های تعاملی، دایرکت مارکتینگ و تحلیل Insights رفتم. هدف فقط تولید محتوا نبود؛ ساختن یک سیستم منسجم برای دیده‌شدن، تعامل و فروش بود.",
+    "services": [
+        {"title": "هویت بصری", "description": "بازطراحی هویت بصری پیج از لوگو و کاور هایلایت تا پالت رنگ و ایجاد یک زبان بصری یکپارچه و قابل تشخیص."},
+        {"title": "استراتژی محتوا", "description": "ترکیب محتوای فروش، آموزشی، تعاملی و پشت‌صحنه برای اینکه پیج فقط تبلیغاتی نباشد و تعامل واقعی ایجاد کند."},
+        {"title": "تولید محتوای بصری", "description": "طراحی پست، کاروسل و استوری و ساخت سبک تصویری محصولات؛ با استفاده هدفمند از AI در جاهایی که عکاسی حرفه‌ای محدود بود."},
+        {"title": "مدیریت و رشد پیج", "description": "مدیریت روزانه محتوا، بررسی Insights و رفتار مخاطب و اصلاح زمان انتشار و فرمت محتوا بر اساس داده."}
+    ],
+    "case": {
+        "title": "یک پروژه، از بازطراحی هویت تا ساختن سیستم رشد",
+        "lead": "سه ماه همکاری مستمر با Alka، از مدیریت روزانه پیج تا طراحی هویت بصری، استراتژی محتوا، سناریونویسی، دایرکت مارکتینگ و تحلیل داده."
+    },
+    "stats": [
+        {"value": "35,902 → 312,427", "label": "بازدید محتوا", "note": "حدود ۸.۷ برابر"},
+        {"value": "2,191 → 29,365", "label": "تعامل", "note": "۱۳ برابر"},
+        {"value": "+900", "label": "فالوور جدید", "note": "رشد خالص پروژه"},
+        {"value": "3,636", "label": "ریپلای استوری", "note": "تعامل مستقیم مخاطب"}
+    ],
+    "process": [
+        {"title": "۱. شروع با یکپارچه‌سازی برند", "text": "لوگو، کاور هایلایت‌ها، پالت رنگ و سبک تصویری از پایه بازطراحی شدند تا پیج قبل از هر چیز یک هویت مشخص داشته باشد."},
+        {"title": "۲. ساختن سیستم محتوا", "text": "تقویم محتوا طوری چیده شد که معرفی محصول و آفر در کنار محتوای آموزشی، تعاملی و پشت‌صحنه قرار بگیرد."},
+        {"title": "۳. طراحی تعامل، نه فقط انتشار", "text": "رشته‌استوری‌های چندقسمتی با CTA و سناریو طراحی شد تا مخاطب را به ادامه‌دادن، ریپلای و ورود به دایرکت تشویق کند."},
+        {"title": "۴. تصمیم‌گیری با داده", "text": "Insights و رفتار مخاطب مرتب بررسی شد تا زمان انتشار، فرمت محتوا و نوع موضوعات بر اساس عملکرد واقعی اصلاح شوند."}
+    ]
+}
+
 def get_files(folder):
     if not os.path.exists(folder):
         return []
     return sorted([f for f in os.listdir(folder) if f.endswith(VALID_EXTENSIONS)])
 
-def update_data_file():
-    if not os.path.exists(DATA_JS_PATH):
-        print("فایل data.js پیدا نشد!")
-        return
+def generate_data_file():
+    portfolio = BASE_PORTFOLIO.copy()
 
-    with open(DATA_JS_PATH, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    # --- 1. بروزرسانی گالری ---
+    # ۱. اسکن گالری
     gallery_files = get_files(GALLERY_PATH)
-    if gallery_files:
-        entries = [f'    {{\n      src: "{GALLERY_PATH}/{img}",\n      alt: "هویت بصری Alka"\n    }}' for img in gallery_files]
-        new_gallery = "\n" + ",\n".join(entries) + "\n  "
-        content = re.sub(r"(gallery\s*:\s*\[).*?(\])", rf"\1{new_gallery}\2", content, flags=re.DOTALL)
+    portfolio["gallery"] = [
+        {"src": f"{GALLERY_PATH}/{img}", "alt": "هویت بصری Alka"}
+        for img in gallery_files
+    ]
 
-    # --- 2. بروزرسانی مدرک (Evidence) ---
+    # ۲. اسکن مدارک (Evidence)
     evidence_files = get_files(EVIDENCE_PATH)
-    if evidence_files:
-        entries = [f'    {{\n      src: "{EVIDENCE_PATH}/{img}",\n      alt: "نتیجه Alka"\n    }}' for img in evidence_files]
-        new_evidence = "\n" + ",\n".join(entries) + "\n  "
-        content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
+    portfolio["evidence"] = [
+        {"src": f"{EVIDENCE_PATH}/{img}", "alt": "نتیجه Alka"}
+        for img in evidence_files
+    ]
 
-    # --- 3. ساخت ساختار storyGroups با مرتب‌سازی دقیق ---
+    # ۳. اسکن استوری‌ها
+    story_groups = []
     if os.path.exists(STORIES_ROOT):
         existing_folders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
-        
-        # نگاشت نام پوشه‌ها به حالت حروف کوچک برای مقایسه دقیق
         folder_lookup = {f.lower(): f for f in existing_folders}
         
         ordered_folders = []
-        
-        # ۱. مرتب‌سازی دقیق و اجباری بر اساس ترتیب CUSTOM_FOLDER_ORDER
         for folder_in_list in CUSTOM_FOLDER_ORDER:
             key = folder_in_list.lower()
             if key in folder_lookup:
                 ordered_folders.append(folder_lookup[key])
         
-        # ۲. افزودن پوشه‌های احتمالی جدید در انتهای لیست
         for f in existing_folders:
             if f not in ordered_folders:
                 ordered_folders.append(f)
 
-        group_entries = []
         for group_index, folder_name in enumerate(ordered_folders, start=1):
             subfolder_path = os.path.join(STORIES_ROOT, folder_name)
             images = get_files(subfolder_path)
@@ -86,39 +107,31 @@ def update_data_file():
             if not raw_title:
                 raw_title = folder_name.replace("-", " ").replace("_", " ")
 
-            group_title = f"{group_index:02d}. " + raw_title
+            group_title = f"{group_index:02d}. {raw_title}"
 
-            item_entries = []
+            items = []
             for img_index, img in enumerate(images, start=1):
                 path = f"{subfolder_path}/{img}".replace("\\", "/")
-                item_entries.append(f'''        {{
-          src: "{path}",
-          alt: "استوری Alka",
-          index: "{img_index:02d}"
-        }}''')
-            
-            items_str = ",\n".join(item_entries)
-            group_entries.append(f'''    {{
-      groupTitle: "{group_title}",
-      items: [
-{items_str}
-      ]
-    }}''')
+                items.append({
+                    "src": path,
+                    "alt": "استوری Alka",
+                    "index": f"{img_index:02d}"
+                })
 
-        if group_entries:
-            groups_str = ",\n".join(group_entries)
-            story_groups_block = f"storyGroups: [\n{groups_str}\n  ]"
-            
-            pattern = r"storyGroups\s*:\s*\[[\s\S]*?\](?=\s*,\s*[\w]+\s*:|\s*\})"
-            if re.search(pattern, content):
-                content = re.sub(pattern, story_groups_block, content, count=1)
-            else:
-                print("هشدار: الگوی storyGroups پیدا نشد.")
+            story_groups.append({
+                "groupTitle": group_title,
+                "items": items
+            })
+
+    portfolio["storyGroups"] = story_groups
+
+    # ۴. ساخت فایل استاندارد JS بدون هیچ خطای آکولاد/کروچه
+    js_content = f"const portfolio = {json.dumps(portfolio, ensure_ascii=False, indent=2)};\n"
 
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
-        f.write(content)
+        f.write(js_content)
 
-    print("فایل data.js با موفقیت و بر اساس ترتیب دقیق بازنویسی شد!")
+    print("✅ فایل data.js با موفقیت کاملاً از نو و بدون هیچ خطایی ساخته شد!")
 
 if __name__ == "__main__":
-    update_data_file()
+    generate_data_file()
