@@ -8,19 +8,26 @@ EVIDENCE_PATH = "images/uploads/evidence"
 
 VALID_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP")
 
-# 📌 ترتیب دقیق و درست مورد نظر شما (از اول به آخر)
+# 📌 ترتیب دقیق و ثابت پوشه‌های اول تا هفتم
 CUSTOM_FOLDER_ORDER = [
-    "paraffin-story",
-    "kash_story",
-    "Hadieh_story",
-    "Event_story",
-    "Kederi_story"
+    "paraffin-story",  # ۱. پارافین
+    "kash_story",      # ۲. کاش
+    "Hadieh_story",    # ۳. هدیه
+    "Event_story",     # ۴. ایونت
+    "Kederi_story",    # ۵. کدری
+    "tarak_story",     # ۶. ترک خوردن (اگر اسم پوشه‌ات چیز دیگری است، این متن داخل کوتیشن را تغییر بده)
+    "dama_story"       # ۷. دما (اگر اسم پوشه‌ات چیز دیگری است، این متن داخل کوتیشن را تغییر بده)
 ]
 
 def get_files(folder):
     if not os.path.exists(folder):
         return []
     return sorted([f for f in os.listdir(folder) if f.endswith(VALID_EXTENSIONS)])
+
+def extract_number(folder_name):
+    # استخراج عدد از اسم پوشه برای مرتب‌سازی عددی پوشه‌های جدید
+    numbers = re.findall(r'\d+', folder_name)
+    return int(numbers[0]) if numbers else None
 
 def update_data_file():
     if not os.path.exists(DATA_JS_PATH):
@@ -44,18 +51,24 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. خواندن خودکار title.txt و مرتب‌سازی دقیقاً بر اساس ترتیب درست شما ---
+    # --- 3. خواندن خودکار title.txt و مرتب‌سازی دقیق ---
     if os.path.exists(STORIES_ROOT):
         subfolders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
         
-        # مرتب‌سازی: لیست دستی اولویت اول، پوشه‌های جدید بر اساس زمان ساخت (قدیمی به جدید)
         def sort_key(folder):
+            # اگر پوشه در لیست ۷‌تایی اول باشد، طبق همان ترتیب چیده می‌شود
             if folder in CUSTOM_FOLDER_ORDER:
-                return (0, CUSTOM_FOLDER_ORDER.index(folder))
+                return (0, CUSTOM_FOLDER_ORDER.index(folder), 0)
             
-            # برای پوشه‌های جدید، زمان ساخت/آخرین دستکاری پوشه را برمی‌گرداند
+            # برای پوشه‌های جدید (۸ به بعد):
             folder_path = os.path.join(STORIES_ROOT, folder)
-            return (1, os.path.getmtime(folder_path))
+            num = extract_number(folder)
+            
+            # اولویت اول با عدد موجود در اسم پوشه است، اگر عددی نبود بر اساس زمان ساخت پوشه تهِ لیست می‌رود
+            if num is not None:
+                return (1, num, 0)
+            else:
+                return (2, os.path.getmtime(folder_path), 0)
 
         subfolders.sort(key=sort_key)
         
