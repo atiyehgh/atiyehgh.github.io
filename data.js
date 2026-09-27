@@ -510,16 +510,6 @@ const portfolio = {
       ]
     },
     {
-      groupTitle: "06. ​استراتژی تعامل در اینستاگرام: قلاب دمایی برای هدایت مخاطب به دایرکت و ارائه‌ نکات تخصصی",
-      items: [
-        {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-13-525_com.instagram.android.jpg",
-          alt: "استوری Alka",
-          index: "01"
-        }
-      ]
-    },
-    {
       groupTitle: "07. تحلیل و عیب‌یابی تخصصی: دلایل ترک خوردن شمع و روش‌های پیشگیری",
       items: [
         {
