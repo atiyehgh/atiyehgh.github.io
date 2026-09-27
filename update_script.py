@@ -18,7 +18,7 @@ CUSTOM_FOLDER_ORDER = [
     "Dama_story",      # ۷. دما
 ]
 
-# اطلاعات ثابت که در هربار خروجی بدون تغییر بازنویسی می‌شوند
+# اطلاعات ثابت پورتفولیو
 BASE_PORTFOLIO = {
     "name": "عطیه قیومی‌پور",
     "title": "مدیر دیجیتال مارکتینگ برند Alka",
@@ -61,14 +61,14 @@ def generate_data_file():
     # ۱. اسکن گالری
     gallery_files = get_files(GALLERY_PATH)
     portfolio["gallery"] = [
-        {"src": f"{GALLERY_PATH}/{img}", "alt": "هویت بصری Alka"}
+        {"src": f"{GALLERY_PATH}/{img}".replace("\\", "/"), "alt": "هویت بصری Alka"}
         for img in gallery_files
     ]
 
     # ۲. اسکن مدارک (Evidence)
     evidence_files = get_files(EVIDENCE_PATH)
     portfolio["evidence"] = [
-        {"src": f"{EVIDENCE_PATH}/{img}", "alt": "نتیجه Alka"}
+        {"src": f"{EVIDENCE_PATH}/{img}".replace("\\", "/"), "alt": "نتیجه Alka"}
         for img in evidence_files
     ]
 
@@ -111,7 +111,7 @@ def generate_data_file():
 
             items = []
             for img_index, img in enumerate(images, start=1):
-                path = f"{subfolder_path}/{img}".replace("\\", "/")
+                path = os.path.join(subfolder_path, img).replace("\\", "/")
                 items.append({
                     "src": path,
                     "alt": "استوری Alka",
@@ -125,7 +125,7 @@ def generate_data_file():
 
     portfolio["storyGroups"] = story_groups
 
-    # ۴. ساخت فایل استاندارد JS همراه با export default
+    # ۴. خروجی استاندارد ES Module
     js_content = f"const portfolio = {json.dumps(portfolio, ensure_ascii=False, indent=2)};\n\nexport default portfolio;\n"
 
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
