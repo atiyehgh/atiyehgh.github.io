@@ -15,13 +15,10 @@ VALID_EXTENSIONS = (
     ".JPG",
     ".JPEG",
     ".PNG",
-    ".WEBP"
+    ".WEBP",
 )
 
-# =========================================================
-# ترتیب ثابت پوشه‌های استوری
-# =========================================================
-
+# ترتیب ثابت گروه‌های استوری
 CUSTOM_FOLDER_ORDER = [
     "paraffin-story",
     "kash_story",
@@ -139,30 +136,29 @@ BASE_PORTFOLIO = {
 
 
     # =====================================================
-    # روند همکاری
-    # این بخش قبلاً در Python وجود نداشت و باعث توقف render می‌شد
+    # تایم‌لاین
     # =====================================================
 
     "timeline": [
         {
             "date": "مهر ۱۴۰۴",
             "title": "شروع همکاری",
-            "text": "بررسی وضعیت پیج، هویت بصری و مسیر محتوایی Alka."
+            "text": "شروع مدیریت و بازطراحی حضور دیجیتال Alka."
         },
         {
             "date": "مهر تا آبان ۱۴۰۴",
-            "title": "هویت بصری و محتوا",
-            "text": "بازطراحی هویت بصری، طراحی محتوا، استوری و ساخت سبک تصویری محصولات."
+            "title": "هویت بصری",
+            "text": "بازطراحی لوگو، کاور هایلایت‌ها، پالت رنگ و سبک تصویری."
         },
         {
             "date": "آبان تا آذر ۱۴۰۴",
-            "title": "تعامل و رشد",
-            "text": "اجرای رشته‌استوری‌های تعاملی، CTA، دایرکت مارکتینگ و بررسی Insights."
+            "title": "سیستم محتوا",
+            "text": "تولید محتوا، استوری، سناریو، CTA و دایرکت مارکتینگ."
         },
         {
             "date": "آذر تا دی ۱۴۰۴",
             "title": "تحلیل و بهینه‌سازی",
-            "text": "بررسی داده‌ها و اصلاح فرمت و زمان انتشار محتوا بر اساس عملکرد واقعی."
+            "text": "بررسی Insights و اصلاح فرمت و زمان انتشار بر اساس داده."
         }
     ],
 
@@ -173,11 +169,11 @@ BASE_PORTFOLIO = {
 
     "tools": [
         "Instagram",
-        "Instagram Insights",
         "Canva",
         "Adobe Photoshop",
+        "Adobe Illustrator",
         "AI Tools",
-        "دایرکت مارکتینگ"
+        "Directam"
     ],
 
 
@@ -185,12 +181,12 @@ BASE_PORTFOLIO = {
     # اینستاگرام
     # =====================================================
 
-    "instagramUrl": "https://instagram.com/atiyeh_ghayoumipoor"
+    "instagramUrl": "https://instagram.com/alka"
 }
 
 
 # =========================================================
-# گرفتن فایل‌های تصویری یک پوشه
+# دریافت فایل‌های تصویری
 # =========================================================
 
 def get_files(folder):
@@ -198,13 +194,17 @@ def get_files(folder):
     if not os.path.exists(folder):
         return []
 
-    files = [
-        f
-        for f in os.listdir(folder)
-        if f.endswith(VALID_EXTENSIONS)
-    ]
+    files = []
 
-    return sorted(files)
+    for filename in os.listdir(folder):
+
+        if filename.endswith(VALID_EXTENSIONS):
+            files.append(filename)
+
+    # ترتیب فایل‌ها بر اساس نام
+    files.sort()
+
+    return files
 
 
 # =========================================================
@@ -213,42 +213,44 @@ def get_files(folder):
 
 def generate_data_file():
 
-    # یک کپی مستقل از اطلاعات پایه
+    # کپی مستقل از اطلاعات پایه
     portfolio = BASE_PORTFOLIO.copy()
 
 
     # =====================================================
-    # ۱. Gallery
+    # 1. Gallery
     # =====================================================
 
     gallery_files = get_files(GALLERY_PATH)
 
-    portfolio["gallery"] = [
-        {
+    portfolio["gallery"] = []
+
+    for img in gallery_files:
+
+        portfolio["gallery"].append({
             "src": f"{GALLERY_PATH}/{img}".replace("\\", "/"),
             "alt": "هویت بصری Alka"
-        }
-        for img in gallery_files
-    ]
+        })
 
 
     # =====================================================
-    # ۲. Evidence
+    # 2. Evidence
     # =====================================================
 
     evidence_files = get_files(EVIDENCE_PATH)
 
-    portfolio["evidence"] = [
-        {
+    portfolio["evidence"] = []
+
+    for img in evidence_files:
+
+        portfolio["evidence"].append({
             "src": f"{EVIDENCE_PATH}/{img}".replace("\\", "/"),
             "alt": "نتیجه Alka"
-        }
-        for img in evidence_files
-    ]
+        })
 
 
     # =====================================================
-    # ۳. Story Groups
+    # 3. Stories
     # =====================================================
 
     story_groups = []
@@ -256,31 +258,29 @@ def generate_data_file():
 
     if os.path.exists(STORIES_ROOT):
 
+        # گرفتن تمام پوشه‌های استوری
         existing_folders = [
-            d
-            for d in os.listdir(STORIES_ROOT)
+            folder
+            for folder in os.listdir(STORIES_ROOT)
             if os.path.isdir(
-                os.path.join(STORIES_ROOT, d)
+                os.path.join(STORIES_ROOT, folder)
             )
         ]
 
 
-        # -------------------------------------------------
-        # ساخت lookup برای پیدا کردن پوشه بدون حساسیت
-        # به حروف بزرگ و کوچک
-        # -------------------------------------------------
-
+        # ساخت lookup برای جلوگیری از مشکل حروف بزرگ و کوچک
         folder_lookup = {
-            f.lower(): f
-            for f in existing_folders
+            folder.lower(): folder
+            for folder in existing_folders
         }
 
 
-        # -------------------------------------------------
-        # ابتدا پوشه‌های مشخص‌شده در ترتیب دلخواه
-        # -------------------------------------------------
+        # =================================================
+        # اعمال ترتیب دلخواه
+        # =================================================
 
         ordered_folders = []
+
 
         for folder_in_list in CUSTOM_FOLDER_ORDER:
 
@@ -288,30 +288,31 @@ def generate_data_file():
 
             if key in folder_lookup:
 
-                actual_folder_name = folder_lookup[key]
+                real_folder_name = folder_lookup[key]
 
                 ordered_folders.append(
-                    actual_folder_name
+                    real_folder_name
                 )
 
 
-        # -------------------------------------------------
-        # اگر پوشه جدیدی اضافه شد که در لیست بالا نبود،
-        # آن را هم حذف نکن
-        # -------------------------------------------------
+        # اگر پوشه جدیدی بعداً اضافه شد
+        # آن را هم در انتهای لیست قرار بده
 
-        for folder_name in existing_folders:
+        for folder in existing_folders:
 
-            if folder_name not in ordered_folders:
+            if folder not in ordered_folders:
 
-                ordered_folders.append(folder_name)
+                ordered_folders.append(folder)
 
 
-        # -------------------------------------------------
-        # ساخت هر گروه
-        # -------------------------------------------------
+        # =================================================
+        # ساخت گروه‌ها
+        # =================================================
 
-        for folder_name in ordered_folders:
+        for group_index, folder_name in enumerate(
+            ordered_folders,
+            start=1
+        ):
 
             subfolder_path = os.path.join(
                 STORIES_ROOT,
@@ -323,14 +324,14 @@ def generate_data_file():
             images = get_files(subfolder_path)
 
 
-            # اگر پوشه خالی بود، رد شود
+            # اگر پوشه خالی بود
             if not images:
                 continue
 
 
-            # -------------------------------------------------
-            # title.txt
-            # -------------------------------------------------
+            # =================================================
+            # عنوان گروه
+            # =================================================
 
             title_file_path = os.path.join(
                 subfolder_path,
@@ -348,22 +349,18 @@ def generate_data_file():
                         title_file_path,
                         "r",
                         encoding="utf-8"
-                    ) as tf:
+                    ) as title_file:
 
-                        raw_title = tf.read().strip()
+                        raw_title = title_file.read().strip()
 
-                except Exception as e:
+                except Exception as error:
 
                     print(
-                        f"خطا در خواندن فایل title.txt: {e}"
+                        f"خطا در خواندن title.txt در {folder_name}: {error}"
                     )
 
 
-            # -------------------------------------------------
             # اگر title.txt وجود نداشت
-            # نام پوشه استفاده می‌شود
-            # -------------------------------------------------
-
             if not raw_title:
 
                 raw_title = (
@@ -373,18 +370,14 @@ def generate_data_file():
                 )
 
 
-            # شماره گروه بر اساس ترتیب
-            group_index = len(story_groups) + 1
-
-
             group_title = (
                 f"{group_index:02d}. {raw_title}"
             )
 
 
-            # -------------------------------------------------
-            # ساخت تصاویر گروه
-            # -------------------------------------------------
+            # =================================================
+            # ساخت آیتم‌های استوری
+            # =================================================
 
             items = []
 
@@ -400,46 +393,44 @@ def generate_data_file():
                 ).replace("\\", "/")
 
 
-                items.append(
-                    {
-                        "src": path,
-                        "alt": "استوری Alka",
-                        "index": f"{img_index:02d}"
-                    }
-                )
+                items.append({
+                    "src": path,
+                    "alt": "استوری Alka",
+                    "index": f"{img_index:02d}"
+                })
 
 
-            # -------------------------------------------------
+            # =================================================
             # اضافه کردن گروه
-            # -------------------------------------------------
+            # =================================================
 
-            story_groups.append(
-                {
-                    "groupTitle": group_title,
-                    "items": items
-                }
-            )
+            story_groups.append({
+
+                "groupTitle": group_title,
+
+                "items": items
+
+            })
 
 
-    # ذخیره Story Groups
+    # قرار دادن گروه‌های استوری در portfolio
     portfolio["storyGroups"] = story_groups
 
 
     # =====================================================
-    # ساخت خروجی JavaScript
+    # ساخت JavaScript
     # =====================================================
 
-    # مهم:
-    # چون index.html از <script src="data.js"></script>
-    # استفاده می‌کند، نباید export default داشته باشیم.
+    json_data = json.dumps(
+        portfolio,
+        ensure_ascii=False,
+        indent=2
+    )
+
 
     js_content = (
         "var portfolio = "
-        + json.dumps(
-            portfolio,
-            ensure_ascii=False,
-            indent=2
-        )
+        + json_data
         + ";\n"
     )
 
@@ -452,9 +443,9 @@ def generate_data_file():
         DATA_JS_PATH,
         "w",
         encoding="utf-8"
-    ) as f:
+    ) as data_file:
 
-        f.write(js_content)
+        data_file.write(js_content)
 
 
     # =====================================================
@@ -466,24 +457,24 @@ def generate_data_file():
     print("========================================")
 
     print(
-        f"🖼 Gallery: {len(gallery_files)} فایل"
+        f"📸 تعداد تصاویر Gallery: "
+        f"{len(portfolio['gallery'])}"
     )
 
     print(
-        f"📊 Evidence: {len(evidence_files)} فایل"
+        f"📊 تعداد Evidence: "
+        f"{len(portfolio['evidence'])}"
     )
 
     print(
-        f"📱 Story Groups: {len(story_groups)} گروه"
+        f"📱 تعداد گروه‌های Story: "
+        f"{len(portfolio['storyGroups'])}"
     )
 
-    for i, group in enumerate(
-        story_groups,
-        start=1
-    ):
+    for group in portfolio["storyGroups"]:
 
         print(
-            f"   {i}. {group['groupTitle']} "
+            f"   • {group['groupTitle']} "
             f"→ {len(group['items'])} تصویر"
         )
 
@@ -491,7 +482,7 @@ def generate_data_file():
 
 
 # =========================================================
-# اجرای اسکریپت
+# اجرای برنامه
 # =========================================================
 
 if __name__ == "__main__":
