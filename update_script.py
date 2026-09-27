@@ -8,25 +8,22 @@ EVIDENCE_PATH = "images/uploads/evidence"
 
 VALID_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP")
 
-# 📌 ترتیب دقیق و ثبت‌شده ۷ پوشه اول (بدون حساسیت به حروف بزرگ/کوچک)
+# 📌 لیست دقیق و قطعی پوشه‌ها به ترتیب دلخواه شما
+# هر زمان پوشه جدیدی (مثلاً پوشه ۸) اضافه کردی، کافیست اسمش را به انتهای این لیست اضافه کنی.
 CUSTOM_FOLDER_ORDER = [
     "paraffin-story",  # ۱. پارافین
     "kash_story",      # ۲. کاش
-    "hadieh_story",    # ۳. هدیه
-    "event_story",     # ۴. ایونت
-    "kederi_story",    # ۵. کدری
-    "tarak_story",     # ۶. ترک
-    "dama_story"       # ۷. دما
+    "Hadieh_story",    # ۳. هدیه
+    "Event_story",     # ۴. ایونت
+    "Kederi_story",    # ۵. کدری
+    "Tarak_story",     # ۶. ترک
+    "Dama_story",      # ۷. دما
 ]
 
 def get_files(folder):
     if not os.path.exists(folder):
         return []
     return sorted([f for f in os.listdir(folder) if f.endswith(VALID_EXTENSIONS)])
-
-def extract_number(folder_name):
-    numbers = re.findall(r'\d+', folder_name)
-    return int(numbers[0]) if numbers else None
 
 def update_data_file():
     if not os.path.exists(DATA_JS_PATH):
@@ -50,33 +47,28 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. خواندن خودکار title.txt و مرتب‌سازی دقیق ---
+    # --- 3. خواندن خودکار title.txt و مرتب‌سازی قطعی ---
     if os.path.exists(STORIES_ROOT):
-        subfolders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
+        # گرفتن همه پوشه‌های موجود در مسیر
+        existing_folders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
         
-        # تبدیل لیست سفارشی به حروف کوچک برای مقایسه دقیق
-        order_lower = [f.lower() for f in CUSTOM_FOLDER_ORDER]
-
-        def sort_key(folder):
-            folder_lower = folder.lower()
-            
-            # اگر پوشه در لیست ۷‌تایی ثبت‌شده باشد
-            if folder_lower in order_lower:
-                return (0, order_lower.index(folder_lower), 0)
-            
-            # برای پوشه‌های جدید بعدی (۸ به بعد)
-            folder_path = os.path.join(STORIES_ROOT, folder)
-            num = extract_number(folder)
-            
-            if num is not None:
-                return (1, num, 0)
-            else:
-                return (2, os.path.getmtime(folder_path), 0)
-
-        subfolders.sort(key=sort_key)
+        # پیدا کردن پوشه‌هایی که در لیست تعریف شده‌اند به همان ترتیب دقیق لیست
+        ordered_folders = []
         
+        # ۱. اول پوشه‌هایی که توی لیست ثبت شده‌اند را دقیقاً به همان ترتیب می‌آوریم
+        for folder_in_list in CUSTOM_FOLDER_ORDER:
+            for actual_folder in existing_folders:
+                if actual_folder.lower() == folder_in_list.lower():
+                    ordered_folders.append(actual_folder)
+                    break
+        
+        # ۲. اگر پوشه‌ای جدیدی بود که هنوز اسمش توی لیست وارد نشده، تهِ لیست اضافه می‌شود
+        for actual_folder in existing_folders:
+            if not any(actual_folder.lower() == f.lower() for f in CUSTOM_FOLDER_ORDER):
+                ordered_folders.append(actual_folder)
+
         group_entries = []
-        for group_index, folder_name in enumerate(subfolders, start=1):
+        for group_index, folder_name in enumerate(ordered_folders, start=1):
             subfolder_path = os.path.join(STORIES_ROOT, folder_name)
             images = get_files(subfolder_path)
             
@@ -126,7 +118,7 @@ def update_data_file():
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت و دقیقاً مطابق ترتیب درست شما آپدیت شد!")
+    print("فایل data.js با موفقیت و ۱۰۰٪ تضمینی به ترتیب درست آپدیت شد!")
 
 if __name__ == "__main__":
     update_data_file()
