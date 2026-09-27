@@ -2,7 +2,6 @@ const portfolio = {
   name: "عطیه قیومی‌پور",
   title: "مدیر دیجیتال مارکتینگ برند Alka",
   slogan: "از هویت بصری تا رشد واقعی.",
-
   heroText:
     "طراحی کردم، محتوا ساختم و با ترکیب استراتژی و ابزارهای AI، حضور دیجیتال Alka را توسعه دادم؛ نتیجه، افزایش ۱۳ برابری تعامل پیج بود.",
 
@@ -86,57 +85,72 @@ const portfolio = {
     }
   ],
 
-  timeline: [
-    {
-      date: "مهر ۱۴۰۴",
-      title: "شروع همکاری با Alka",
-      text:
-        "بررسی وضعیت پیج، شناخت برند، مخاطب و اهداف همکاری و مشخص‌کردن مسیر اولیه پروژه."
-    },
-    {
-      date: "مهر تا آبان ۱۴۰۴",
-      title: "بازطراحی هویت بصری",
-      text:
-        "بازطراحی لوگو، کاور هایلایت‌ها، پالت رنگ و شکل‌دهی به یک سبک تصویری منسجم برای پیج."
-    },
-    {
-      date: "آبان تا آذر ۱۴۰۴",
-      title: "توسعه سیستم محتوا و تعامل",
-      text:
-        "طراحی و اجرای پست، کاروسل، ریلز و رشته‌استوری‌های آموزشی، فروش و تعاملی همراه با CTA و سناریونویسی."
-    },
-    {
-      date: "آذر تا دی ۱۴۰۴",
-      title: "تحلیل، بهینه‌سازی و رشد",
-      text:
-        "بررسی Insights و رفتار مخاطب، اصلاح زمان و فرمت انتشار و استفاده از دایرکت مارکتینگ و ابزارهای AI برای توسعه عملکرد پیج."
-    }
-  ],
-
-  tools: [
-    "Instagram",
-    "Instagram Insights",
-    "Canva",
-    "Adobe Photoshop",
-    "Adobe Illustrator",
-    "CapCut",
-    "AI Tools",
-    "Directam.ir"
-  ],
-
   gallery: [
     {
-      src: "images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      src:
+        "images/uploads/gallery/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt: "هویت بصری Alka"
     }
   ],
 
   evidence: [
     {
-      src: "images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
+      src:
+        "images/uploads/evidence/Screenshot_2026-09-01-18-50-51-799_com.instagram.android.jpg",
       alt: "استوری Alka"
     }
   ],
+
+  /* =========================
+     PROJECT TIMELINE
+     ========================= */
+
+  timeline: [
+    {
+      date: "مهر ۱۴۰۴",
+      title: "شروع همکاری با Alka",
+      text:
+        "بررسی وضعیت پیج، شناسایی نقاط ضعف هویت بصری و تعیین مسیر اولیه محتوا."
+    },
+    {
+      date: "مهر تا آبان ۱۴۰۴",
+      title: "بازطراحی هویت بصری",
+      text:
+        "بازطراحی لوگو، کاور هایلایت‌ها، پالت رنگ و شکل‌دهی به زبان بصری یکپارچه."
+    },
+    {
+      date: "آبان تا آذر ۱۴۰۴",
+      title: "استراتژی و تولید محتوا",
+      text:
+        "طراحی و اجرای محتوای فروش، آموزشی، تعاملی، استوری و سناریوهای محتوایی."
+    },
+    {
+      date: "آذر تا دی ۱۴۰۴",
+      title: "تحلیل و بهینه‌سازی",
+      text:
+        "بررسی Insights، رفتار مخاطب، زمان انتشار و اصلاح فرمت و موضوع محتوا بر اساس داده."
+    }
+  ],
+
+  /* =========================
+     TOOLS
+     ========================= */
+
+  tools: [
+    "Instagram",
+    "Instagram Insights",
+    "Canva",
+    "Photoshop",
+    "CapCut",
+    "ChatGPT",
+    "AI Tools",
+    "دایرکت مارکتینگ",
+    "دایرکتم"
+  ],
+
+  /* =========================
+     STORY GROUPS
+     ========================= */
 
   storyGroups: [
     {
@@ -145,77 +159,92 @@ const portfolio = {
 
       items: [
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-09-337_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "01"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-10-613_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "02"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-11-821_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "03"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-13-091_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-13-091_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "04"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-14-646_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-14-646_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "05"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-16-098_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-16-098_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "06"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-17-422_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-17-422_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "07"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-18-584_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-18-584_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "08"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-21-559_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-21-559_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "09"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-22-757_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-22-757_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "10"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-24-040_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-24-040_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "11"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-28-336_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-28-336_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "12"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-31-135_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-31-135_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "13"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-32-940_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-32-940_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "14"
         },
         {
-          src: "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-37-342_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/paraffin-story/Screenshot_2026-02-18-17-41-37-342_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "15"
         }
@@ -228,72 +257,86 @@ const portfolio = {
 
       items: [
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-55-691_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-55-691_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "01"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-57-085_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-36-57-085_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "02"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-02-100_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-02-100_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "03"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-04-584_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-04-584_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "04"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-05-762_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-05-762_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "05"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-07-116_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-07-116_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "06"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-08-440_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-08-440_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "07"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-09-724_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-09-724_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "08"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-11-364_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-11-364_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "09"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-12-716_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-12-716_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "10"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-14-056_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-14-056_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "11"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-15-863_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-15-863_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "12"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-17-108_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-17-108_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "13"
         },
         {
-          src: "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-18-621_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/kash_story/Screenshot_2026-02-18-17-37-18-621_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "14"
         }
@@ -306,67 +349,80 @@ const portfolio = {
 
       items: [
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-02-254_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-02-254_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "01"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-03-918_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-03-918_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "02"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-05-238_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-05-238_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "03"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-06-943_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-06-943_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "04"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-08-364_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-08-364_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "05"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-09-643_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-09-643_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "06"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-10-875_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-10-875_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "07"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-12-238_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-12-238_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "08"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-13-595_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-13-595_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "09"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-14-841_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-14-841_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "10"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-16-180_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-16-180_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "11"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-18-761_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-18-761_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "12"
         },
         {
-          src: "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-20-026_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Hadieh_story/Screenshot_2026-02-18-17-35-20-026_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "13"
         }
@@ -379,142 +435,170 @@ const portfolio = {
 
       items: [
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-23-916_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-23-916_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "01"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-25-290_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-25-290_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "02"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-26-707_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-26-707_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "03"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-28-176_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-28-176_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "04"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-29-424_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-29-424_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "05"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-30-677_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-30-677_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "06"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-33-331_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-33-331_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "07"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-34-786_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-34-786_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "08"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-36-074_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-36-074_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "09"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-37-441_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-37-441_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "10"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-39-041_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-39-041_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "11"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-41-920_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-41-920_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "12"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-43-911_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-43-911_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "13"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-46-544_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-46-544_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "14"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-48-119_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-48-119_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "15"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-50-513_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-50-513_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "16"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-52-320_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-52-320_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "17"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-54-619_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-54-619_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "18"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-57-890_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-21-57-890_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "19"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-00-040_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-00-040_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "20"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-01-552_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-01-552_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "21"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-03-467_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-03-467_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "22"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-04-820_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-04-820_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "23"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-06-515_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-06-515_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "24"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-09-612_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-09-612_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "25"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-11-380_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-11-380_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "26"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-13-209_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-13-209_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "27"
         },
         {
-          src: "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-20-091_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Event_story/Screenshot_2026-02-18-17-22-20-091_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "28"
         }
@@ -527,42 +611,50 @@ const portfolio = {
 
       items: [
         {
-          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-05-235_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-05-235_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "01"
         },
         {
-          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-07-196_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-07-196_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "02"
         },
         {
-          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-08-588_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-08-588_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "03"
         },
         {
-          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-10-188_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-10-188_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "04"
         },
         {
-          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-11-756_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-11-756_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "05"
         },
         {
-          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-13-095_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-13-095_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "06"
         },
         {
-          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-14-497_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-14-497_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "07"
         },
         {
-          src: "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-15-856_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Kederi_story/Screenshot_2026-02-18-17-19-15-856_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "08"
         }
@@ -575,47 +667,56 @@ const portfolio = {
 
       items: [
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-54-841_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-54-841_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "01"
         },
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-57-533_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-57-533_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "02"
         },
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-59-110_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-59-110_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "03"
         },
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-00-415_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-00-415_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "04"
         },
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-02-113_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-02-113_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "05"
         },
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-03-634_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-03-634_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "06"
         },
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-05-033_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-05-033_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "07"
         },
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-06-314_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-06-314_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "08"
         },
         {
-          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-07-600_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-07-600_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "09"
         }
@@ -624,41 +725,48 @@ const portfolio = {
 
     {
       groupTitle:
-        "07. ​استراتژی تعامل در اینستاگرام: قلاب دمایی برای هدایت مخاطب به دایرکت و ارائه‌ نکات تخصصی",
+        "07. استراتژی تعامل در اینستاگرام: قلاب دمایی برای هدایت مخاطب به دایرکت و ارائه نکات تخصصی",
 
       items: [
         {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-06-225_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-06-225_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "01"
         },
         {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-07-453_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-07-453_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "02"
         },
         {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-09-189_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-09-189_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "03"
         },
         {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-10-664_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-10-664_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "04"
         },
         {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-11-994_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-11-994_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "05"
         },
         {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-13-525_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-13-525_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "06"
         },
         {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-14-000_com.instagram.android.jpg",
+          src:
+            "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-14-000_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "07"
         }
