@@ -510,7 +510,7 @@ const portfolio = {
       ]
     },
     {
-      groupTitle: "06. تحلیل و عیب‌یابی تخصصی: دلایل ترک خوردن شمع و روش‌های پیشگیری",
+      groupTitle: "07. تحلیل و عیب‌یابی تخصصی: دلایل ترک خوردن شمع و روش‌های پیشگیری",
       items: [
         {
           src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-54-841_com.instagram.android.jpg",
