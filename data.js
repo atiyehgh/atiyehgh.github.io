@@ -510,7 +510,7 @@ const portfolio = {
       ]
     },
     {
-      groupTitle: "06. Dama story",
+      groupTitle: "06. ​استراتژی تعامل در اینستاگرام: قلاب دمایی برای هدایت مخاطب به دایرکت و ارائه‌ نکات تخصصی",
       items: [
         {
           src: "images/uploads/stories/Dama_story/Screenshot_2025-12-29-19-44-55-669_com.instagram.android.jpg",
