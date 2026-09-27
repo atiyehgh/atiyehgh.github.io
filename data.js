@@ -92,7 +92,6 @@ const portfolio = {
     }
   ],
 
-  // ترتیب نهایی درست: ۱. پارافین -> ۲. کاش -> ۳. هدیه -> ۴. ایونت -> ۵. کدر شدن
   storyGroups: [
     {
       groupTitle: "01. روبرو شدن با یک نقد، فرصتی برای شفافیت: بررسی فنی موم گیاهی در برابر پارافین",
@@ -510,47 +509,7 @@ const portfolio = {
       ]
     },
     {
-      groupTitle: "06. ​استراتژی تعامل در اینستاگرام: قلاب دمایی برای هدایت مخاطب به دایرکت و ارائه‌ نکات تخصصی",
-      items: [
-        {
-          src: "images/uploads/stories/Dama_story/IMG_20260927_162839.jpg",
-          alt: "استوری Alka",
-          index: "01"
-        },
-        {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-06-225_com.instagram.android.jpg",
-          alt: "استوری Alka",
-          index: "02"
-        },
-        {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-07-453_com.instagram.android.jpg",
-          alt: "استوری Alka",
-          index: "03"
-        },
-        {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-09-189_com.instagram.android.jpg",
-          alt: "استوری Alka",
-          index: "04"
-        },
-        {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-10-664_com.instagram.android.jpg",
-          alt: "استوری Alka",
-          index: "05"
-        },
-        {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-11-994_com.instagram.android.jpg",
-          alt: "استوری Alka",
-          index: "06"
-        },
-        {
-          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-13-525_com.instagram.android.jpg",
-          alt: "استوری Alka",
-          index: "07"
-        }
-      ]
-    },
-    {
-      groupTitle: "07. تحلیل و عیب‌یابی تخصصی: دلایل ترک خوردن شمع و روش‌های پیشگیری",
+      groupTitle: "06. تحلیل و عیب‌یابی تخصصی: دلایل ترک خوردن شمع و روش‌های پیشگیری",
       items: [
         {
           src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-54-841_com.instagram.android.jpg",
@@ -596,6 +555,46 @@ const portfolio = {
           src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-07-600_com.instagram.android.jpg",
           alt: "استوری Alka",
           index: "09"
+        }
+      ]
+    },
+    {
+      groupTitle: "07. استراتژی تعامل در اینستاگرام: قلاب دمایی برای هدایت مخاطب به دایرکت و ارائه‌ نکات تخصصی",
+      items: [
+        {
+          src: "images/uploads/stories/Dama_story/IMG_20260927_162839.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-06-225_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-07-453_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-09-189_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-10-664_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-11-994_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-13-525_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
         }
       ]
     }
