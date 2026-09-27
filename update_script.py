@@ -125,13 +125,13 @@ def generate_data_file():
 
     portfolio["storyGroups"] = story_groups
 
-    # ۴. خروجی استاندارد ES Module
-    js_content = f"const portfolio = {json.dumps(portfolio, ensure_ascii=False, indent=2)};\n\nexport default portfolio;\n"
+    # ۴. خروجی اسکریپت سراسری (بدون export) برای تطابق با <script src="data.js"></script>
+    js_content = f"var portfolio = {json.dumps(portfolio, ensure_ascii=False, indent=2)};\n"
 
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(js_content)
 
-    print("✅ فایل data.js با موفقیت کاملاً از نو، استاندارد و با export ساخته شد!")
+    print("✅ فایل data.js با موفقیت ساخته شد و با فراخوانی عادی HTML سازگار است!")
 
 if __name__ == "__main__":
     generate_data_file()
