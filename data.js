@@ -508,6 +508,56 @@ const portfolio = {
           index: "08"
         }
       ]
+    },
+    {
+      groupTitle: "06. Tarak story",
+      items: [
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-54-841_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-57-533_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-20-59-110_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-00-415_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-02-113_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-03-634_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-05-033_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        },
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-06-314_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "08"
+        },
+        {
+          src: "images/uploads/stories/Tarak_story/Screenshot_2026-02-18-17-21-07-600_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "09"
+        }
+      ]
     }
   ],
 
