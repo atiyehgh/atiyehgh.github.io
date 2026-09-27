@@ -9,7 +9,6 @@ EVIDENCE_PATH = "images/uploads/evidence"
 VALID_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP")
 
 # 📌 لیست دقیق و قطعی پوشه‌ها به ترتیب دلخواه شما
-# هر زمان پوشه جدیدی (مثلاً پوشه ۸) اضافه کردی، کافیست اسمش را به انتهای این لیست اضافه کنی.
 CUSTOM_FOLDER_ORDER = [
     "paraffin-story",  # ۱. پارافین
     "kash_story",      # ۲. کاش
@@ -47,25 +46,25 @@ def update_data_file():
         new_evidence = "\n" + ",\n".join(entries) + "\n  "
         content = re.sub(r"(evidence\s*:\s*\[).*?(\])", rf"\1{new_evidence}\2", content, flags=re.DOTALL)
 
-    # --- 3. خواندن خودکار title.txt و مرتب‌سازی قطعی ---
+    # --- 3. ساخت ساختار storyGroups با مرتب‌سازی دقیق ---
     if os.path.exists(STORIES_ROOT):
-        # گرفتن همه پوشه‌های موجود در مسیر
         existing_folders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
         
-        # پیدا کردن پوشه‌هایی که در لیست تعریف شده‌اند به همان ترتیب دقیق لیست
+        # نگاشت نام پوشه‌ها به حالت حروف کوچک برای مقایسه دقیق
+        folder_lookup = {f.lower(): f for f in existing_folders}
+        
         ordered_folders = []
         
-        # ۱. اول پوشه‌هایی که توی لیست ثبت شده‌اند را دقیقاً به همان ترتیب می‌آوریم
+        # ۱. مرتب‌سازی دقیق و اجباری بر اساس ترتیب CUSTOM_FOLDER_ORDER
         for folder_in_list in CUSTOM_FOLDER_ORDER:
-            for actual_folder in existing_folders:
-                if actual_folder.lower() == folder_in_list.lower():
-                    ordered_folders.append(actual_folder)
-                    break
+            key = folder_in_list.lower()
+            if key in folder_lookup:
+                ordered_folders.append(folder_lookup[key])
         
-        # ۲. اگر پوشه‌ای جدیدی بود که هنوز اسمش توی لیست وارد نشده، تهِ لیست اضافه می‌شود
-        for actual_folder in existing_folders:
-            if not any(actual_folder.lower() == f.lower() for f in CUSTOM_FOLDER_ORDER):
-                ordered_folders.append(actual_folder)
+        # ۲. افزودن پوشه‌های احتمالی جدید در انتهای لیست
+        for f in existing_folders:
+            if f not in ordered_folders:
+                ordered_folders.append(f)
 
         group_entries = []
         for group_index, folder_name in enumerate(ordered_folders, start=1):
@@ -75,7 +74,6 @@ def update_data_file():
             if not images:
                 continue
 
-            # خواندن متن از فایل title.txt داخل پوشه
             title_file_path = os.path.join(subfolder_path, "title.txt")
             raw_title = ""
             if os.path.exists(title_file_path):
@@ -110,15 +108,17 @@ def update_data_file():
         if group_entries:
             groups_str = ",\n".join(group_entries)
             story_groups_block = f"storyGroups: [\n{groups_str}\n  ]"
-            if "storyGroups:" in content:
-                content = re.sub(r"storyGroups\s*:\s*\[.*?\](?=\s*,\s*(?:timeline|tools|instagramUrl|\}))", story_groups_block, content, flags=re.DOTALL)
+            
+            pattern = r"storyGroups\s*:\s*\[[\s\S]*?\](?=\s*,\s*[\w]+\s*:|\s*\})"
+            if re.search(pattern, content):
+                content = re.sub(pattern, story_groups_block, content, count=1)
             else:
-                print("بخش storyGroups در فایل یافت نشد!")
+                print("هشدار: الگوی storyGroups پیدا نشد.")
 
     with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
         f.write(content)
 
-    print("فایل data.js با موفقیت و ۱۰۰٪ تضمینی به ترتیب درست آپدیت شد!")
+    print("فایل data.js با موفقیت و بر اساس ترتیب دقیق بازنویسی شد!")
 
 if __name__ == "__main__":
     update_data_file()
