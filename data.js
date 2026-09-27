@@ -510,6 +510,46 @@ const portfolio = {
       ]
     },
     {
+      groupTitle: "06. ​استراتژی تعامل در اینستاگرام: قلاب دمایی برای هدایت مخاطب به دایرکت و ارائه‌ نکات تخصصی",
+      items: [
+        {
+          src: "images/uploads/stories/Dama_story/IMG_20260927_162839.jpg",
+          alt: "استوری Alka",
+          index: "01"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-06-225_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "02"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-07-453_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "03"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-09-189_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "04"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-10-664_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "05"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-11-994_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "06"
+        },
+        {
+          src: "images/uploads/stories/Dama_story/Screenshot_2026-02-18-17-20-13-525_com.instagram.android.jpg",
+          alt: "استوری Alka",
+          index: "07"
+        }
+      ]
+    },
+    {
       groupTitle: "07. تحلیل و عیب‌یابی تخصصی: دلایل ترک خوردن شمع و روش‌های پیشگیری",
       items: [
         {
