@@ -8,15 +8,15 @@ EVIDENCE_PATH = "images/uploads/evidence"
 
 VALID_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP")
 
-# 📌 ترتیب دقیق و ثابت پوشه‌های اول تا هفتم
+# 📌 ترتیب دقیق و ثبت‌شده ۷ پوشه اول (بدون حساسیت به حروف بزرگ/کوچک)
 CUSTOM_FOLDER_ORDER = [
     "paraffin-story",  # ۱. پارافین
     "kash_story",      # ۲. کاش
-    "Hadieh_story",    # ۳. هدیه
-    "Event_story",     # ۴. ایونت
-    "Kederi_story",    # ۵. کدری
-    "tarak_story",     # ۶. ترک خوردن (اگر اسم پوشه‌ات چیز دیگری است، این متن داخل کوتیشن را تغییر بده)
-    "dama_story"       # ۷. دما (اگر اسم پوشه‌ات چیز دیگری است، این متن داخل کوتیشن را تغییر بده)
+    "hadieh_story",    # ۳. هدیه
+    "event_story",     # ۴. ایونت
+    "kederi_story",    # ۵. کدری
+    "tarak_story",     # ۶. ترک
+    "dama_story"       # ۷. دما
 ]
 
 def get_files(folder):
@@ -25,7 +25,6 @@ def get_files(folder):
     return sorted([f for f in os.listdir(folder) if f.endswith(VALID_EXTENSIONS)])
 
 def extract_number(folder_name):
-    # استخراج عدد از اسم پوشه برای مرتب‌سازی عددی پوشه‌های جدید
     numbers = re.findall(r'\d+', folder_name)
     return int(numbers[0]) if numbers else None
 
@@ -55,16 +54,20 @@ def update_data_file():
     if os.path.exists(STORIES_ROOT):
         subfolders = [d for d in os.listdir(STORIES_ROOT) if os.path.isdir(os.path.join(STORIES_ROOT, d))]
         
+        # تبدیل لیست سفارشی به حروف کوچک برای مقایسه دقیق
+        order_lower = [f.lower() for f in CUSTOM_FOLDER_ORDER]
+
         def sort_key(folder):
-            # اگر پوشه در لیست ۷‌تایی اول باشد، طبق همان ترتیب چیده می‌شود
-            if folder in CUSTOM_FOLDER_ORDER:
-                return (0, CUSTOM_FOLDER_ORDER.index(folder), 0)
+            folder_lower = folder.lower()
             
-            # برای پوشه‌های جدید (۸ به بعد):
+            # اگر پوشه در لیست ۷‌تایی ثبت‌شده باشد
+            if folder_lower in order_lower:
+                return (0, order_lower.index(folder_lower), 0)
+            
+            # برای پوشه‌های جدید بعدی (۸ به بعد)
             folder_path = os.path.join(STORIES_ROOT, folder)
             num = extract_number(folder)
             
-            # اولویت اول با عدد موجود در اسم پوشه است، اگر عددی نبود بر اساس زمان ساخت پوشه تهِ لیست می‌رود
             if num is not None:
                 return (1, num, 0)
             else:
