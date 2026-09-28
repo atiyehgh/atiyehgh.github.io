@@ -607,7 +607,7 @@ var portfolio = {
       ]
     },
     {
-      "groupTitle": "08. Rezayat story",
+      "groupTitle": "08. کیفیت در عمل؛ نظر خریداران",
       "items": [
         {
           "src": "images/uploads/stories/Rezayat_story/Screenshot_2026-02-18-17-20-35-354_com.instagram.android.jpg",
