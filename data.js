@@ -605,6 +605,36 @@ var portfolio = {
           "index": "07"
         }
       ]
+    },
+    {
+      "groupTitle": "08. Rezayat story",
+      "items": [
+        {
+          "src": "images/uploads/stories/Rezayat_story/Screenshot_2026-02-18-17-20-35-354_com.instagram.android.jpg",
+          "alt": "استوری Alka",
+          "index": "01"
+        },
+        {
+          "src": "images/uploads/stories/Rezayat_story/Screenshot_2026-02-18-17-20-36-801_com.instagram.android.jpg",
+          "alt": "استوری Alka",
+          "index": "02"
+        },
+        {
+          "src": "images/uploads/stories/Rezayat_story/Screenshot_2026-02-18-17-20-38-083_com.instagram.android.jpg",
+          "alt": "استوری Alka",
+          "index": "03"
+        },
+        {
+          "src": "images/uploads/stories/Rezayat_story/Screenshot_2026-02-18-17-20-39-302_com.instagram.android.jpg",
+          "alt": "استوری Alka",
+          "index": "04"
+        },
+        {
+          "src": "images/uploads/stories/Rezayat_story/Screenshot_2026-02-18-17-20-40-695_com.instagram.android.jpg",
+          "alt": "استوری Alka",
+          "index": "05"
+        }
+      ]
     }
   ]
 };
