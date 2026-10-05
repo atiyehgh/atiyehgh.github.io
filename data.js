@@ -100,6 +100,14 @@ var portfolio = {
   "instagramUrl": "https://instagram.com/alka",
   "gallery": [
     {
+      "src": "images/uploads/gallery/Generated Image January 05, 2026 - 3_46PM.png",
+      "alt": "هویت بصری Alka"
+    },
+    {
+      "src": "images/uploads/gallery/Generated Image January 05, 2026 - 3_48PM.png",
+      "alt": "هویت بصری Alka"
+    },
+    {
       "src": "images/uploads/gallery/Generated Image January 05, 2026 - 3_51PM.png",
       "alt": "هویت بصری Alka"
     },
@@ -117,6 +125,10 @@ var portfolio = {
     },
     {
       "src": "images/uploads/gallery/IMG_20260104_142821_544.jpg",
+      "alt": "هویت بصری Alka"
+    },
+    {
+      "src": "images/uploads/gallery/IMG_20260104_142826_738.jpg",
       "alt": "هویت بصری Alka"
     },
     {
