@@ -112,6 +112,14 @@ var portfolio = {
       "alt": "هویت بصری Alka"
     },
     {
+      "src": "images/uploads/gallery/Generated Image December 30, 2025 - 6_16PM.png",
+      "alt": "هویت بصری Alka"
+    },
+    {
+      "src": "images/uploads/gallery/Generated Image December 30, 2025 - 6_23PM.png",
+      "alt": "هویت بصری Alka"
+    },
+    {
       "src": "images/uploads/gallery/Generated Image December 31, 2025 - 11_07PM.png",
       "alt": "هویت بصری Alka"
     },
@@ -161,6 +169,10 @@ var portfolio = {
     },
     {
       "src": "images/uploads/gallery/IMG_20251224_111544_358.JPG",
+      "alt": "هویت بصری Alka"
+    },
+    {
+      "src": "images/uploads/gallery/IMG_20251230_180400_659.jpg",
       "alt": "هویت بصری Alka"
     },
     {
