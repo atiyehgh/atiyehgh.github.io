@@ -340,7 +340,15 @@ var portfolio = {
       "alt": "هویت بصری Alka"
     },
     {
+      "src": "images/uploads/gallery/IMG_20261005_190024_012.jpg",
+      "alt": "هویت بصری Alka"
+    },
+    {
       "src": "images/uploads/gallery/IMG_20261005_190047_090.jpg",
+      "alt": "هویت بصری Alka"
+    },
+    {
+      "src": "images/uploads/gallery/IMG_20261005_195428_036.JPG",
       "alt": "هویت بصری Alka"
     }
   ],
