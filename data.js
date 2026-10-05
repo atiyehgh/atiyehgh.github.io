@@ -98,7 +98,20 @@ var portfolio = {
     "Directam"
   ],
   "instagramUrl": "https://instagram.com/alka",
-  "gallery": [],
+  "gallery": [
+    {
+      "src": "images/uploads/gallery/IMG_20261005_170528_714.JPG",
+      "alt": "هویت بصری Alka"
+    },
+    {
+      "src": "images/uploads/gallery/IMG_20261005_170836_824.jpg",
+      "alt": "هویت بصری Alka"
+    },
+    {
+      "src": "images/uploads/gallery/IMG_20261005_170839_814.jpg",
+      "alt": "هویت بصری Alka"
+    }
+  ],
   "evidence": [
     {
       "src": "images/uploads/evidence/Screenshot_2026-01-23-10-50-59-032_com.instagram.android.jpg",
