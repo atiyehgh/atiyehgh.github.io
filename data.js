@@ -232,6 +232,10 @@ var portfolio = {
       "alt": "هویت بصری Alka"
     },
     {
+      "src": "images/uploads/gallery/IMG_20261005_170646_575.JPG",
+      "alt": "هویت بصری Alka"
+    },
+    {
       "src": "images/uploads/gallery/IMG_20261005_170806_541.jpg",
       "alt": "هویت بصری Alka"
     },
@@ -245,6 +249,10 @@ var portfolio = {
     },
     {
       "src": "images/uploads/gallery/IMG_20261005_170839_814.jpg",
+      "alt": "هویت بصری Alka"
+    },
+    {
+      "src": "images/uploads/gallery/IMG_20261005_190047_090.jpg",
       "alt": "هویت بصری Alka"
     }
   ],
