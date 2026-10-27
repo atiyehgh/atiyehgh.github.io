@@ -45,7 +45,7 @@ BASE_PORTFOLIO = {
 
     "profileImage": "/images/profile.jpg",
 
-    "about": "وقتی همکاری با Alka را شروع کردم، پیج هویت بصری منسجمی نداشت. از بازطراحی لوگو، کاور هایلایت و پالت رنگ شروع کردم، سبک تصویری محصولات را شکل دادم و بعد سراغ استراتژی محتوا، رشته‌استوری‌های تعاملی، دایرکت مارکتینگ و تحلیل Insights رفتم. هدف فقط تولید محتوا نبود؛ ساختن یک سیستم منسجم برای دیده‌شدن، تعامل و فروش بود.",
+    "about": "وقتی همکاری با آلکا را شروع کردم، پیج هویت بصری منسجمی نداشت در همکاری با آلکا، تمرکز من فقط بر تولید محتوا نبود؛سبک تصویری محصولات را شکل دادم و هدفم ایجاد یک مسیر منسجم میان هویت بصری برند، استراتژی محتوا، تعامل با مخاطب از طریق استوری و دایرکت مارکتینگ و تحلیل عملکرد و فروش بود.",
 
 
     # =====================================================
@@ -54,20 +54,24 @@ BASE_PORTFOLIO = {
 
     "services": [
         {
-            "title": "هویت بصری",
-            "description": "بازطراحی هویت بصری پیج از لوگو و کاور هایلایت تا پالت رنگ و ایجاد یک زبان بصری یکپارچه و قابل تشخیص."
+            "title": "استراتژی و برنامه ریزی محتوا",
+            "description": "تدوین مسیر محتوایی، تقویم انتشار و ایده پردازی متناسب با هدف برند و شناخت مخاطب."
         },
         {
-            "title": "استراتژی محتوا",
-            "description": "ترکیب محتوای فروش، آموزشی، تعاملی و پشت‌صحنه برای اینکه پیج فقط تبلیغاتی نباشد و تعامل واقعی ایجاد کند."
+            "title": "مهندسی پرامپت و طراحی خلاقانه راهکارهای مبتنی بر هوش مصنوعی",
+            "description": "ترکیب تفکر ساختاری، خلاقیت، شناخت مخاطب و هدف‌گذاری برای طراحی پرامپت‌های دقیق و هدفمند؛ به‌کارگیری این مهارت در ایده‌پردازی، سناریونویسی،کپی رایتینگ و تولید محتوای متنی و بصری و حل مسائل محتوایی، با هدف دستیابی به خروجی‌های مرتبط‌تر، باکیفیت‌تر و کارآمدتر."
         },
         {
-            "title": "تولید محتوای بصری",
-            "description": "طراحی پست، کاروسل و استوری و ساخت سبک تصویری محصولات؛ با استفاده هدفمند از AI در جاهایی که عکاسی حرفه‌ای محدود بود."
+            "title": "طراحی هویت بصری و محتوای برند",
+            "description": "طراحی عناصر بصری هماهنگ با شخصیت برند برای ایجاد حضوری منسجم و حرفه ای در شبکه های اجتماعی."
         },
         {
-            "title": "مدیریت و رشد پیج",
-            "description": "مدیریت روزانه محتوا، بررسی Insights و رفتار مخاطب و اصلاح زمان انتشار و فرمت محتوا بر اساس داده."
+            "title": "مدیریت و بهینه سازی شبکه های اجتماعی",
+            "description": "مدیریت انتشار محتوا، تحلیل عملکرد، بهینه سازی تعامل و کمک به رشد هدفمند صفحه."
+        }
+        ,{
+            "title": "هوشمندسازی تعامل با مخاطب",
+            "description": "طراحی سناریوهای تعاملی و پیاده سازی راهکارهای اتوماسیون دایرکت و پاسخ گویی با ابزارهای مرتبط."
         }
     ],
 
@@ -89,12 +93,12 @@ BASE_PORTFOLIO = {
 
     "stats": [
         {
-            "value": "35,902 → 312,427",
+            "value": "35,902 ← 312,427",
             "label": "بازدید محتوا",
             "note": "حدود ۸.۷ برابر"
         },
         {
-            "value": "2,191 → 29,365",
+            "value": "2,191 ← 29,365",
             "label": "تعامل",
             "note": "۱۳ برابر"
         },
@@ -117,20 +121,20 @@ BASE_PORTFOLIO = {
 
     "process": [
         {
-            "title": "۱. شروع با یکپارچه‌سازی برند",
-            "text": "لوگو، کاور هایلایت‌ها، پالت رنگ و سبک تصویری از پایه بازطراحی شدند تا پیج قبل از هر چیز یک هویت مشخص داشته باشد."
+            "title": "1. شکل‌دهی به هویت یکپارچه‌ی برند",
+            "text": "بازطراحی هویت بصری با تمرکز بر لوگو، پالت رنگی، کاورها و سبک تصاویر محصولات، برای ایجاد ظاهری هماهنگ و قابل‌شناسایی در صفحه."
         },
         {
-            "title": "۲. ساختن سیستم محتوا",
-            "text": "تقویم محتوا طوری چیده شد که معرفی محصول و آفر در کنار محتوای آموزشی، تعاملی و پشت‌صحنه قرار بگیرد."
+            "title": "2. طراحی مسیر محتوایی هدفمند",
+            "text": "تدوین ایده‌ها و سناریوهای محتوا با توجه به ماهیت محصولات و اهداف صفحه؛ تقویم محتوایی طوری نوشته شد که  تصاویر معرفی محصول تولید شده با هوش مصنوعی و محتوای فروش تا روایت‌های تعاملی و پشت صحنه در کنار هم قرار بگیرند "
         },
         {
-            "title": "۳. طراحی تعامل، نه فقط انتشار",
-            "text": "رشته‌استوری‌های چندقسمتی با CTA و سناریو طراحی شد تا مخاطب را به ادامه‌دادن، ریپلای و ورود به دایرکت تشویق کند."
+            "title": "3. تبدیل محتوا به فرصتی برای تعامل",
+            "text": "طراحی رشته‌های استوری، پرسش‌ها و دعوت به اقدام (CTA) با هدف تقویت مشارکت مخاطبان؛ در کنار استفاده از اتوماسیون دایرکت برای پاسخ‌گویی هدفمندتر."
         },
         {
-            "title": "۴. تصمیم‌گیری با داده",
-            "text": "Insights و رفتار مخاطب مرتب بررسی شد تا زمان انتشار، فرمت محتوا و نوع موضوعات بر اساس عملکرد واقعی اصلاح شوند."
+            "title": "4. تحلیل عملکرد و بهینه‌سازی",
+            "text": "بررسی داده‌های Insights و واکنش مخاطبان برای ارزیابی عملکرد محتوا و اصلاح زمان انتشار، قالب‌ها و موضوعات بر اساس نتایج به‌دست‌آمده."
         }
     ],
 
@@ -221,32 +225,148 @@ def generate_data_file():
     # 1. Gallery
     # =====================================================
 
-    gallery_files = get_files(GALLERY_PATH)
+    gallery_groups = []
 
-    portfolio["gallery"] = []
+    if os.path.exists(GALLERY_PATH):
 
-    for img in gallery_files:
+        gallery_folders = [
+            folder
+            for folder in os.listdir(GALLERY_PATH)
+            if os.path.isdir(
+                os.path.join(GALLERY_PATH, folder)
+            )
+        ]
+        gallery_folders.sort()
 
-        portfolio["gallery"].append({
-            "src": f"{GALLERY_PATH}/{img}".replace("\\", "/"),
-            "alt": "هویت بصری Alka"
-        })
+        for folder_name in gallery_folders:
 
+            folder_path = os.path.join(
+                GALLERY_PATH,
+                folder_name
+            )
+            images = get_files(folder_path)
+
+            if not images:
+                continue
+
+            items = []
+
+            for img in images:
+                path = os.path.join(
+                    folder_path,
+                    img
+                ).replace("\\", "/")
+
+                items.append({
+                    "src": path,
+                    "alt": "هویت بصری Alka"
+                })
+
+            gallery_groups.append({
+                "items": items
+            })
+
+    portfolio["gallery"] = gallery_groups
 
     # =====================================================
     # 2. Evidence
     # =====================================================
 
-    evidence_files = get_files(EVIDENCE_PATH)
+    evidence_groups = []
 
-    portfolio["evidence"] = []
+    if os.path.exists(EVIDENCE_PATH):
 
-    for img in evidence_files:
+        # گرفتن تمام پوشه‌های Evidence
+        existing_folders = [
+            folder
+            for folder in os.listdir(EVIDENCE_PATH)
+            if os.path.isdir(
+                os.path.join(EVIDENCE_PATH, folder)
+            )
+        ]
 
-        portfolio["evidence"].append({
-            "src": f"{EVIDENCE_PATH}/{img}".replace("\\", "/"),
-            "alt": "نتیجه Alka"
-        })
+        # ترتیب پوشه‌ها بر اساس نام
+        existing_folders.sort()
+
+        for folder_name in existing_folders:
+
+            folder_path = os.path.join(
+                EVIDENCE_PATH,
+                folder_name
+            )
+
+            # گرفتن تصاویر داخل این گروه
+            images = get_files(folder_path)
+
+            if not images:
+                continue
+            # =================================================
+            # خواندن title.txt
+            # =================================================
+
+            title_file_path = os.path.join(
+                folder_path,
+                "title.txt"
+            )
+
+            titles = []
+
+            if os.path.exists(title_file_path):
+
+                try:
+
+                    with open(
+                        title_file_path,
+                        "r",
+                        encoding="utf-8"
+                    ) as title_file:
+
+                        content = title_file.read().strip()
+
+                        titles = [
+                            title.strip()
+                            for title in content.split("\n---\n")
+                            if title.strip()
+                        ]
+
+                except Exception as error:
+
+                    print(
+                        f"خطا در خواندن title.txt در {folder_name}: {error}"
+                    )
+
+            # =================================================
+            # ساخت آیتم‌های Evidence
+            # =================================================
+            items = []
+
+            for img_index, img in enumerate(images):
+
+                path = os.path.join(
+                    folder_path,
+                    img
+                ).replace("\\", "/")
+
+                title = ""
+
+                if img_index < len(titles):
+                    title = titles[img_index]
+
+                items.append({
+                    "src": path,
+                    "alt": "نتیجه Alka",
+                    "title": title
+                })
+
+            # =================================================
+            # اضافه کردن گروه
+            # =================================================
+
+            evidence_groups.append({
+                "items": items
+            })
+
+    portfolio["evidence"] = evidence_groups
 
 
     # =====================================================
@@ -254,7 +374,6 @@ def generate_data_file():
     # =====================================================
 
     story_groups = []
-
 
     if os.path.exists(STORIES_ROOT):
 
@@ -267,6 +386,11 @@ def generate_data_file():
             )
         ]
 
+        # ساخت lookup برای جلوگیری از مشکل حروف بزرگ و کوچک
+        folder_lookup = {
+            folder.lower(): folder
+            for folder in existing_folders
+        }
 
         # ساخت lookup برای جلوگیری از مشکل حروف بزرگ و کوچک
         folder_lookup = {

@@ -199,10 +199,12 @@
       }
       .service {
         padding: 30px 23px;
-        border-left: 1px solid var(--line);
+        border-inline-start: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
       }
-      .service:first-child {
-        border-left: 0;
+      .service:nth-child(4n),
+      .service:last-child {
+        border-inline-end: 1px solid var(--line);
       }
       .service-num {
         font:
@@ -308,38 +310,97 @@
         background: #ebe3d6;
       }
       .evidence-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .evidence-row {
+        display: flex;
+        direction: rtl;
+        align-items: stretch;
+        justify-content: center;
         gap: 16px;
       }
+
       .evidence-card {
-        background: var(--white);
+        flex: 0 1 380px;
+        max-width: 380px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        background: white;
         border: 1px solid var(--line);
         border-radius: 16px;
         overflow: hidden;
       }
-      .evidence-image {
-        min-height: 260px;
-        display: grid;
-        place-items: center;
-        background: #ded6ca;
-        padding: 25px;
-        text-align: center;
-        color: #71695f;
-        font-size: 12px;
+
+      .evidence-arrow {
+        flex: 0 0 auto;
+        align-self: center;
+        direction: ltr;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 1;
+
+        border: 1px solid rgba(128, 128, 128, 0.22);
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.025);
+        /* box-shadow:
+          0 8px 24px rgba(0, 0, 0, 0.08),
+          inset 0 0 20px rgba(255, 255, 255, 0.025); */
+
+        opacity: 0.65;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        transition:
+          transform 0.35s ease,
+          opacity 0.35s ease,
+          box-shadow 0.35s ease;
       }
+
+      .evidence-arrow:hover {
+        opacity: 0.95;
+        transform: translateX(-6px);
+        box-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.12),
+          inset 0 0 24px rgba(255, 255, 255, 0.05);
+      }
+      .evidence-image {
+        aspect-ratio: 9 / 18;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #ded6ca;
+        padding: 0;
+      }
+
       .evidence-image img {
         width: 100%;
         height: 100%;
-        max-height: 430px;
-        object-fit: contain;
+        max-height: none;
+        object-fit: cover;
+        object-position: center;
+        display: block;
       }
       .evidence-info {
+        flex: 1;
         padding: 18px;
       }
       .evidence-info h3 {
         font-size: 15px;
         margin: 0 0 5px;
+        white-space: pre-line;
       }
       .evidence-info p {
         font-size: 11px;
@@ -384,17 +445,48 @@
         color: var(--muted);
         margin: 0;
       }
+
+      .story-more-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+      }
+
+      .story-more-btn {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--paper);
+        padding: 10px 22px;
+        font-family: inherit;
+        font-size: 12px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .story-more-btn:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
       .gallery {
         background: #f5f1e9;
       }
       .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+      .gallery-group {
+        display: flex;
+        direction: rtl;
+        align-items: center;
         gap: 13px;
       }
       .gallery-item {
-        grid-column: span 4;
-        min-height: 250px;
+        flex: 1 1 0;
+        min-width: 0;
+        aspect-ratio: 4 / 6; /* نسبت ابعاد یکسان برای همه آیتم‌ها */
         border-radius: 14px;
         overflow: hidden;
         background: #ddd5c9;
@@ -442,7 +534,8 @@
         border: 1px solid #ffffff14;
         border-radius: 16px;
         overflow: hidden;
-        height: 588px;
+        aspect-ratio: 9 / 17.6;
+        height: auto;
         cursor: pointer;
         position: relative;
       }
@@ -452,10 +545,10 @@
         object-fit: cover;
         object-position: center;
         transform: scale(1);
-        transition: 0.4s;
+        transition: transform 0.4s ease;
       }
       .story-item:hover img {
-        transform: scale(1.16);
+        transform: scale(1.14);
       }
       .story-number {
         position: absolute;
@@ -596,16 +689,10 @@
         .story-gallery {
           grid-template-columns: repeat(3, 1fr);
         }
-        .story-item {
-          height: 780px;
-        }
       }
       @media (max-width: 1080px) {
         .story-gallery {
           grid-template-columns: repeat(2, 1fr);
-        }
-        .story-item {
-          height: 1000px;
         }
       }
       @media (max-width: 900px) {
@@ -625,6 +712,14 @@
         .stats,
         .timeline-list {
           grid-template-columns: 1fr 1fr;
+        }
+        .service:nth-child(4n),
+        .service:last-child {
+          border-inline-end: 0;
+        }
+        .service:nth-child(2n),
+        .service:last-child {
+          border-inline-end: 1px solid var(--line);
         }
         .service {
           border-top: 1px solid var(--line);
@@ -685,22 +780,35 @@
         .evidence-grid {
           grid-template-columns: 1fr;
         }
+        .service:nth-child(n) {
+          border-inline-end: 1px solid var(--line);
+        }
+        .evidence-row {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .evidence-card {
+          width: 100%;
+          max-width: 280px;
+          flex: none;
+        }
+
+        .evidence-arrow {
+          transform: rotate(-90deg);
+        }
         .case-copy h2 {
           font-size: 50px;
         }
         .story-gallery {
           grid-template-columns: repeat(2, 1fr);
         }
-        .story-item {
-          height: 520px; /* اصلاح ارتفاع در موبایل متناسب با تناسب ویندوز */
-        }
-        .story-item img {
-          object-fit: contain; /* فیکس کردن عکس دقیقا مشابه نسخه ویندوز بدون برش اضافی */
-          background: #1d1b18; /* پر کردن فضای خالی احتمالی بالا و پایین با رنگ پس‌زمینه یکدست */
-        }
         .gallery-item {
-          grid-column: span 12;
           min-height: 280px;
+        }
+        .gallery-group {
+          flex-direction: column;
         }
         .contact h2 {
           font-size: 36px;
@@ -758,7 +866,7 @@
               <div class="eyebrow">WHAT I DO</div>
               <h2>خدمات من</h2>
             </div>
-            <p>نقش من فقط اجرای چند خروجی نبود؛ برای Alka یک مسیر منسجم از هویت بصری، محتوا، تعامل و رشد طراحی و اجرا شد.</p>
+            <p>چه کمکی به رشد برند شما می‌کنم؟</p>
           </div>
           <div class="service-grid" id="servicesGrid"></div>
         </div>
@@ -814,7 +922,7 @@
               <div class="eyebrow">PROOF OF PERFORMANCE</div>
               <h2>نتایج</h2>
             </div>
-            <p>اسکرین‌شات‌های واقعی Insights و آمار پیج در این بخش قرار می‌گیرند تا نتایج پروژه قابل بررسی و مشاهده باشند.</p>
+            <p>اسکرین‌شات‌های واقعی Insights و آمار پیج</p>
           </div>
           <div class="evidence-grid" id="evidenceGrid"></div>
         </div>
@@ -925,28 +1033,44 @@
           return;
         }
 
-        portfolio.gallery.forEach((item) => {
-          const wrap = document.createElement("div");
-          wrap.className = "gallery-item";
+        const groups = portfolio.gallery.map((group) => (Array.isArray(group.items) ? group.items : [group]));
 
-          const img = document.createElement("img");
-          img.src = item.src;
-          img.alt = item.alt || "";
-          img.loading = "lazy";
+        groups.forEach((items) => {
+          const row = document.createElement("div");
+          row.className = "gallery-group";
 
-          img.onerror = function () {
-            wrap.remove();
-          };
+          items.forEach((item, index) => {
+            const wrap = document.createElement("div");
+            wrap.className = "gallery-item";
 
-          wrap.appendChild(img);
+            const img = document.createElement("img");
+            img.src = item.src;
+            img.alt = item.alt || "";
+            img.loading = "lazy";
 
-          wrap.onclick = function () {
-            if (img.naturalWidth) {
-              openLightbox(item.src);
+            img.onerror = function () {
+              wrap.remove();
+            };
+
+            wrap.appendChild(img);
+
+            wrap.onclick = function () {
+              if (img.naturalWidth) {
+                openLightbox(item.src);
+              }
+            };
+
+            row.appendChild(wrap);
+
+            if (index === 0 && items.length > 1) {
+              const arrow = document.createElement("div");
+              arrow.className = "evidence-arrow";
+              arrow.textContent = "←";
+              row.appendChild(arrow);
             }
-          };
+          });
 
-          grid.appendChild(wrap);
+          grid.appendChild(row);
         });
       }
 
@@ -955,23 +1079,30 @@
         container.innerHTML = "";
 
         if (!portfolio.storyGroups || portfolio.storyGroups.length === 0) {
-          container.innerHTML = `<div class="story-empty">استوری‌های پروژه هنوز اضافه نشده‌اند.</div>`;
+          container.innerHTML = `
+      <div class="story-empty">
+        استوری‌های پروژه هنوز اضافه نشده‌اند.
+      </div>
+    `;
           return;
         }
 
-        portfolio.storyGroups.forEach((group) => {
+        // ساخت یک گروه استوری
+        function createStoryGroup(group) {
           const groupDiv = document.createElement("div");
           groupDiv.className = "story-group";
 
           const titleEl = document.createElement("h3");
           titleEl.className = "story-group-title";
           titleEl.textContent = group.groupTitle;
+
           groupDiv.appendChild(titleEl);
 
           const gridDiv = document.createElement("div");
           gridDiv.className = "story-gallery";
 
-          group.items.forEach((item) => {
+          // ساخت یک آیتم استوری
+          function createStoryItem(item) {
             const wrap = document.createElement("div");
             wrap.className = "story-item";
 
@@ -999,12 +1130,44 @@
               }
             };
 
-            gridDiv.appendChild(wrap);
+            return wrap;
+          }
+
+          group.items.forEach((item) => {
+            gridDiv.appendChild(createStoryItem(item));
           });
 
           groupDiv.appendChild(gridDiv);
-          container.appendChild(groupDiv);
+
+          return groupDiv;
+        }
+
+        // فقط 2 گروه اول
+        portfolio.storyGroups.slice(0, 2).forEach((group) => {
+          container.appendChild(createStoryGroup(group));
         });
+
+        // اگر بیشتر از 2 گروه وجود داشت، دکمه نمایش بیشتر
+        if (portfolio.storyGroups.length > 2) {
+          const moreWrap = document.createElement("div");
+          moreWrap.className = "story-more-wrap";
+
+          const moreButton = document.createElement("button");
+          moreButton.type = "button";
+          moreButton.className = "story-more-btn";
+          moreButton.textContent = "مشاهده بیشتر";
+
+          moreButton.addEventListener("click", function () {
+            portfolio.storyGroups.slice(2).forEach((group) => {
+              container.appendChild(createStoryGroup(group));
+            });
+
+            moreWrap.remove();
+          });
+
+          moreWrap.appendChild(moreButton);
+          container.appendChild(moreWrap);
+        }
       }
 
       function renderEvidence() {
@@ -1012,38 +1175,67 @@
         grid.innerHTML = "";
 
         if (!portfolio.evidence || portfolio.evidence.length === 0) {
-          grid.innerHTML = `<div class="evidence-card"><div class="evidence-image">اسکرین‌شات‌های واقعی Insights<br>بعداً در این بخش قرار می‌گیرند.</div><div class="evidence-info"><h3>Evidence · Insights</h3><p>مدرک تصویری عملکرد پروژه</p></div></div>`;
+          grid.innerHTML = `
+      <div class="evidence-card">
+        <div class="evidence-image">
+          اسکرین‌شات‌های واقعی Insights<br>
+          بعداً در این بخش قرار می‌گیرند.
+        </div>
+        <div class="evidence-info">
+          <h3>Evidence · Insights</h3>
+          <p>مدرک تصویری عملکرد پروژه</p>
+        </div>
+      </div>
+    `;
           return;
         }
 
-        portfolio.evidence.forEach((item) => {
-          const card = document.createElement("article");
-          card.className = "evidence-card";
+        portfolio.evidence.forEach((group) => {
+          if (!group.items || group.items.length === 0) return;
 
-          const imageBox = document.createElement("div");
-          imageBox.className = "evidence-image";
+          const row = document.createElement("div");
+          row.className = "evidence-row";
 
-          const img = document.createElement("img");
-          img.src = item.src;
-          img.alt = item.alt || "";
-          img.loading = "lazy";
+          group.items.forEach((item, index) => {
+            const card = document.createElement("article");
+            card.className = "evidence-card";
 
-          img.onerror = function () {
-            imageBox.innerHTML = "تصویر هنوز اضافه نشده است.";
-          };
+            const imageBox = document.createElement("div");
+            imageBox.className = "evidence-image";
 
-          imageBox.appendChild(img);
+            const img = document.createElement("img");
+            img.src = item.src;
+            img.alt = item.alt || "";
+            img.loading = "lazy";
 
-          const info = document.createElement("div");
-          info.className = "evidence-info";
-          info.innerHTML = `<h3>${item.title || "Insights"}</h3><p>${item.description || ""}</p>`;
+            img.onerror = function () {
+              imageBox.innerHTML = "تصویر هنوز اضافه نشده است.";
+            };
 
-          card.appendChild(imageBox);
-          card.appendChild(info);
-          grid.appendChild(card);
+            imageBox.appendChild(img);
+
+            const info = document.createElement("div");
+            info.className = "evidence-info";
+            info.innerHTML = `
+        <h3>${item.title || "Insights"}</h3>
+        <p>${item.description || ""}</p>
+      `;
+
+            card.appendChild(imageBox);
+            card.appendChild(info);
+            row.appendChild(card);
+
+            if (index < group.items.length - 1) {
+              const arrow = document.createElement("div");
+              arrow.className = "evidence-arrow";
+              arrow.textContent = "←";
+              row.appendChild(arrow);
+            }
+          });
+
+          grid.appendChild(row);
         });
       }
-
       function render() {
         const d = portfolio;
 

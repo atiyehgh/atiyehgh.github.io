@@ -4,23 +4,27 @@ var portfolio = {
   "slogan": "از هویت بصری تا رشد واقعی.",
   "heroText": "طراحی کردم، محتوا ساختم و با ترکیب استراتژی و ابزارهای AI، حضور دیجیتال Alka را توسعه دادم؛ نتیجه، افزایش ۱۳ برابری تعامل پیج بود.",
   "profileImage": "/images/profile.jpg",
-  "about": "وقتی همکاری با Alka را شروع کردم، پیج هویت بصری منسجمی نداشت. از بازطراحی لوگو، کاور هایلایت و پالت رنگ شروع کردم، سبک تصویری محصولات را شکل دادم و بعد سراغ استراتژی محتوا، رشته‌استوری‌های تعاملی، دایرکت مارکتینگ و تحلیل Insights رفتم. هدف فقط تولید محتوا نبود؛ ساختن یک سیستم منسجم برای دیده‌شدن، تعامل و فروش بود.",
+  "about": "وقتی همکاری با آلکا را شروع کردم، پیج هویت بصری منسجمی نداشت در همکاری با آلکا، تمرکز من فقط بر تولید محتوا نبود؛سبک تصویری محصولات را شکل دادم و هدفم ایجاد یک مسیر منسجم میان هویت بصری برند، استراتژی محتوا، تعامل با مخاطب از طریق استوری و دایرکت مارکتینگ و تحلیل عملکرد و فروش بود.",
   "services": [
     {
-      "title": "هویت بصری",
-      "description": "بازطراحی هویت بصری پیج از لوگو و کاور هایلایت تا پالت رنگ و ایجاد یک زبان بصری یکپارچه و قابل تشخیص."
+      "title": "استراتژی و برنامه ریزی محتوا",
+      "description": "تدوین مسیر محتوایی، تقویم انتشار و ایده پردازی متناسب با هدف برند و شناخت مخاطب."
     },
     {
-      "title": "استراتژی محتوا",
-      "description": "ترکیب محتوای فروش، آموزشی، تعاملی و پشت‌صحنه برای اینکه پیج فقط تبلیغاتی نباشد و تعامل واقعی ایجاد کند."
+      "title": "مهندسی پرامپت و طراحی خلاقانه راهکارهای مبتنی بر هوش مصنوعی",
+      "description": "ترکیب تفکر ساختاری، خلاقیت، شناخت مخاطب و هدف‌گذاری برای طراحی پرامپت‌های دقیق و هدفمند؛ به‌کارگیری این مهارت در ایده‌پردازی، سناریونویسی،کپی رایتینگ و تولید محتوای متنی و بصری و حل مسائل محتوایی، با هدف دستیابی به خروجی‌های مرتبط‌تر، باکیفیت‌تر و کارآمدتر."
     },
     {
-      "title": "تولید محتوای بصری",
-      "description": "طراحی پست، کاروسل و استوری و ساخت سبک تصویری محصولات؛ با استفاده هدفمند از AI در جاهایی که عکاسی حرفه‌ای محدود بود."
+      "title": "طراحی هویت بصری و محتوای برند",
+      "description": "طراحی عناصر بصری هماهنگ با شخصیت برند برای ایجاد حضوری منسجم و حرفه ای در شبکه های اجتماعی."
     },
     {
-      "title": "مدیریت و رشد پیج",
-      "description": "مدیریت روزانه محتوا، بررسی Insights و رفتار مخاطب و اصلاح زمان انتشار و فرمت محتوا بر اساس داده."
+      "title": "مدیریت و بهینه سازی شبکه های اجتماعی",
+      "description": "مدیریت انتشار محتوا، تحلیل عملکرد، بهینه سازی تعامل و کمک به رشد هدفمند صفحه."
+    },
+    {
+      "title": "هوشمندسازی تعامل با مخاطب",
+      "description": "طراحی سناریوهای تعاملی و پیاده سازی راهکارهای اتوماسیون دایرکت و پاسخ گویی با ابزارهای مرتبط."
     }
   ],
   "case": {
@@ -29,12 +33,12 @@ var portfolio = {
   },
   "stats": [
     {
-      "value": "35,902 → 312,427",
+      "value": "35,902 ← 312,427",
       "label": "بازدید محتوا",
       "note": "حدود ۸.۷ برابر"
     },
     {
-      "value": "2,191 → 29,365",
+      "value": "2,191 ← 29,365",
       "label": "تعامل",
       "note": "۱۳ برابر"
     },
@@ -51,20 +55,20 @@ var portfolio = {
   ],
   "process": [
     {
-      "title": "۱. شروع با یکپارچه‌سازی برند",
-      "text": "لوگو، کاور هایلایت‌ها، پالت رنگ و سبک تصویری از پایه بازطراحی شدند تا پیج قبل از هر چیز یک هویت مشخص داشته باشد."
+      "title": "1. شکل‌دهی به هویت یکپارچه‌ی برند",
+      "text": "بازطراحی هویت بصری با تمرکز بر لوگو، پالت رنگی، کاورها و سبک تصاویر محصولات، برای ایجاد ظاهری هماهنگ و قابل‌شناسایی در صفحه."
     },
     {
-      "title": "۲. ساختن سیستم محتوا",
-      "text": "تقویم محتوا طوری چیده شد که معرفی محصول و آفر در کنار محتوای آموزشی، تعاملی و پشت‌صحنه قرار بگیرد."
+      "title": "2. طراحی مسیر محتوایی هدفمند",
+      "text": "تدوین ایده‌ها و سناریوهای محتوا با توجه به ماهیت محصولات و اهداف صفحه؛ تقویم محتوایی طوری نوشته شد که  تصاویر معرفی محصول تولید شده با هوش مصنوعی و محتوای فروش تا روایت‌های تعاملی و پشت صحنه در کنار هم قرار بگیرند "
     },
     {
-      "title": "۳. طراحی تعامل، نه فقط انتشار",
-      "text": "رشته‌استوری‌های چندقسمتی با CTA و سناریو طراحی شد تا مخاطب را به ادامه‌دادن، ریپلای و ورود به دایرکت تشویق کند."
+      "title": "3. تبدیل محتوا به فرصتی برای تعامل",
+      "text": "طراحی رشته‌های استوری، پرسش‌ها و دعوت به اقدام (CTA) با هدف تقویت مشارکت مخاطبان؛ در کنار استفاده از اتوماسیون دایرکت برای پاسخ‌گویی هدفمندتر."
     },
     {
-      "title": "۴. تصمیم‌گیری با داده",
-      "text": "Insights و رفتار مخاطب مرتب بررسی شد تا زمان انتشار، فرمت محتوا و نوع موضوعات بر اساس عملکرد واقعی اصلاح شوند."
+      "title": "4. تحلیل عملکرد و بهینه‌سازی",
+      "text": "بررسی داده‌های Insights و واکنش مخاطبان برای ارزیابی عملکرد محتوا و اصلاح زمان انتشار، قالب‌ها و موضوعات بر اساس نتایج به‌دست‌آمده."
     }
   ],
   "timeline": [
@@ -100,294 +104,431 @@ var portfolio = {
   "instagramUrl": "https://instagram.com/alka",
   "gallery": [
     {
-      "src": "images/uploads/gallery/Generated Image December 03, 2025 - 11_28PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/01/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/01/02.jpg",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 14, 2025 - 10_28PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/02/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/02/02.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/02/03.jpg",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 15, 2025 - 3_49PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/03/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/03/02.jpg",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 18, 2025 - 3_16PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/04/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/04/02.jpg",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 20, 2025 - 7_50PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/05/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/05/02.jpg",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 20, 2025 - 7_52PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/06/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/06/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 24, 2025 - 4_27PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/07/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/07/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 24, 2025 - 4_34PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/08/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/08/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/08/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 25, 2025 - 1_29PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/09/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/09/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/09/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 25, 2025 - 1_30PM (1).png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/10/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/10/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 28, 2025 - 2_24PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/11/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/11/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 28, 2025 - 5_00PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/12/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/12/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/12/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 28, 2025 - 5_06PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/13/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/13/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/13/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 29, 2025 - 5_48PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/14/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/14/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 29, 2025 - 6_22PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/15/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/15/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/15/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 30, 2025 - 6_13PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/16/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/16/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/16/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 30, 2025 - 6_16PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/17/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/17/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/17/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 30, 2025 - 6_23PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/18/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/18/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image December 31, 2025 - 11_07PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/19/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/19/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/19/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image January 02, 2026 - 3_41PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/20/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/20/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image January 02, 2026 - 5_33PM (1).png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/21/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/21/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/21/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image January 05, 2026 - 2_22PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/22/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/22/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/22/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image January 05, 2026 - 3_33PM (1).png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/23/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/23/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/23/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image January 05, 2026 - 3_46PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/24/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/24/02.png",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/24/03.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image January 05, 2026 - 3_48PM.png",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/25/01.jpg",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/25/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     },
     {
-      "src": "images/uploads/gallery/Generated Image January 05, 2026 - 3_51PM.png",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/Generated Image January 05, 2026 - 4_00PM.png",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/Generated Image January 06, 2026 - 5_51PM.png",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/Generated Image January 06, 2026 - 6_26PM.png",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/Generated Image January 06, 2026 - 8_11PM.png",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/Generated Image November 13, 2025 - 11_54PM.png",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/Generated Image November 28, 2025 - 2_51PM.png",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/Generated Image November 28, 2025 - 2_56PM.png",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251113_175542_113.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251116_204559_213.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251118_143131_495.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251122_151001_600.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251203_131101_656.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251210_171335_042.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251213_165955_094.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251214_184552_708.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251220_142322_319.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251224_111544_358.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251225_120807_648.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251225_120850_640.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251228_142157_278.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251230_180400_659.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20251230_180408_648.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20260104_142821_544.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20260104_142826_738.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20260106_163943_604.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20260106_180353_020.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_155358_594.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_170528_714.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_170646_575.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_170806_541.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_170819_174.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_170836_824.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_170839_814.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_185921_937.JPG",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_190024_012.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_190047_090.jpg",
-      "alt": "هویت بصری Alka"
-    },
-    {
-      "src": "images/uploads/gallery/IMG_20261005_195428_036.JPG",
-      "alt": "هویت بصری Alka"
+      "items": [
+        {
+          "src": "images/uploads/gallery/26/01.JPG",
+          "alt": "هویت بصری Alka"
+        },
+        {
+          "src": "images/uploads/gallery/26/02.png",
+          "alt": "هویت بصری Alka"
+        }
+      ]
     }
   ],
   "evidence": [
     {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-10-50-59-032_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
+      "items": [
+        {
+          "src": "images/uploads/evidence/01/01.jpg",
+          "alt": "نتیجه Alka",
+          "title": "شروع پرقدرت و رشد اولیه\n۳۵,۹۰۰ بازدید و +۳۳۶٪ افزایش پوشش مخاطب در (هفته اول) وضعیت اولیه پیج"
+        },
+        {
+          "src": "images/uploads/evidence/01/02.jpg",
+          "alt": "نتیجه Alka",
+          "title": "جهش عملکرد ماهانه(آبان_آذر) \n رشد چشمگیر بازدید و افزایش ۲۵۱.۷٪ در تعامل با مخاطبان جدید"
+        },
+        {
+          "src": "images/uploads/evidence/01/03.jpg",
+          "alt": "نتیجه Alka",
+          "title": "اوج بازدید و ویرال شدن (آذر_دی) \n+۳۱۲,۰۰۰ بازدید کلی و جذب ۴۹,۷۵۲ اکانت منحصر‌به‌فرد (جذب ۵۲.۲٪ مخاطب جدید از طریق ریلز و پست‌ها)."
+        }
+      ]
     },
     {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-10-52-19-865_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
+      "items": [
+        {
+          "src": "images/uploads/evidence/02/01.jpg",
+          "alt": "نتیجه Alka",
+          "title": "شروع رشد تعامل\nثبت ۲,۱۹۱ تعامل در ابتدای دوره همکاری؛ استوری‌ها با سهم ۴۸.۳٪، مهم‌ترین منبع تعامل بودند"
+        },
+        {
+          "src": "images/uploads/evidence/02/02.jpg",
+          "alt": "نتیجه Alka",
+          "title": "رشد 13 برابری تعامل\nافزایش تعامل به ۲۹,۳۶۵؛ با رشد سهم ریلزها به ۴۲.۹٪ و گسترش تعامل مخاطبان با محتوا"
+        }
+      ]
     },
     {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-10-53-31-464_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
+      "items": [
+        {
+          "src": "images/uploads/evidence/03/01.jpg",
+          "alt": "نتیجه Alka",
+          "title": "وضعیت پیج در هفته اول تحویل گرفتن پروژه؛ مجموع ۶۱۰ لایک و ۲۴۱ کامنت قبل از شروع اصلاح استراتژی بصری و محتوایی."
+        },
+        {
+          "src": "images/uploads/evidence/03/02.jpg",
+          "alt": "نتیجه Alka",
+          "title": "تبدیل پیج به یک رسانه تعاملی: رشد  تعامل با ثبت ۸,۳۸۸ لایک و بیش از ۲,۶۰۰ سیو و شیر. همچنین رشد ۱۹ برابری کامنت‌ها (رسیدن به ۴,۶۱۲ عدد) حاصل اجرای سناریونویسی هدفمند، ریلزهای جذاب و CTAهای موثر برای هدایت مخاطب به دایرکت و تعامل بود."
+        }
+      ]
     },
     {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-10-57-23-834_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
-    },
-    {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-10-57-42-588_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
-    },
-    {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-11-00-18-895_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
-    },
-    {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-11-00-27-312_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
-    },
-    {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-11-10-10-090_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
-    },
-    {
-      "src": "images/uploads/evidence/Screenshot_2026-01-23-11-11-30-760_com.instagram.android.jpg",
-      "alt": "نتیجه Alka"
+      "items": [
+        {
+          "src": "images/uploads/evidence/04/01.jpg",
+          "alt": "نتیجه Alka",
+          "title": "شروع همکاری (هفته اول آبان ) \nتثبیت وضعیت پیج و کنترل ریزش‌ها\nنقطه شروع اصلاح روند: تحویل گرفتن پروژه در شرایط ریزش فالوور و تبدیل آن به رشد مثبت . این مرحله با بازطراحی هویت بصری، بهبود بیو و شروع استراتژی جدید محتوایی برای تثبیت مخاطبان قبلی همراه بود."
+        },
+        {
+          "src": "images/uploads/evidence/04/02.jpg",
+          "alt": "نتیجه Alka",
+          "title": "نتیجه کل دوره (۱۰ آبان تا ۱ بهمن ) \n​رشد ارگانیک و جذب پایدار مخاطب (۱۸.۲٪+)\n​دستاوردهای کمپین ۳ ماهه: جذب ۱,۳۸۳ مخاطب جدید و ثبت رشد خالص ۹۰۰+ فالوور واقعی (افزایش ۱۸.۲ درصدی کل پیج). این رشد کاملاً ارگانیک و بر پایه سناریونویسی ریلزها، انتشار منظم و بهبود الگوریتمی تعامل انجام شد و نرخ ریزش به حداقل رسید"
+        }
+      ]
     }
   ],
   "storyGroups": [
