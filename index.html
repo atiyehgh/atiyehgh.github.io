@@ -248,6 +248,9 @@
         text-align: left;
         line-height: 1;
         margin: 0 0 18px;
+        position: absolute;
+        left: -130%;
+        top: 6%;
       }
       .case-copy h3 {
         font-size: 24px;
@@ -262,7 +265,7 @@
       }
       .step {
         display: grid;
-        grid-template-columns: 55px 1fr;
+        grid-template-columns: 30px 1fr;
         gap: 12px;
         padding: 16px 0;
         border-top: 1px solid #f5f1e926;
@@ -472,6 +475,26 @@
       .gallery {
         background: #f5f1e9;
       }
+      .gallery-more-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+      }
+      .gallery-more-btn {
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--ink);
+        padding: 10px 22px;
+        font-family: inherit;
+        font-size: 12px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      .gallery-more-btn:hover {
+        transform: translateY(-2px);
+        background: var(--white);
+      }
       .gallery-grid {
         display: flex;
         flex-direction: column;
@@ -611,6 +634,102 @@
         padding: 7px 13px;
         font-size: 11px;
       }
+      .certifications {
+        background: #ebe3d6;
+      }
+      .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .certification-card {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--white);
+        box-shadow: 0 12px 36px rgba(42, 36, 33, 0.05);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .certification-card:hover {
+        transform: translateY(-4px);
+        border-color: #c9b79f;
+        box-shadow: 0 18px 42px rgba(42, 36, 33, 0.09);
+      }
+      .certification-image {
+        padding: 12px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(145deg, #f8f4ed, #e8dfd2);
+      }
+      .certification-image img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2303 / 1662;
+        object-fit: contain;
+        border-radius: 12px;
+        background: #fff;
+      }
+      .certification-info {
+        padding: 24px;
+      }
+      .certification-kicker {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 12px;
+        color: var(--accent);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+      .certification-kicker::before {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        content: "";
+      }
+      .certification-info h3 {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.65;
+      }
+      .certification-subtitle {
+        display: block;
+        margin-top: 3px;
+        color: var(--accent);
+        font-family: "Playfair Display", serif;
+        font-size: 12px;
+        direction: ltr;
+        text-align: right;
+      }
+      .certification-info p {
+        margin: 13px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.9;
+      }
+      .certification-number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 19px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 10px;
+      }
+      .certification-number strong {
+        color: var(--ink);
+        font-family: "Playfair Display", serif;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        direction: ltr;
+      }
       .contact {
         background: var(--dark);
         color: var(--paper);
@@ -743,6 +862,14 @@
         .story-gallery {
           grid-template-columns: repeat(2, 1fr);
         }
+        .certifications-grid {
+          gap: 16px;
+        }
+        .case-copy h2 {
+          position: static;
+          font-size: 50px;
+          margin-bottom: 20px;
+        }
       }
 
       @media (max-width: 600px) {
@@ -804,6 +931,12 @@
         .story-gallery {
           grid-template-columns: repeat(2, 1fr);
         }
+        .certifications-grid {
+          grid-template-columns: 1fr;
+        }
+        .certification-info {
+          padding: 20px;
+        }
         .gallery-item {
           min-height: 280px;
         }
@@ -814,6 +947,371 @@
           font-size: 36px;
         }
         footer .container {
+          display: block;
+        }
+      }
+
+      /* Content calendar section */
+      .calendar-section {
+        padding: 100px 0;
+        font-family: Vazirmatn, sans-serif;
+      }
+      .calendar-section .eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .calendar-section .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+      .calendar-section .section-head h2 {
+        font-size: 37px;
+        line-height: 1.3;
+        margin: 0;
+        letter-spacing: -0.03em;
+        font-weight: 600;
+      }
+      .calendar-section .section-head p {
+        max-width: 520px;
+        color: var(--muted);
+        font-size: 13px;
+        margin: 12px 0 0;
+      }
+      .calendar-section .pill {
+        white-space: nowrap;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 14px;
+        font-size: 11px;
+        color: #5b554e;
+        background: var(--white);
+      }
+      .calendar-section .acc-list {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+      }
+      .calendar-section .acc-item {
+        min-width: 0;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: clip;
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+      }
+      .calendar-section .acc-item:hover {
+        border-color: #c9b79f;
+      }
+      .calendar-section .acc-item.open {
+        border-color: var(--accent);
+        box-shadow: 0 18px 40px #1715120f;
+      }
+      .calendar-section .acc-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px 28px;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        font: inherit;
+        text-align: right;
+      }
+      .calendar-section .acc-btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: -4px;
+        border-radius: 16px;
+      }
+      .calendar-section .acc-title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .calendar-section .acc-num {
+        font:
+          22px "Playfair Display",
+          serif;
+        color: var(--accent);
+        min-width: 34px;
+      }
+      .calendar-section .acc-title strong {
+        display: block;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+      }
+      .calendar-section .acc-title small {
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .calendar-section .acc-action {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .calendar-section .acc-label {
+        font-size: 12px;
+        color: #504a43;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        padding: 7px 16px;
+        transition: 0.25s;
+        white-space: nowrap;
+      }
+      .calendar-section .acc-btn:hover .acc-label {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .calendar-section .acc-item.open .acc-label {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .calendar-section .acc-icon {
+        position: relative;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--ink);
+        flex: none;
+        transition: 0.35s;
+      }
+      .calendar-section .acc-icon::before,
+      .calendar-section .acc-icon::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 14px;
+        height: 1.5px;
+        background: var(--ink);
+        transform: translate(-50%, -50%);
+        transition: 0.35s;
+      }
+      .calendar-section .acc-icon::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+      .calendar-section .acc-item.open .acc-icon {
+        background: var(--accent);
+        border-color: var(--accent);
+        transform: rotate(180deg);
+      }
+      .calendar-section .acc-item.open .acc-icon::before,
+      .calendar-section .acc-item.open .acc-icon::after {
+        background: var(--white);
+      }
+      .calendar-section .acc-item.open .acc-icon::after {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      .calendar-section .panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: 0fr;
+        min-width: 0;
+        visibility: hidden;
+        transition:
+          grid-template-rows 0.45s ease,
+          visibility 0s linear 0.45s;
+      }
+      .calendar-section .acc-item.open .panel {
+        grid-template-rows: 1fr;
+        visibility: visible;
+        transition:
+          grid-template-rows 0.45s ease,
+          visibility 0s;
+      }
+      .calendar-section .panel-inner {
+        min-height: 0;
+        min-width: 0;
+        overflow: clip;
+      }
+      .calendar-section .table-scroll {
+        overflow-x: auto;
+        overflow-y: auto;
+        min-width: 0;
+        max-height: 560px;
+        border-top: 1px solid var(--line);
+        background: var(--white);
+        overscroll-behavior: contain;
+      }
+      .calendar-section .table-scroll::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+      }
+      .calendar-section .table-scroll::-webkit-scrollbar-thumb {
+        background: #cfc4b3;
+        border-radius: 10px;
+      }
+      .calendar-section .calendar {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        min-width: 1200px;
+        table-layout: fixed;
+        font-family: Vazirmatn, sans-serif;
+        font-size: 13px;
+      }
+      .calendar-section .calendar th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: var(--dark);
+        color: var(--paper);
+        font-weight: 600;
+        padding: 12px 10px;
+        line-height: 1.7;
+        border-left: 1px solid #f5f1e91f;
+        font-size: 13px;
+      }
+      .calendar-section .calendar th.post,
+      .calendar-section .calendar th.story {
+        background: var(--accent);
+        color: var(--white);
+      }
+      .calendar-section .calendar th.story,
+      .calendar-section .calendar td.story {
+        display: table-cell;
+      }
+      .calendar-section .calendar th:last-child,
+      .calendar-section .calendar td:last-child {
+        border-left: 0;
+      }
+      .calendar-section .calendar td {
+        vertical-align: top;
+        padding: 11px 10px;
+        line-height: 1.8;
+        border-bottom: 1px solid #e8e1d5;
+        border-left: 1px solid #eee8dc;
+        color: #4a443c;
+        overflow-wrap: break-word;
+      }
+      .calendar-section .calendar th:nth-child(6),
+      .calendar-section .calendar td:nth-child(6) {
+        overflow-wrap: anywhere;
+      }
+      .calendar-section .calendar tbody tr:nth-child(even) td {
+        background: #fbf8f2;
+      }
+      .calendar-section .calendar tbody tr:hover td {
+        background: #f6efe3;
+      }
+      .calendar-section .calendar th:nth-child(1) {
+        width: 70px;
+      }
+      .calendar-section .calendar th:nth-child(2) {
+        width: 125px;
+      }
+      .calendar-section .calendar th:nth-child(3) {
+        width: 185px;
+      }
+      .calendar-section .calendar th:nth-child(4) {
+        width: 145px;
+      }
+      .calendar-section .calendar th:nth-child(5) {
+        width: 155px;
+      }
+      .calendar-section .calendar th:nth-child(6) {
+        width: 220px;
+      }
+      .calendar-section .calendar th:nth-child(7) {
+        width: 140px;
+      }
+      .calendar-section .calendar th:nth-child(8) {
+        width: 160px;
+      }
+      .calendar-section .calendar th:first-child,
+      .calendar-section .calendar td.day {
+        position: sticky;
+        right: 0;
+      }
+      .calendar-section .calendar th:first-child {
+        z-index: 4;
+      }
+      .calendar-section .calendar td.day {
+        z-index: 1;
+        width: 74px;
+        text-align: center;
+        font:
+          500 20px "Playfair Display",
+          serif;
+        color: var(--accent);
+        background: #f3ece0 !important;
+        border-left: 1px solid #e2d9c9;
+      }
+      .calendar-section .calendar td.occasion {
+        color: #8a6a45;
+        background: #faf6ee !important;
+        font-weight: 500;
+      }
+      .calendar-section .calendar td.post {
+        background: #f4ebdc !important;
+        color: #3b3226;
+        font-weight: 500;
+      }
+      .calendar-section .calendar td.story {
+        background: #ebe1cf !important;
+        color: #3b3226;
+        font-weight: 500;
+      }
+      .calendar-section .calendar td.dash {
+        color: #b9b0a2;
+      }
+      .calendar-section .foot-note {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 11px;
+        display: flex;
+        gap: 10px;
+      }
+      .calendar-section .foot-note b {
+        color: var(--accent);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      @media (max-width: 900px) {
+        .calendar-section {
+          padding: 64px 0;
+        }
+        .calendar-section .section-head {
+          display: block;
+        }
+        .calendar-section .section-head h2 {
+          font-size: 30px;
+        }
+        .calendar-section .pill {
+          display: inline-block;
+          margin-top: 18px;
+        }
+        .calendar-section .acc-btn {
+          padding: 18px 16px;
+        }
+        .calendar-section .acc-title {
+          gap: 12px;
+        }
+        .calendar-section .acc-title strong {
+          font-size: 18px;
+        }
+        .calendar-section .acc-label {
+          display: none;
+        }
+      }
+      @supports not (grid-template-rows: 0fr) {
+        .calendar-section .panel {
+          display: none;
+        }
+        .calendar-section .acc-item.open .panel {
           display: block;
         }
       }
@@ -882,19 +1380,37 @@
             <div class="steps">
               <div class="step">
                 <b>01</b>
-                <div><strong>چالش</strong><span>نبود هویت بصری یکپارچه و نیاز به رشد تعامل</span></div>
+                <div>
+                  <span>THE CHALLENGE</span><strong>چالش پروژه</strong
+                  ><span>نیاز به انسجام بیشتر در هویت بصری، هدفمندتر شدن مسیر محتوا و تقویت تعامل مخاطبان با برند.</span>
+                </div>
               </div>
               <div class="step">
                 <b>02</b>
-                <div><strong>استراتژی</strong><span>ترکیب طراحی، محتوای فروش، آموزش و تعامل</span></div>
+                <div>
+                  <span>THE STRATEGY</span>
+                  <strong>تدوین استراتژی محتوا</strong
+                  ><span>ایجاد هماهنگی میان هویت بصری برند، محتوای محصولات و ارتباط با مخاطب، با هدف شکل‌دادن به حضوری منسجم‌تر و تقویت تعامل در پیج الکا.</span>
+                </div>
               </div>
               <div class="step">
                 <b>03</b>
-                <div><strong>اجرا</strong><span>محتوا، استوری، سناریو، AI و دایرکت مارکتینگ</span></div>
+                <div>
+                  <span>THE EXECUTION</span>
+                  <strong>از استراتژی تا اجرای محتوا</strong
+                  ><span
+                    >بازطراحی هویت بصری، سناریونویسی و تولید محتوای تصویری با هوش مصنوعی، در کنار طراحی رشته‌استوری‌های تعاملی، بهینه‌سازی زمان انتشار و اجرای سناریوهای
+                    دایرکت مارکتینگ، بخش‌های اصلی اجرای پروژه بودند.</span
+                  >
+                </div>
               </div>
               <div class="step">
                 <b>04</b>
-                <div><strong>نتیجه</strong><span>افزایش قابل‌اندازه‌گیری بازدید و تعامل</span></div>
+                <div>
+                  <span>THE RESULTS</span>
+                  <strong>افزایش قابل‌اندازه‌گیری بازدید و تعامل</strong
+                  ><span>- ۱۳ برابر افزایش تعامل پیج - ۸٫۷ برابر افزایش بازدید «این رشد حتی با وجود یک چالش قطعی اینترنت در ماه پایانی پروژه حاصل شد.»</span>
+                </div>
               </div>
             </div>
           </div>
@@ -939,6 +1455,621 @@
         </div>
       </section>
 
+      <section class="brand-identity-section" id="brandIdentity">
+        <div class="brand-identity-ambience" aria-hidden="true"></div>
+        <section class="alka-relative alka-z-10 alka-max-w-6xl alka-mx-auto alka-px-4 sm:alka-px-6 lg:alka-px-8 alka-py-12 md:alka-py-20">
+          <!-- Outer Luxury Container -->
+          <div class="alka-bg-white/85 alka-backdrop-blur-md alka-border alka-border-alka-sand/90 alka-rounded-3xl alka-p-6 sm:alka-p-10 lg:alka-p-12 alka-shadow-card">
+            <!-- HEADER: Project Title & Alka Signature Logo -->
+            <div class="alka-flex alka-flex-col md:alka-flex-row alka-items-center alka-justify-between alka-gap-8 alka-pb-10 alka-border-b alka-border-alka-sand/80">
+              <!-- Text Details -->
+              <div class="alka-text-center md:alka-text-right alka-space-y-3 alka-max-w-2xl">
+                <div
+                  class="alka-inline-flex alka-items-center alka-gap-2 alka-px-3.5 alka-py-1.5 alka-rounded-full alka-bg-alka-cream alka-text-alka-rosegold alka-text-xs sm:alka-text-sm alka-font-semibold alka-border alka-border-alka-rosegold/20">
+                  <span class="alka-w-2 alka-h-2 alka-rounded-full alka-bg-alka-rosegold alka-animate-pulse"></span>
+                  مطالعه موردی برندینگ • سوشال مدیا و دیزاین
+                </div>
+
+                <h1 class="alka-text-3xl sm:alka-text-4xl lg:alka-text-5xl alka-font-extrabold alka-text-alka-dark alka-tracking-tight alka-leading-tight">
+                  هویت بصری برند <span class="alka-text-alka-rosegold alka-inline-block">Alka</span>
+                </h1>
+
+                <p class="alka-text-base sm:alka-text-lg alka-text-alka-muted alka-leading-relaxed alka-font-normal">
+                  طراحی کانسپت و استراتژی بصری بر پایه شمع‌های دست‌ساز و باکس‌های ژورنالی گل
+                </p>
+
+                <!-- Tags -->
+                <div class="alka-flex alka-flex-wrap alka-items-center alka-justify-center md:alka-justify-start alka-gap-2 alka-pt-2">
+                  <span class="alka-text-xs alka-px-3 alka-py-1 alka-rounded-lg alka-bg-alka-cream/70 alka-text-alka-charcoal alka-border alka-border-alka-sand"
+                    >طراحی لوگو و هویت بصری</span
+                  >
+                  <span class="alka-text-xs alka-px-3 alka-py-1 alka-rounded-lg alka-bg-alka-cream/70 alka-text-alka-charcoal alka-border alka-border-alka-sand"
+                    >استراتژی محتوای اینستاگرام</span
+                  >
+                  <span class="alka-text-xs alka-px-3 alka-py-1 alka-rounded-lg alka-bg-alka-cream/70 alka-text-alka-charcoal alka-border alka-border-alka-sand"
+                    >تصویرسازی با ابزارهای AI</span
+                  >
+                  <span class="alka-text-xs alka-px-3 alka-py-1 alka-rounded-lg alka-bg-alka-cream/70 alka-text-alka-charcoal alka-border alka-border-alka-sand"
+                    >اتوماسیون تعامل و فروش</span
+                  >
+                </div>
+              </div>
+
+              <!-- Alka Signature Emblem (Recreated Minimalist Vector Logo) -->
+              <div class="alka-relative alka-group">
+                <div
+                  class="alka-w-32 alka-h-32 sm:alka-w-48 sm:alka-h-48 alka-rounded-full alka-border alka-border-alka-rosegold/40 alka-p-2 alka-flex alka-items-center alka-justify-center alka-bg-gradient-to-br alka-from-[#FAF7F2] alka-to-alka-cream alka-shadow-soft group-hover:alka-scale-105 alka-smooth-transition">
+                  <!-- <div class="alka-w-full alka-h-full alka-rounded-full alka-border-2 alka-border-dashed alka-border-alka-rosegold/60 alka-flex alka-flex-col alka-items-center alka-justify-center alka-relative alka-p-3">
+
+              <svg class="alka-w-7 alka-h-7 alka-text-alka-rosegold alka-mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2c.5 2.5 3 4.5 3 7.5a4.5 4.5 0 0 1-9 0C6 6.5 8.5 4.5 9 2c.5 2 2 3 3 0z" fill="#E8C9B5" fill-opacity="0.4"/>
+                <path d="M12 12c-1 0-2 .8-2 1.8 0 1.2 1 2.2 2 2.2s2-1 2-2.2c0-1-.9-1.8-2-1.8z" fill="#B58E7A"/>
+              </svg>
+
+              <span class="alka-font-serif alka-text-2xl alka-font-bold alka-tracking-wider alka-text-alka-charcoal" style="font-family: Georgia, serif;">Alka</span>
+              <span class="alka-text-[9px] alka-text-alka-rosegold alka-font-medium alka-tracking-widest alka-mt-0.5 alka-uppercase">Candle & Bloom</span>
+            </div> -->
+
+                  <img
+                    src="data:image/webp;base64,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"
+                    alt="لوگوی مینیمال آلکا"
+                    class="alka-w-full alka-h-full alka-object-contain alka-rounded-full" />
+                </div>
+                <!-- Subtle decorative ring glow -->
+                <div
+                  class="alka-absolute alka--inset-1 alka-bg-gradient-to-r alka-from-alka-rosegold/20 alka-to-alka-peach/20 alka-rounded-full alka-blur-md alka--z-10 alka-opacity-70 group-hover:alka-opacity-100 alka-smooth-transition"></div>
+              </div>
+            </div>
+
+            <!-- SECTION 1: MODERN COLOR PALETTE (Small Circles & Interactive Copy) -->
+            <div class="alka-py-12 alka-border-b alka-border-alka-sand/80">
+              <div class="alka-flex alka-flex-col sm:alka-flex-row sm:alka-items-end alka-justify-between alka-mb-8 alka-gap-3">
+                <div>
+                  <h2 class="alka-text-xl sm:alka-text-2xl alka-font-bold alka-text-alka-dark alka-flex alka-items-center alka-gap-2.5">
+                    <span class="alka-w-3 alka-h-3 alka-rounded-full alka-bg-alka-rosegold"></span>
+                    پالت رنگ‌های ارگانیک و هارمونیک برند
+                  </h2>
+                  <p class="alka-text-sm alka-text-alka-muted alka-mt-1.5">
+                    ترکیب طیف‌های ملایم، پودری و نئوکلاسیک برای خلق فضایی آرامش‌بخش و لوکس (برای کپی کردن کد رنگ، کلیک کنید)
+                  </p>
+                </div>
+                <span
+                  class="alka-text-xs alka-text-alka-rosegold alka-font-semibold alka-bg-alka-peach/30 alka-px-3 alka-py-1.5 alka-rounded-full alka-self-start sm:alka-self-auto">
+                  کلیک برای کپی HEX 📋
+                </span>
+              </div>
+
+              <!-- Palette Cards Grid -->
+              <div class="alka-grid alka-grid-cols-1 sm:alka-grid-cols-2 lg:alka-grid-cols-4 alka-gap-5">
+                <!-- Color 1: Rose Gold / Soft Bronze -->
+                <div
+                  class="alka-bg-alka-canvas/70 hover:alka-bg-white alka-rounded-2xl alka-p-5 alka-border alka-border-alka-sand/70 hover:alka-border-alka-rosegold/40 hover:alka-shadow-card alka-smooth-transition alka-flex alka-flex-col alka-justify-between alka-group">
+                  <div>
+                    <div class="alka-flex alka-items-center alka-justify-between alka-mb-4">
+                      <!-- Small Modern Color Disc -->
+                      <div class="alka-flex alka-items-center alka-gap-3">
+                        <div class="alka-relative">
+                          <div
+                            class="alka-w-10 alka-h-10 alka-rounded-full alka-shadow-inner alka-ring-2 alka-ring-white alka-border alka-border-black/10 group-hover:alka-scale-110 alka-smooth-transition"
+                            style="background-color: #b58e7a"></div>
+                          <div
+                            class="alka-absolute alka--bottom-1 alka--right-1 alka-w-4 alka-h-4 alka-rounded-full alka-bg-white alka-flex alka-items-center alka-justify-center alka-shadow-xs">
+                            <div class="alka-w-2 alka-h-2 alka-rounded-full" style="background-color: #b58e7a"></div>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 class="alka-text-sm alka-font-bold alka-text-alka-dark">رزگلد ملایم / برنز سافت</h3>
+                          <span class="alka-text-[11px] alka-text-alka-muted alka-uppercase alka-font-sans alka-tracking-tight">Rose Gold / Soft Bronze</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="alka-text-xs alka-text-alka-charcoal/80 alka-leading-relaxed alka-mb-4">
+                      رنگ محوری هویت برند؛ استفاده در خطوط وکتوری لوگو، بسته‌بندی‌های لوکس و جزئیات گرافیکی.
+                    </p>
+                  </div>
+
+                  <!-- Copy Code Button -->
+                  <button
+                    onclick="alkaCopyColor('#B58E7A', 'رزگلد ملایم')"
+                    class="alka-w-full alka-flex alka-items-center alka-justify-between alka-px-3.5 alka-py-2 alka-rounded-xl alka-bg-white group-hover:alka-bg-alka-cream/60 alka-border alka-border-alka-sand alka-text-xs alka-font-mono alka-font-bold alka-text-alka-charcoal alka-smooth-transition hover:alka-border-alka-rosegold">
+                    <span class="alka-font-sans alka-text-[11px] alka-font-normal alka-text-alka-muted">کپی کد:</span>
+                    <span class="alka-tracking-wider">#B58E7A</span>
+                    <svg
+                      class="alka-w-3.5 alka-h-3.5 alka-text-alka-rosegold alka-opacity-60 group-hover:alka-opacity-100"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Color 2: Soft Cream / Warm Beige -->
+                <div
+                  class="alka-bg-alka-canvas/70 hover:alka-bg-white alka-rounded-2xl alka-p-5 alka-border alka-border-alka-sand/70 hover:alka-border-alka-rosegold/40 hover:alka-shadow-card alka-smooth-transition alka-flex alka-flex-col alka-justify-between alka-group">
+                  <div>
+                    <div class="alka-flex alka-items-center alka-justify-between alka-mb-4">
+                      <div class="alka-flex alka-items-center alka-gap-3">
+                        <div class="alka-relative">
+                          <div
+                            class="alka-w-10 alka-h-10 alka-rounded-full alka-shadow-inner alka-ring-2 alka-ring-white alka-border alka-border-black/10 group-hover:alka-scale-110 alka-smooth-transition"
+                            style="background-color: #f7f1e8"></div>
+                          <div
+                            class="alka-absolute alka--bottom-1 alka--right-1 alka-w-4 alka-h-4 alka-rounded-full alka-bg-white alka-flex alka-items-center alka-justify-center alka-shadow-xs">
+                            <div class="alka-w-2 alka-h-2 alka-rounded-full" style="background-color: #f7f1e8"></div>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 class="alka-text-sm alka-font-bold alka-text-alka-dark">کرم ملایم / بژ گرم</h3>
+                          <span class="alka-text-[11px] alka-text-alka-muted alka-uppercase alka-font-sans alka-tracking-tight">Soft Cream / Warm Beige</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="alka-text-xs alka-text-alka-charcoal/80 alka-leading-relaxed alka-mb-4">
+                      پس‌زمینه‌های لطیف، بافت گلبرگ‌های ابریشمی و کاغذهای کرافت بسته‌بندی برای ایجاد حس صمیمیت.
+                    </p>
+                  </div>
+
+                  <button
+                    onclick="alkaCopyColor('#F7F1E8', 'کرم ملایم')"
+                    class="alka-w-full alka-flex alka-items-center alka-justify-between alka-px-3.5 alka-py-2 alka-rounded-xl alka-bg-white group-hover:alka-bg-alka-cream/60 alka-border alka-border-alka-sand alka-text-xs alka-font-mono alka-font-bold alka-text-alka-charcoal alka-smooth-transition hover:alka-border-alka-rosegold">
+                    <span class="alka-font-sans alka-text-[11px] alka-font-normal alka-text-alka-muted">کپی کد:</span>
+                    <span class="alka-tracking-wider">#F7F1E8</span>
+                    <svg
+                      class="alka-w-3.5 alka-h-3.5 alka-text-alka-rosegold alka-opacity-60 group-hover:alka-opacity-100"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Color 3: Dusty Pink / Soft Blush -->
+                <div
+                  class="alka-bg-alka-canvas/70 hover:alka-bg-white alka-rounded-2xl alka-p-5 alka-border alka-border-alka-sand/70 hover:alka-border-alka-rosegold/40 hover:alka-shadow-card alka-smooth-transition alka-flex alka-flex-col alka-justify-between alka-group">
+                  <div>
+                    <div class="alka-flex alka-items-center alka-justify-between alka-mb-4">
+                      <div class="alka-flex alka-items-center alka-gap-3">
+                        <div class="alka-relative">
+                          <div
+                            class="alka-w-10 alka-h-10 alka-rounded-full alka-shadow-inner alka-ring-2 alka-ring-white alka-border alka-border-black/10 group-hover:alka-scale-110 alka-smooth-transition"
+                            style="background-color: #dcc7bd"></div>
+                          <div
+                            class="alka-absolute alka--bottom-1 alka--right-1 alka-w-4 alka-h-4 alka-rounded-full alka-bg-white alka-flex alka-items-center alka-justify-center alka-shadow-xs">
+                            <div class="alka-w-2 alka-h-2 alka-rounded-full" style="background-color: #dcc7bd"></div>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 class="alka-text-sm alka-font-bold alka-text-alka-dark">صورتی چرک / بلش پودری</h3>
+                          <span class="alka-text-[11px] alka-text-alka-muted alka-uppercase alka-font-sans alka-tracking-tight">Dusty Pink / Soft Blush</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="alka-text-xs alka-text-alka-charcoal/80 alka-leading-relaxed alka-mb-4">
+                      رنگ مکمل برای گل‌آرایی هارمونیک، روبان‌های حریر و القای لطافت بصری در استوری‌های روزمره.
+                    </p>
+                  </div>
+
+                  <button
+                    onclick="alkaCopyColor('#DCC7BD', 'صورتی چرک ملایم')"
+                    class="alka-w-full alka-flex alka-items-center alka-justify-between alka-px-3.5 alka-py-2 alka-rounded-xl alka-bg-white group-hover:alka-bg-alka-cream/60 alka-border alka-border-alka-sand alka-text-xs alka-font-mono alka-font-bold alka-text-alka-charcoal alka-smooth-transition hover:alka-border-alka-rosegold">
+                    <span class="alka-font-sans alka-text-[11px] alka-font-normal alka-text-alka-muted">کپی کد:</span>
+                    <span class="alka-tracking-wider">#DCC7BD</span>
+                    <svg
+                      class="alka-w-3.5 alka-h-3.5 alka-text-alka-rosegold alka-opacity-60 group-hover:alka-opacity-100"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Color 4: Candle Glow / Peach -->
+                <div
+                  class="alka-bg-alka-canvas/70 hover:alka-bg-white alka-rounded-2xl alka-p-5 alka-border alka-border-alka-sand/70 hover:alka-border-alka-rosegold/40 hover:alka-shadow-card alka-smooth-transition alka-flex alka-flex-col alka-justify-between alka-group">
+                  <div>
+                    <div class="alka-flex alka-items-center alka-justify-between alka-mb-4">
+                      <div class="alka-flex alka-items-center alka-gap-3">
+                        <div class="alka-relative">
+                          <div
+                            class="alka-w-10 alka-h-10 alka-rounded-full alka-shadow-inner alka-ring-2 alka-ring-white alka-border alka-border-black/10 group-hover:alka-scale-110 alka-smooth-transition"
+                            style="background-color: #e8c9b5"></div>
+                          <div
+                            class="alka-absolute alka--bottom-1 alka--right-1 alka-w-4 alka-h-4 alka-rounded-full alka-bg-white alka-flex alka-items-center alka-justify-center alka-shadow-xs">
+                            <div class="alka-w-2 alka-h-2 alka-rounded-full" style="background-color: #e8c9b5"></div>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 class="alka-text-sm alka-font-bold alka-text-alka-dark">نور گرم شمع / هلویی</h3>
+                          <span class="alka-text-[11px] alka-text-alka-muted alka-uppercase alka-font-sans alka-tracking-tight">Candle Glow / Peach</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="alka-text-xs alka-text-alka-charcoal/80 alka-leading-relaxed alka-mb-4">
+                      تداعی‌کننده تابش درخشان و آرامش‌بخش موم شمع، هایلایت‌های عکاسی و دکمه‌های کنش‌گرا (CTA).
+                    </p>
+                  </div>
+
+                  <button
+                    onclick="alkaCopyColor('#E8C9B5', 'نور گرم شمع')"
+                    class="alka-w-full alka-flex alka-items-center alka-justify-between alka-px-3.5 alka-py-2 alka-rounded-xl alka-bg-white group-hover:alka-bg-alka-cream/60 alka-border alka-border-alka-sand alka-text-xs alka-font-mono alka-font-bold alka-text-alka-charcoal alka-smooth-transition hover:alka-border-alka-rosegold">
+                    <span class="alka-font-sans alka-text-[11px] alka-font-normal alka-text-alka-muted">کپی کد:</span>
+                    <span class="alka-tracking-wider">#E8C9B5</span>
+                    <svg
+                      class="alka-w-3.5 alka-h-3.5 alka-text-alka-rosegold alka-opacity-60 group-hover:alka-opacity-100"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 2: HARMONIC PRODUCT COMPOSITION (ترکیب هارمونیک محصولات) -->
+            <div class="alka-py-12 alka-border-b alka-border-alka-sand/80">
+              <div class="alka-flex alka-flex-col sm:alka-flex-row sm:alka-items-center alka-justify-between alka-gap-4 alka-mb-8">
+                <div>
+                  <h2 class="alka-text-xl sm:alka-text-2xl alka-font-bold alka-text-alka-dark alka-flex alka-items-center alka-gap-2.5">
+                    <span class="alka-w-3 alka-h-3 alka-rounded-full alka-bg-alka-peach"></span>
+                    ترکیب هارمونیک محصولات
+                  </h2>
+                  <p class="alka-text-sm alka-text-alka-muted alka-mt-1.5">عکاسی چیدمان و جلوه‌های بصری ماکسیمال شمع و گل با حفظ تناژهای رنگی برند</p>
+                </div>
+                <div
+                  class="alka-text-xs alka-text-alka-rosegold alka-font-medium alka-bg-white alka-px-3.5 alka-py-1.5 alka-rounded-full alka-border alka-border-alka-sand">
+                  استایل عکاسی: Maximalist Dreamy & Warm
+                </div>
+              </div>
+
+              <div
+                class="alka-mx-auto alka-w-full alka-max-w-5xl alka-overflow-hidden alka-rounded-2xl alka-border alka-border-alka-sand/80 alka-bg-white alka-shadow-card">
+                <img
+                  src="images/uploads/photo_2026-10-28_20-04-54.jpg"
+                  alt="نمایی از محصولات و هویت بصری برند Alka"
+                  class="alka-block alka-h-auto alka-w-full"
+                  loading="lazy"
+                  decoding="async" />
+                <img
+                  src="images/uploads/photo_2026-10-28_19-45-33.jpg"
+                  alt="نمایی از محصولات و هویت بصری برند Alka"
+                  class="alka-block alka-h-auto alka-w-full"
+                  loading="lazy"
+                  decoding="async"
+                  style="margin-top: 20px" />
+              </div>
+            </div>
+
+            <!-- SECTION 3: INSTAGRAM HIGHLIGHTS & PROFILE MOCKUP (استوری هایلایت‌ها و اکوسیستم سوشال مدیا) -->
+            <div class="alka-pt-12">
+              <div class="alka-flex alka-flex-col sm:alka-flex-row sm:alka-items-center alka-justify-between alka-gap-4 alka-mb-8">
+                <div>
+                  <h2 class="alka-text-xl sm:alka-text-2xl alka-font-bold alka-text-alka-dark alka-flex alka-items-center alka-gap-2.5">
+                    <span class="alka-w-3 alka-h-3 alka-rounded-full alka-bg-alka-blush"></span>
+                    طراحی هویت پیج و کاور هایلایت‌های اینستاگرام
+                  </h2>
+                  <p class="alka-text-sm alka-text-alka-muted alka-mt-1.5">
+                    طراحی یکپارچه آیکون‌های اختصاصی هایلایت مطابق پالت رنگی با هدف افزایش تعامل و هدایت مخاطب به فروش
+                  </p>
+                </div>
+                <span
+                  class="alka-text-xs alka-text-alka-muted alka-font-normal alka-bg-alka-canvas alka-px-3 alka-py-1.5 alka-rounded-full alka-border alka-border-alka-sand alka-self-start sm:alka-self-auto">
+                  محیط شبیه‌سازی شده موبایل
+                </span>
+              </div>
+
+              <!-- Instagram Minimal Device Mockup Container -->
+              <div
+                class="alka-max-w-5xl alka-mx-auto alka-bg-gradient-to-b alka-from-white alka-to-alka-canvas/50 alka-rounded-3xl alka-p-5 sm:alka-p-7 alka-border alka-border-alka-sand alka-shadow-soft">
+                <!-- Mockup Profile Buttons (Following / Message / Discover) -->
+                <div
+                  class="alka-mx-auto alka-flex alka-max-w-2xl alka-items-center alka-justify-center alka-gap-2.5 alka-pb-6 alka-mb-6 alka-border-b alka-border-alka-sand/60">
+                  <!-- Following button -->
+                  <button
+                    class="alka-px-5 alka-py-1.5 alka-rounded-xl alka-bg-alka-sand/50 hover:alka-bg-alka-sand alka-text-xs alka-font-semibold alka-text-alka-dark alka-flex alka-items-center alka-gap-1.5 alka-smooth-transition">
+                    <span>Following</span>
+                    <svg class="alka-w-3 alka-h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <!-- Message button -->
+                  <button
+                    class="alka-px-7 alka-py-1.5 alka-rounded-xl alka-bg-alka-sand/50 hover:alka-bg-alka-sand alka-text-xs alka-font-semibold alka-text-alka-dark alka-smooth-transition">
+                    Message
+                  </button>
+                  <!-- Add contact / suggestion button -->
+                  <button class="alka-p-2 alka-rounded-xl alka-bg-alka-sand/50 hover:alka-bg-alka-sand alka-text-alka-dark alka-smooth-transition" title="پیشنهاد مخاطب">
+                    <svg class="alka-w-3.5 alka-h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Highlight Stories Row (Exact Items from Alka Image) -->
+                <div class="alka-grid alka-grid-cols-1 md:alka-grid-cols-2 alka-gap-5 sm:alka-gap-6">
+                  <figure
+                    class="alka-group alka-overflow-hidden alka-rounded-2xl alka-border alka-border-alka-sand alka-bg-white alka-shadow-sm alka-smooth-transition hover:alka-shadow-soft">
+                    <img
+                      src="images/uploads/photo_2026-10-28_15-15-39.jpg"
+                      alt="نمونه کاورهای هایلایت اینستاگرام برای رضایت دوره، درباره ما، فروش حضوری و سفارش دلخواه"
+                      class="alka-block alka-h-auto alka-w-full alka-object-contain"
+                      loading="lazy" />
+                    <figcaption
+                      class="alka-border-t alka-border-alka-sand/70 alka-px-4 alka-py-3 alka-text-center alka-text-sm alka-font-medium alka-text-alka-charcoal sm:alka-text-base">
+                      هایلایت‌های معرفی، رضایت و سفارش
+                    </figcaption>
+                  </figure>
+                  <figure
+                    class="alka-group alka-overflow-hidden alka-rounded-2xl alka-border alka-border-alka-sand alka-bg-white alka-shadow-sm alka-smooth-transition hover:alka-shadow-soft">
+                    <img
+                      src="images/uploads/photo_2026-10-28_15-14-04.jpg"
+                      alt="نمونه کاورهای هایلایت اینستاگرام برای دوره آموزشی، ایونت، ترفند و رضایت مشتری"
+                      class="alka-block alka-h-auto alka-w-full alka-object-contain"
+                      loading="lazy" />
+                    <figcaption
+                      class="alka-border-t alka-border-alka-sand/70 alka-px-4 alka-py-3 alka-text-center alka-text-sm alka-font-medium alka-text-alka-charcoal sm:alka-text-base">
+                      هایلایت‌های آموزش، رویداد و رضایت مشتری
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <!-- Metric Growth Banner (from your Project Performance in Resume) -->
+              <div
+                class="alka-mt-8 alka-bg-alka-cream/60 alka-rounded-2xl alka-p-5 alka-border alka-border-alka-sand alka-flex alka-flex-col md:alka-flex-row alka-items-center alka-justify-between alka-gap-4 alka-text-center md:alka-text-right">
+                <div class="alka-flex alka-items-center alka-gap-3">
+                  <div class="alka-w-10 alka-h-10 alka-rounded-full alka-bg-white alka-flex alka-items-center alka-justify-center alka-text-alka-rosegold alka-shadow-xs">
+                    <svg class="alka-w-5 alka-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="alka-text-sm alka-font-bold alka-text-alka-dark">نتایج استراتژی بصری و محتوایی در پیج آلکا</h4>
+                    <p class="alka-text-xs alka-text-alka-muted">رشد چشم‌گیر شاخص‌های اصلی در بازه مهر تا دی ۱۴۰۴</p>
+                  </div>
+                </div>
+                <div class="alka-flex alka-items-center alka-gap-6 alka-text-xs sm:alka-text-sm">
+                  <div>
+                    <span class="alka-block alka-text-base sm:alka-text-lg alka-font-bold alka-text-alka-rosegold">۱۳ برابر</span>
+                    <span class="alka-text-alka-muted alka-text-[11px]">رشد تعامل مخاطب</span>
+                  </div>
+                  <div class="alka-w-px alka-h-8 alka-bg-alka-sand"></div>
+                  <div>
+                    <span class="alka-block alka-text-base sm:alka-text-lg alka-font-bold alka-text-alka-rosegold">۸.۷ برابر</span>
+                    <span class="alka-text-alka-muted alka-text-[11px]">رشد ایمپرشن و بازدید</span>
+                  </div>
+                  <div class="alka-w-px alka-h-8 alka-bg-alka-sand"></div>
+                  <div>
+                    <span class="alka-block alka-text-base sm:alka-text-lg alka-font-bold alka-text-alka-rosegold">+۱۸٪</span>
+                    <span class="alka-text-alka-muted alka-text-[11px]">جذب فالوور هدفمند</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FOOTER: Attribution & Portfolio Link -->
+            <div
+              class="alka-mt-12 alka-pt-6 alka-border-t alka-border-alka-sand alka-flex alka-flex-col sm:alka-flex-row alka-items-center alka-justify-between alka-gap-4 alka-text-xs alka-text-alka-muted">
+              <div class="alka-flex alka-items-center alka-gap-2">
+                <span>طراحی هویت بصری و دیجیتال مارکتینگ:</span>
+                <strong class="alka-text-alka-dark alka-font-bold">عطیه قیومی‌پور</strong>
+                <span class="alka-hidden sm:alka-inline alka-text-alka-sand">•</span>
+                <span class="alka-font-mono alka-text-[11px] alka-text-alka-rosegold">Atiyeh Alka Portfolio</span>
+              </div>
+
+              <div class="alka-flex alka-items-center alka-gap-3">
+                <a
+                  href="https://atiyehgh.github.io"
+                  target="_blank"
+                  rel="noopener"
+                  class="alka-text-alka-rosegold hover:alka-text-alka-dark alka-font-medium alka-underline alka-underline-offset-4 alka-smooth-transition">
+                  مشاهده سایر پروژه‌های پورتفولیو
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div
+          id="brand-identity-toast"
+          class="alka-fixed alka-bottom-6 alka-left-1/2 alka-z-50 alka-flex alka--translate-x-1/2 alka-pointer-events-none alka-items-center alka-gap-3 alka-rounded-2xl alka-bg-alka-dark alka-px-5 alka-py-3 alka-text-xs sm:alka-text-sm alka-font-medium alka-text-white alka-opacity-0 alka-shadow-xl alka-transition-opacity alka-duration-300"
+          role="status"
+          aria-live="polite">
+          <span class="alka-h-2 alka-w-2 alka-rounded-full alka-bg-alka-peach alka-animate-ping"></span>
+          <span id="brand-identity-toast-text">کد با موفقیت کپی شد</span>
+        </div>
+        <style>
+          .brand-identity-section {
+            position: relative;
+            isolation: isolate;
+            padding: 48px 0;
+            background: #faf7f2;
+            color: #2a2421;
+            font-family: Vazirmatn, sans-serif;
+            line-height: 1.8;
+          }
+          .brand-identity-section,
+          .brand-identity-section * {
+            box-sizing: border-box;
+          }
+          .brand-identity-section h1,
+          .brand-identity-section h2,
+          .brand-identity-section h3,
+          .brand-identity-section p {
+            margin: 0;
+          }
+          .brand-identity-section button {
+            border: 0 solid;
+            font: inherit;
+            color: inherit;
+          }
+          .brand-identity-section .brand-identity-ambience {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+              radial-gradient(circle at 60% 4%, rgba(232, 201, 181, 0.3), transparent 18rem),
+              radial-gradient(circle at 0% 40%, rgba(220, 199, 189, 0.28), transparent 18rem),
+              radial-gradient(circle at 92% 92%, rgba(239, 231, 221, 0.65), transparent 20rem);
+          }
+          .brand-identity-section .brand-identity-ambience::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.15;
+            background-image: radial-gradient(#b58e7a 0.75px, transparent 0.75px);
+            background-size: 28px 28px;
+          }
+          .brand-identity-section .alka-smooth-transition {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+          .brand-identity-section .alka-no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .brand-identity-section .alka-no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+          .brand-identity-section .alka-backdrop-blur-xs {
+            backdrop-filter: blur(4px);
+          }
+          .brand-identity-section .alka-shadow-xs {
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+          }
+          .brand-identity-section .alka-toast-anim {
+            animation: brandIdentityToastSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+          @keyframes brandIdentityToastSlide {
+            0% {
+              opacity: 0;
+              transform: translate(-50%, 20px) scale(0.95);
+            }
+            100% {
+              opacity: 1;
+              transform: translate(-50%, 0) scale(1);
+            }
+          }
+          @media (max-width: 640px) {
+            .brand-identity-section {
+              padding: 32px 0;
+            }
+          }
+        </style>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+          window.tailwind.config = {
+            prefix: "alka-",
+            corePlugins: { preflight: false },
+            theme: {
+              extend: {
+                spacing: { 18: "4.5rem" },
+                fontFamily: { sans: ["Vazirmatn", "sans-serif"], vazir: ["Vazirmatn", "sans-serif"] },
+                colors: {
+                  alka: {
+                    rosegold: "#B58E7A",
+                    cream: "#F7F1E8",
+                    blush: "#DCC7BD",
+                    peach: "#E8C9B5",
+                    dark: "#2A2421",
+                    charcoal: "#3D342F",
+                    muted: "#7A6B63",
+                    sand: "#EFE7DD",
+                    canvas: "#FAF7F2",
+                  },
+                },
+                boxShadow: {
+                  soft: "0 8px 30px rgba(181, 142, 122, 0.08)",
+                  card: "0 12px 36px rgba(42, 36, 33, 0.05)",
+                  glow: "0 0 25px rgba(232, 201, 181, 0.45)",
+                },
+              },
+            },
+          };
+        </script>
+        <script>
+          (function () {
+            let toastTimer;
+
+            // Copy Color Code to Clipboard with Fallback & Toast
+            window.alkaCopyColor = function (hex, name) {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard
+                  .writeText(hex)
+                  .then(() => {
+                    showToast(`کد رنگ ${name} (${hex}) کپی شد ✨`);
+                  })
+                  .catch(() => {
+                    fallbackCopyText(hex, name);
+                  });
+              } else {
+                fallbackCopyText(hex, name);
+              }
+            };
+
+            function fallbackCopyText(text, name) {
+              const textArea = document.createElement("textarea");
+              textArea.value = text;
+              textArea.style.position = "fixed";
+              textArea.style.left = "-999999px";
+              document.body.appendChild(textArea);
+              textArea.focus();
+              textArea.select();
+              try {
+                document.execCommand("copy");
+                showToast(`کد رنگ ${name} (${text}) کپی شد ✨`);
+              } catch (err) {
+                showToast(`کد: ${text}`);
+              }
+              document.body.removeChild(textArea);
+            }
+
+            window.alkaSelectHighlight = function (title) {
+              showToast(`پیش‌نمایش هایلایت: ${title}`);
+            };
+
+            function showToast(message) {
+              const toast = document.getElementById("brand-identity-toast");
+              const toastText = document.getElementById("brand-identity-toast-text");
+              toastText.innerText = message;
+              toast.classList.remove("alka-opacity-0");
+              toast.classList.add("alka-opacity-100", "alka-toast-anim");
+
+              clearTimeout(toastTimer);
+              toastTimer = setTimeout(() => {
+                toast.classList.remove("alka-opacity-100", "alka-toast-anim");
+                toast.classList.add("alka-opacity-0");
+              }, 2400);
+            }
+          })();
+        </script>
+      </section>
       <section id="gallery" class="gallery reveal">
         <div class="container">
           <div class="section-head">
@@ -965,12 +2096,704 @@
         </div>
       </section>
 
+      <section class="calendar-section" id="calendar">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">CONTENT PLANNING · ALKA</div>
+              <h2>تقویم محتوایی Alka</h2>
+              <p>برنامه‌ریزی محتوا در قالب جدول اجرایی؛ از موضوع پست و استوری تا تکنیک‌های محتوایی و اجرایی هر روز.</p>
+            </div>
+          </div>
+          <div class="acc-list">
+            <div class="acc-item" id="item-aban">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="panel-aban">
+                <span class="acc-title"
+                  ><span class="acc-num">01</span><span><strong>تقویم محتوایی آبان</strong><small>جدول ۳۰ روزه · ۸ ستون</small></span></span
+                >
+                <span class="acc-action"
+                  ><span class="acc-label" data-open="بستن جدول" data-closed="مشاهده جدول">مشاهده جدول</span><span class="acc-icon" aria-hidden="true"></span
+                ></span>
+              </button>
+              <div class="panel" id="panel-aban" role="region" aria-label="تقویم آبان">
+                <div class="panel-inner">
+                  <div class="table-scroll" tabindex="0">
+                    <table class="calendar">
+                      <thead>
+                        <tr>
+                          <th>روزهای ماه</th>
+                          <th>مناسبت ها</th>
+                          <th class="post">پست ها(دغدغه)</th>
+                          <th>تکنیک های محتوایی</th>
+                          <th>تکنیک های اجرایی</th>
+                          <th class="story">استوری ها (موضوع)</th>
+                          <th>تکنیک محتوایی</th>
+                          <th>تکنیک اجرایی</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="day">1</td>
+                          <td class="occasion"></td>
+                          <td class="post"></td>
+                          <td></td>
+                          <td></td>
+                          <td class="story"></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td class="day">2</td>
+                          <td class="occasion"></td>
+                          <td class="post"></td>
+                          <td></td>
+                          <td></td>
+                          <td class="story"></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td class="day">3</td>
+                          <td class="occasion"></td>
+                          <td class="post"></td>
+                          <td></td>
+                          <td></td>
+                          <td class="story"></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td class="day">4</td>
+                          <td class="occasion"></td>
+                          <td class="post">پست ساده معرفی محصول</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">میشه سفارش سازی کرد؟ رنگ و مدل رو</td>
+                          <td>توضیح و گپ و گفت</td>
+                          <td>پاسخ به سوالات</td>
+                        </tr>
+                        <tr>
+                          <td class="day">5</td>
+                          <td class="occasion">ولادت حضرت زینب(روز پرستار)</td>
+                          <td class="post">پست ساده معرفی محصول</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">اعلام تخفیف برای پرستار ها +باکس سوال</td>
+                          <td>ارزش گذاری مخاطب</td>
+                          <td>قبیله سازی مخصوص پرستارها</td>
+                        </tr>
+                        <tr>
+                          <td class="day">6</td>
+                          <td class="occasion"></td>
+                          <td class="post">مدت زمان سوختن شمع چقدر؟</td>
+                          <td>ریلز توضیحی(با تکنیک ،پاسخ به سوال)</td>
+                          <td>ویدیو ساده با صحبت مستقیم</td>
+                          <td class="story">مواد شمع چیه؟ موم گیاهی یا پارافین</td>
+                          <td>تکنیک دعوا +اختلاف نظر انداختن بین مخاطب</td>
+                          <td>مقایسه و چالشی</td>
+                        </tr>
+                        <tr>
+                          <td class="day">7</td>
+                          <td class="occasion"></td>
+                          <td class="post">زیبایی باکس گل شمعی با شمع ساده</td>
+                          <td>ریلز مقایسه ای</td>
+                          <td>تکنیک تقسیم کردن صفحه به دو بخش</td>
+                          <td class="story">گل های داخل باکس چقد ماندگارن؟</td>
+                          <td>بلاگری کردن و توضیح دادن</td>
+                          <td>گفت و گو</td>
+                        </tr>
+                        <tr>
+                          <td class="day">8</td>
+                          <td class="occasion"></td>
+                          <td class="post">از چه مواد اولیه ای استفاده میکنید؟</td>
+                          <td>ریلز پاسخ به سوال</td>
+                          <td>معرفی و نشون دادن مواد اولیه به سبک تکنیک دست ساز(فقط دست تو تصویر باشه)</td>
+                          <td class="story">داستان سرایی از سفارش ی مشتری</td>
+                          <td>گپ و گفت</td>
+                          <td>داستان</td>
+                        </tr>
+                        <tr>
+                          <td class="day">9</td>
+                          <td class="occasion"></td>
+                          <td class="post">پست ساده معرفی محصول</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">پشت صحنه درست کردن کار</td>
+                          <td>بلاگری +یک نکته آموزشی</td>
+                          <td>ترفند</td>
+                        </tr>
+                        <tr>
+                          <td class="day">10</td>
+                          <td class="occasion"></td>
+                          <td class="post">ریلز (امشب خواستگاریم گل چی ببرم) معرفی گل و پیشنهاد</td>
+                          <td>تکنیک کمک (ریلز)</td>
+                          <td>با تکنیک چتی(یک ریلز از گفتگوی الکی .....و بعد معرفی باکس شمعی)</td>
+                          <td class="story">چه ترکیب رنگی حس آرامش بیشتری داره؟</td>
+                          <td>آموزشی و الهام بخشی</td>
+                          <td>آموزشی و استفاده از کوزشن در اخر</td>
+                        </tr>
+                        <tr>
+                          <td class="day">11</td>
+                          <td class="occasion"></td>
+                          <td class="post">چطور بفهمیم شمع با کیفیت یا نه؟</td>
+                          <td>ریلز توضیحی با تکنیک استفاده از اصطلاحات تخصصی</td>
+                          <td>ویدیو ساده توضیحی</td>
+                          <td class="story">نظر مشتری ها+یک ویدیو از روشن شدن شمع با موزیک ملایم+ایده نورپردازی ملایم درشب</td>
+                          <td>رضایت خرید</td>
+                          <td>انگیزشی</td>
+                        </tr>
+                        <tr>
+                          <td class="day">12</td>
+                          <td class="occasion"></td>
+                          <td class="post">پست معرفی محصول</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">توضیح درباره آموزش ها و تعداد جلسات +وسیله مورد نیاز برای شروع+آیا میشه ابزار هارو خودتون ارسال کنید؟</td>
+                          <td>پاسخ به سوالات و بلاگری</td>
+                          <td>گفتگو محور</td>
+                        </tr>
+                        <tr>
+                          <td class="day">13</td>
+                          <td class="occasion">روز دانش آموز</td>
+                          <td class="post">نداریم</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">اعلام تخفیف برای دانش آموز ها</td>
+                          <td>مناسبتی</td>
+                          <td>قبیله سازی دانش اموز ها</td>
+                        </tr>
+                        <tr>
+                          <td class="day">14</td>
+                          <td class="occasion"></td>
+                          <td class="post">تاثیر شمع روی حال خوب و انرژی فضا</td>
+                          <td>ریلز انگیزشی و وایب محور</td>
+                          <td>ویدیو از یک فضای اروم و تاریک با شمع ها و جملات انگیزشی(تکنیک وویس اووِ ر) روی ویدیو صدا بذارید.</td>
+                          <td class="story">کوزشن(پاسخ به سوالات)</td>
+                          <td>تعامل</td>
+                          <td>گفتگو محور</td>
+                        </tr>
+                        <tr>
+                          <td class="day">15</td>
+                          <td class="occasion"></td>
+                          <td class="post">پست توضیحی(شمع ها حساسیت زا هستن؟ )</td>
+                          <td>پست توضیحی</td>
+                          <td>ویدیو ساده</td>
+                          <td class="story">نظر سنجی برای ساخت مدل بعدی+بلاگری روزمره</td>
+                          <td>تعامل +بلاگری</td>
+                          <td>چالشی</td>
+                        </tr>
+                        <tr>
+                          <td class="day">16</td>
+                          <td class="occasion"></td>
+                          <td class="post">پست مدل خاص برای تولد</td>
+                          <td>تکنیک چالشی(آماده کردن باکس مخصوص تولد)</td>
+                          <td>عکس+ریلز آماده کردن باکس با تکنیک ترنسیشن کات(ویدیو هی کات بخوره موقع ادیت)</td>
+                          <td class="story">چطوری شروع کردن این کار و داستانش(بلاگری)</td>
+                          <td>بلاگری+داستان سرایی</td>
+                          <td>تعامل</td>
+                        </tr>
+                        <tr>
+                          <td class="day">17</td>
+                          <td class="occasion"></td>
+                          <td class="post">درست و غلط انجام دادن یک کار(نکته)</td>
+                          <td>از تخصصتون یک نکته درست و غلط بودن انجام کاری رو بگید(ریلز)</td>
+                          <td>ویدیو با تکنیک صدا گذاری روی فیلم</td>
+                          <td class="story">از ارسال و بسته بندی محصولات</td>
+                          <td>پشت صحنه</td>
+                          <td>کنجکاوی برانگیختن</td>
+                        </tr>
+                        <tr>
+                          <td class="day">18</td>
+                          <td class="occasion"></td>
+                          <td class="post">شمع مناسب یوگا دارید؟</td>
+                          <td>پست معرفی شمع درحال یوگا</td>
+                          <td>ریلز معرفی شمع +همراه با یوگا کردن خودتون(نشون دادن شمع یوگا درحالت اون)</td>
+                          <td class="story">برای چه مناسبت هایی مناسبن باکس ها؟</td>
+                          <td>ارزش گذاری محصول(کارهای شکل گیریش ،چرا مناسبن؟)، فوایدش</td>
+                          <td>با تکنیک حسرت که اگر محصول رو نداشته باشی فلانه....</td>
+                        </tr>
+                        <tr>
+                          <td class="day">19</td>
+                          <td class="occasion"></td>
+                          <td class="post">معنی آلکا(پست توضیحی)</td>
+                          <td>پست توضیحی متنی</td>
+                          <td></td>
+                          <td class="story">چرا شمع زود تموم میشه؟</td>
+                          <td>حس ضرر مالی+آموزش</td>
+                          <td>همذات پنداری</td>
+                        </tr>
+                        <tr>
+                          <td class="day">20</td>
+                          <td class="occasion"></td>
+                          <td class="post">پست معرفی محصول</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">چرا شمع بعد چندبار روشن کردن دود میکنه؟</td>
+                          <td>سوال از مخاطب و ریپلای گیری</td>
+                          <td>تعامل و کوزشن باکس</td>
+                        </tr>
+                        <tr>
+                          <td class="day">21</td>
+                          <td class="occasion"></td>
+                          <td class="post">نداریم</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">دلیل ترک خوردن بعضی شمع ها</td>
+                          <td>جواب تخصصی و همذات پنداری</td>
+                          <td>نقد و بررسی</td>
+                        </tr>
+                        <tr>
+                          <td class="day">22</td>
+                          <td class="occasion"></td>
+                          <td class="post">عکس از خودتون</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">یکی از بزرگ ترین اشتباه های هنرجوی تازه کار</td>
+                          <td>آموزشی و اعتماد سازی</td>
+                          <td>تکنیک دعوا و چالش درمورد موضوع</td>
+                        </tr>
+                        <tr>
+                          <td class="day">23</td>
+                          <td class="occasion"></td>
+                          <td class="post">چه چیزی الهام بخش شما موقع ساخت شمع ها؟</td>
+                          <td>ریلز پاسخ به سوال و وایب محور</td>
+                          <td>ویدیو همه مراحل مختلف از چند کار کنار هم قرار بگیره و هی کات بخوره و روش صدا گذاری بشه</td>
+                          <td class="story">چرا موم موقع ذوب شدن حباب میزنه؟</td>
+                          <td>آموزشی+جواب تخصصی</td>
+                          <td>تکنیک درست و غلط استفاده</td>
+                        </tr>
+                        <tr>
+                          <td class="day">24</td>
+                          <td class="occasion"></td>
+                          <td class="post">آموزش ساخت شمع با رنگ ترند سال</td>
+                          <td>ریلز آموزشی+ترفند گفتن</td>
+                          <td>ویدیو ساده آموزشی</td>
+                          <td class="story">بلاگری و روزمره</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td class="day">25</td>
+                          <td class="occasion"></td>
+                          <td class="post">معرفی مدل های پاییزی</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">نداریم</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td class="day">26</td>
+                          <td class="occasion"></td>
+                          <td class="post">پست انگیزشی درباره خلق زیبایی با دست های خودت</td>
+                          <td>ریلز انگیزشی و گفتگو محور</td>
+                          <td>ویدیو انجام کار همراه با صداگذاری</td>
+                          <td class="story">بدترین هدیه ای ک گرفتی رو بگو+چالشی و گپ و گفت</td>
+                          <td>چالشی+داستان سرایی</td>
+                          <td>تعامل</td>
+                        </tr>
+                        <tr>
+                          <td class="day">27</td>
+                          <td class="occasion"></td>
+                          <td class="post">شمع دود میکنه؟ (تست)</td>
+                          <td>ریلز تست محصول و پاسخ به سوال</td>
+                          <td>ویدیو ساده تست کار</td>
+                          <td class="story">ی جمله بگو ک با دیدن شمع به ذهنت میاد</td>
+                          <td>تعاملی</td>
+                          <td>قلاب و درگیر کردن مخاطب</td>
+                        </tr>
+                        <tr>
+                          <td class="day">28</td>
+                          <td class="occasion"></td>
+                          <td class="post">نداریم</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">برای هدیه عروسی و نامزدی مناسب و از ارزش محصول بگو</td>
+                          <td>ارزش گذاری</td>
+                          <td>تکنیک حسرت</td>
+                        </tr>
+                        <tr>
+                          <td class="day">29</td>
+                          <td class="occasion">روز جهانی آقایان</td>
+                          <td class="post">پست تبلیغی ،احساسی(محصول مردونه)</td>
+                          <td>ریلز معرفی محصول با تکنیک قبیله سازی برای آقایان</td>
+                          <td>ویدیو از محصول +تکنیک vs که روز مرد از نظر آقایون vs واقعیت با این هدیه خاص</td>
+                          <td class="story">اعلام تخفیف +پاسخ با سوالات</td>
+                          <td>تکنیک ارزش گذاری مخاطب</td>
+                          <td>قبیله سازی برای آقایان +پاسخ به سوالات +تعامل با مخاطب</td>
+                        </tr>
+                        <tr>
+                          <td class="day">30</td>
+                          <td class="occasion"></td>
+                          <td class="post">نداریم</td>
+                          <td></td>
+                          <td></td>
+                          <td class="story">تک استوری (یک شمع برای شروع دوباره)</td>
+                          <td>الهام بخشی و انگیزشی</td>
+                          <td>با تکنیک یک تصویر جدید از محصول در جای غیر همیشگی</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acc-item" id="item-azar">
+              <button class="acc-btn" type="button" aria-expanded="false" aria-controls="panel-azar">
+                <span class="acc-title"
+                  ><span class="acc-num">02</span><span><strong>تقویم محتوایی آذر</strong><small>جدول ۳۰ روزه · ۸ ستون</small></span></span
+                >
+                <span class="acc-action"
+                  ><span class="acc-label" data-open="بستن جدول" data-closed="مشاهده جدول">مشاهده جدول</span><span class="acc-icon" aria-hidden="true"></span
+                ></span>
+              </button>
+              <div class="panel" id="panel-azar" role="region" aria-label="تقویم آذر">
+                <div class="panel-inner">
+                  <div class="table-scroll" tabindex="0">
+                    <table class="calendar">
+                      <thead>
+                        <tr>
+                          <th>روز های ماه</th>
+                          <th>مناسبت ها</th>
+                          <th class="post">پست ها</th>
+                          <th>استراتژی دایرکت هوشمند</th>
+                          <th>تکنیک محتوایی</th>
+                          <th class="story">استوری ها</th>
+                          <th>تکنیک ها</th>
+                          <th>دایرکت هوشمند</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="day">1</td>
+                          <td class="occasion"></td>
+                          <td class="post">هدیه لوکس میخام با بودجه کم</td>
+                          <td>اگه میخوای پک هدیه مشابه مناسب بودجه ات رو ببینی ،کامنت کن</td>
+                          <td>معرفی محصول</td>
+                          <td class="story">شمعم کدر شده رنگش بعد چند روز</td>
+                          <td>مشکل کیفیت +تخصصی</td>
+                          <td>ریپلای گیری :میخوای بدونی چطور شمع شفاف بسازی؟</td>
+                        </tr>
+                        <tr>
+                          <td class="day">2</td>
+                          <td class="occasion"></td>
+                          <td class="post">ریلز در مورد صفر تا صد بسته بندی و ارسال</td>
+                          <td class="dash">ـ</td>
+                          <td>با تکنیک دست ساز و وویس اور</td>
+                          <td class="story">چطور رنگ ترکیبی بسازم؟</td>
+                          <td>آموزش محور</td>
+                          <td>ریپلای گرفتن مرحله به مرحله توضیح دادن و در آخر رسیدن به مرحله فروختن کلاس و آموزش ها</td>
+                        </tr>
+                        <tr>
+                          <td class="day">3</td>
+                          <td class="occasion">شهادت حضرت زهرا</td>
+                          <td class="post dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">تسلیت /راز رنگ شمع شیشه ای</td>
+                          <td>آموزشی</td>
+                          <td class="dash">-</td>
+                        </tr>
+                        <tr>
+                          <td class="day">4</td>
+                          <td class="occasion"></td>
+                          <td class="post">باکس خواستگاری</td>
+                          <td class="dash">ـ</td>
+                          <td>طنز ،مقایسه ای</td>
+                          <td class="story">چرا شمع دست ساز بهتر از شمع های بازاری؟</td>
+                          <td>ارزش گذاری محصول /نقد گونه</td>
+                          <td>
+                            فیلتر کردن گزینه ها برای مخاطب که مشکلش رو بهتر بفهمیم ،برای هر کدوم وویس آماده میکنی بعد کال تو اکشن فروش و بعد ارسال نمونه و در آخر قیمت و
+                            ثبت
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="day">5</td>
+                          <td class="occasion">برای روز مادر که ۲۰</td>
+                          <td class="post">چه هدیه ای برای روز مادر مناسب؟</td>
+                          <td>همین الان کلمه مادر رو کامنت کن تا از تخفیف ویژه ما جا نمونی</td>
+                          <td>ریلز+تکنیک pov</td>
+                          <td class="story">اعلام تخفیف+ریپلای گیری برای انتخاب مدل</td>
+                          <td>مناسبتی /ارزش گذاری مخاطب</td>
+                          <td>ثبت+پیام یادآوری تخفیف</td>
+                        </tr>
+                        <tr>
+                          <td class="day">6</td>
+                          <td class="occasion"></td>
+                          <td class="post">ابزار لازم حداقلی چیه؟</td>
+                          <td>برای این که بهت بگم از کجا ابزار درجه یک رو دریافت کنی ..کامنت کن</td>
+                          <td>چالشی</td>
+                          <td class="story">شمع سازی چقد سرمایه میخاد؟</td>
+                          <td>بلاگری کردن</td>
+                          <td>اعلام که پست امروز رو حتما ببین /کال تو اکشن که اگه نگران سرمایه ای ریپلای کن وویس کامل توضیحات برات بیاد</td>
+                        </tr>
+                        <tr>
+                          <td class="day">7</td>
+                          <td class="occasion"></td>
+                          <td class="post">معرفی محصول ساده</td>
+                          <td>دریافت قیمت دایرکت</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">تک استوری مرتبط با معرفی محصول</td>
+                          <td class="dash">-</td>
+                          <td>استعلام قیمت</td>
+                        </tr>
+                        <tr>
+                          <td class="day">8</td>
+                          <td class="occasion"></td>
+                          <td class="post">آینده کاری خودت رو در۶ ماه تضمین کن</td>
+                          <td>تو دایرکت برنامه میچینی براش و به چالش های جواب میدی و در آخر انگیزشی دعوتش میکنی به خرید دوره تو با تخفیف</td>
+                          <td>انگیزشی+ضبط از نتیجه کار ها با تکنیک صدا گذاری</td>
+                          <td class="story">پاسخ به سوال مخاطب</td>
+                          <td>گپ و گفت</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">9</td>
+                          <td class="occasion"></td>
+                          <td class="post dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">10</td>
+                          <td class="occasion">یلدا</td>
+                          <td class="post">ریلز معرفی یلدایی</td>
+                          <td>برام بگو چه رنج قیمت میخای کامنت کن تو دایرکت مدل مناسب بودجه ات رو بدم</td>
+                          <td>ویدیو ساده همراه با موزیک</td>
+                          <td class="story">آموزش یک نکته تخصصی</td>
+                          <td>آموزشی</td>
+                          <td>ریپلای گیری +کجای مسیر برات چالش بعد تو دایرکت همراهش کن و ازش سوال بپرس در آخر هم بهش کلاست رو معرفی کن</td>
+                        </tr>
+                        <tr>
+                          <td class="day">11</td>
+                          <td class="occasion"></td>
+                          <td class="post">چطور قیمت گذاری کنم؟</td>
+                          <td>همه نکات رو میگی یه نکته مهم رو میگی در آخر کامنت کن تا برات ارسال بشه</td>
+                          <td>چالشی( هرجوری که خودتون راحتین ضبط کنید)</td>
+                          <td class="story">چرا هرکاری میکنم شمع حباب میزنه</td>
+                          <td>آموزشی</td>
+                          <td>ارزش گذاری کار خودت و در آخر کال تو اکشن دادن و هدایت به سمت ثبت نام کلاس و دوره و سوال پرسیدن تو دایرکت</td>
+                        </tr>
+                        <tr>
+                          <td class="day">12</td>
+                          <td class="occasion"></td>
+                          <td class="post">معرفی محصول ساده</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">کوزشن باکس که امسال برنامه یلدا چی دارن؟</td>
+                          <td>گپ و گفت و قبیله سازی</td>
+                          <td>کال تو اکشن بگو مراسمت چیه و چیکاره ای بعد برای داشتن و خرید باکس یلدایی راهنماییت کنم</td>
+                        </tr>
+                        <tr>
+                          <td class="day">13</td>
+                          <td class="occasion"></td>
+                          <td class="post dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">14</td>
+                          <td class="occasion"></td>
+                          <td class="post dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">15</td>
+                          <td class="occasion">روز حسابدار</td>
+                          <td class="post">درآمد شمع سازی چقدر؟</td>
+                          <td>برای راهنمایی دقیق مسیر شروع کامنت کن و تو دایرکت کاملا مسیر رو براش روشن میکنی</td>
+                          <td>ریلز به صورت ولاگ از کارها و صحبت کردن</td>
+                          <td class="story">اعلام تخفیف ویژه برای حسابدار ها</td>
+                          <td>ریپلای گیری</td>
+                          <td>فروش ویژه +رنج قیمت</td>
+                        </tr>
+                        <tr>
+                          <td class="day">16</td>
+                          <td class="occasion">روز دانشجو</td>
+                          <td class="post">معرفی محصول ساده</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">اعلام تخفیف ویژه برای دانشجو ها</td>
+                          <td>ریپلای گیری</td>
+                          <td>فروش ویژه +رنج قیمت</td>
+                        </tr>
+                        <tr>
+                          <td class="day">17</td>
+                          <td class="occasion"></td>
+                          <td class="post">ریلز قبل و بعد کار</td>
+                          <td class="dash">ـ</td>
+                          <td>بی فور و افتر طنز</td>
+                          <td class="story">روزمره</td>
+                          <td>بلاگری</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">18</td>
+                          <td class="occasion"></td>
+                          <td class="post">ریلز با این باکس کراشت رو تبدیل به همسر کن</td>
+                          <td class="dash">ـ</td>
+                          <td>طنز</td>
+                          <td class="story">چرا سطح شمعمم صاف نمیشه؟</td>
+                          <td>آموزشی</td>
+                          <td>دعوت به تعامل تو دایرکت و ارسال همه توضیحات تو دایرکت</td>
+                        </tr>
+                        <tr>
+                          <td class="day">19</td>
+                          <td class="occasion"></td>
+                          <td class="post">ریلز هنر ینی از هیچ معنا بسازی</td>
+                          <td>فلان چیز رو کامنت کن تا این مسیر رو برای توهم فراهم کنم</td>
+                          <td>انگیزشی</td>
+                          <td class="story">چطور شمع رو به صورت سالم از قالب جدا کنم؟</td>
+                          <td>ترفند</td>
+                          <td>یه نکته مهم مونده که ریپلای کن تو دایرکت برات بفرستم</td>
+                        </tr>
+                        <tr>
+                          <td class="day">20</td>
+                          <td class="occasion">روز مادر</td>
+                          <td class="post dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">استوری اعلام تخفیف</td>
+                          <td>ریپلای گیری</td>
+                          <td>فروش ویژه به مناسبت...</td>
+                        </tr>
+                        <tr>
+                          <td class="day">21</td>
+                          <td class="occasion"></td>
+                          <td class="post dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">حدس بزن که رایحه ی این شمع چیه بعد حدس درست یا هدیه داره یا تخفیف</td>
+                          <td>ریپلای گیری و تعامل</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">22</td>
+                          <td class="occasion"></td>
+                          <td class="post">چطور با یک ملیون شمع سازی رو شروع کنم؟</td>
+                          <td>هرچی خواستی برام کامنت کن دقیق تر مسیر رو راهنماییت کنم</td>
+                          <td>آموزشی با تکنیک صدا گذاری روی ویدیو در حال خرید محصولات</td>
+                          <td class="story">چرا پارافین دیر ذوب میشه؟</td>
+                          <td>آموزشی</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">23</td>
+                          <td class="occasion"></td>
+                          <td class="post">چالش ۳روز شمع یلدایی</td>
+                          <td>کامنت کن تا نکته دقیقش رو برات ارسال کنم</td>
+                          <td>چالشی مولتی پارت + آموزشی</td>
+                          <td class="story">روز مرگی</td>
+                          <td>بلاگری</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">24</td>
+                          <td class="occasion"></td>
+                          <td class="post">چالش ۳روز شمع یلدایی</td>
+                          <td>کامنت کن تا نکته دقیقش رو برات ارسال کنم</td>
+                          <td>چالشی مولتی پارت + آموزشی</td>
+                          <td class="story">چرا شمع چربی پس میده؟</td>
+                          <td>آموزش و نکته</td>
+                          <td>ریپلای کن تا نکته اصلی رو کامل برات بگم</td>
+                        </tr>
+                        <tr>
+                          <td class="day">25</td>
+                          <td class="occasion"></td>
+                          <td class="post">چالش ۳روز شمع یلدایی</td>
+                          <td>کامنت کن تا نکته دقیقش رو برات ارسال کنم</td>
+                          <td>چالشی مولتی پارت + آموزشی</td>
+                          <td class="story">آموزش یه رنگ خاص</td>
+                          <td>ترفند</td>
+                          <td>ریپلای کن فیلم و آموزش کاملش برات میاد</td>
+                        </tr>
+                        <tr>
+                          <td class="day">26</td>
+                          <td class="occasion"></td>
+                          <td class="post dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">27</td>
+                          <td class="occasion"></td>
+                          <td class="post">معرفی محصول ساده</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">چطور با یک نکته کوچک یک تغییر بزرگ در زیبایی باکس ایجاد کنیم؟</td>
+                          <td>ریپلای و تعامل</td>
+                          <td>تو دایرکت نکته رو براش کامل شرح میدی</td>
+                        </tr>
+                        <tr>
+                          <td class="day">28</td>
+                          <td class="occasion"></td>
+                          <td class="post dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">تصور این که ۳/۶ماه دیگه تو این موقعیتی</td>
+                          <td>داستان سرایی و تصور ذهنی دادن</td>
+                          <td>برای دریافت اطلاعات کلاس ریپلای کن</td>
+                        </tr>
+                        <tr>
+                          <td class="day">29</td>
+                          <td class="occasion"></td>
+                          <td class="post">معرفی پست مدل زمستانی</td>
+                          <td class="dash">ـ</td>
+                          <td class="dash">ـ</td>
+                          <td class="story">چرا رنگم ته نشین میشه؟</td>
+                          <td>آموزشی ،ترفندی</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                        <tr>
+                          <td class="day">30</td>
+                          <td class="occasion"></td>
+                          <td class="post">
+                            یک ریلز از ویدیو خارجی که یک شمع عجیب ساخته یا یه نکته حرفه ای گفته ،بعد میگی بریم امتحان کنیم ببینیم واقعامیشه یا نه...شروع میکنی ساختن تا
+                            رسیدن به نتیجه و بعد نظر دادن
+                          </td>
+                          <td>یه قلق مهم داشت که کامنت کن بهت بگم</td>
+                          <td>تکنیک ری اکت دادن به محصول خارجی(اگر با چهره باشه بهتره) /ویدیو رو دور تند میذارم</td>
+                          <td class="story">کوزشن باکس که دوست داره در مورد چی بیشتر محتوا بذاری براشون</td>
+                          <td>تعامل</td>
+                          <td class="dash">ـ</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="foot-note">
+            <b>راهنما</b
+            ><span
+              >برای دیدن هر ماه روی عنوان آن کلیک کنید و برای بستن، دوباره کلیک کنید. جدول‌ها را می‌توان افقی و عمودی اسکرول کرد؛ سربرگ و ستون روزها هنگام اسکرول ثابت
+              می‌مانند.</span
+            >
+          </div>
+        </div>
+      </section>
+
       <section class="timeline reveal">
         <div class="container">
           <div class="section-head">
             <div>
               <div class="eyebrow">PROJECT TIMELINE</div>
-              <h2>روند همکاری</h2>
+              <h2>روند همکاری با آلکا</h2>
+              <span>آبان تا دی ۱۴۰۴</span>
             </div>
           </div>
           <div class="timeline-list" id="timeline"></div>
@@ -981,11 +2804,59 @@
         </div>
       </section>
 
+      <section id="certifications" class="certifications reveal">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">LEARNING & CERTIFICATIONS</div>
+              <h2>گواهی‌ها و دستاوردهای تخصصی</h2>
+            </div>
+            <p>مسیر یادگیری و توسعه‌ی مهارت‌ها در حوزه‌ی هوش مصنوعی و مدیریت حرفه‌ای شبکه‌های اجتماعی.</p>
+          </div>
+
+          <div class="certifications-grid">
+            <article class="certification-card">
+              <div class="certification-image">
+                <img src="images/uploads/Certification/atiyehghayomipoor.jpg" alt="گواهی تخصصی هوش مصنوعی، برنامه ADMIN AI" loading="lazy" decoding="async" />
+              </div>
+              <div class="certification-info">
+                <div class="certification-kicker">AI & DIGITAL INNOVATION</div>
+                <h3>گواهی تخصصی هوش مصنوعی</h3>
+                <span class="certification-subtitle">ADMIN AI PROGRAM</span>
+                <p>دوره جامع 40 ساعته شامل مبانی هوش مصنوعی، مهندسی پرامپت، تولید محتوا با AI، افزایش بهره‌وری، کاربردهای تجاری و فناوری نوظهور.</p>
+                <div class="certification-number">
+                  <span>شماره گواهی</span>
+                  <strong>RMA/0024889261</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="certification-card">
+              <div class="certification-image">
+                <img src="images/uploads/Certification/Atiyeh_Ghayoumipour.png" alt="گواهی تخصصی مدیریت هوشمند اینستاگرام" loading="lazy" decoding="async" />
+              </div>
+              <div class="certification-info">
+                <div class="certification-kicker">INSTAGRAM & DIGITAL MARKETING</div>
+                <h3>گواهی تخصصی مدیریت هوشمند اینستاگرام</h3>
+                <span class="certification-subtitle">SMART INSTAGRAM MANAGEMENT</span>
+                <p>دوره‌ی تخصصی مدیریت و ادمینی اینستاگرام با تمرکز بر مهارت‌های لازم برای مدیریت حرفه‌ای پیج و فعالیت در دیجیتال مارکتینگ.</p>
+                <div class="certification-number">
+                  <span>شماره گواهی</span>
+                  <strong>RMA/0024889261</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="contact reveal">
         <div class="container">
           <div class="eyebrow">LET'S TALK</div>
-          <h2>بیایید با هم کار کنیم</h2>
-          <p>برای همکاری در پروژه‌های دیجیتال مارکتینگ، طراحی هویت بصری و تولید محتوای هدفمند با من در ارتباط باشید.</p>
+          <!-- <h2>بیایید با هم کار کنیم</h2> -->
+          <h2>همراهی با برند شما برای دستیابی به رشد هدفمند و پایدار</h2>
+          <!-- <p>برای همکاری در پروژه‌های دیجیتال مارکتینگ، طراحی هویت بصری و تولید محتوای هدفمند با من در ارتباط باشید.</p> -->
+          <p>با تمرکز بر استراتژی محتوا، طراحی بصری و ابزارهای هوش مصنوعی، به برند شما کمک می‌کنم حضوری مؤثرتر و نتیجه‌محورتر در فضای دیجیتال داشته باشد.</p>
           <div class="actions">
             <a id="instagram" class="btn" href="#" target="_blank" rel="noopener">اینستاگرام ↗</a>
           </div>
@@ -1035,7 +2906,7 @@
 
         const groups = portfolio.gallery.map((group) => (Array.isArray(group.items) ? group.items : [group]));
 
-        groups.forEach((items) => {
+        function createGalleryGroup(items) {
           const row = document.createElement("div");
           row.className = "gallery-group";
 
@@ -1070,8 +2941,33 @@
             }
           });
 
-          grid.appendChild(row);
+          return row;
+        }
+
+        groups.slice(0, 4).forEach((items) => {
+          grid.appendChild(createGalleryGroup(items));
         });
+
+        if (groups.length > 4) {
+          const moreWrap = document.createElement("div");
+          moreWrap.className = "gallery-more-wrap";
+
+          const moreButton = document.createElement("button");
+          moreButton.type = "button";
+          moreButton.className = "gallery-more-btn";
+          moreButton.textContent = "مشاهده بیشتر";
+
+          moreButton.addEventListener("click", function () {
+            groups.slice(4).forEach((items) => {
+              grid.appendChild(createGalleryGroup(items));
+            });
+
+            moreWrap.remove();
+          });
+
+          moreWrap.appendChild(moreButton);
+          grid.appendChild(moreWrap);
+        }
       }
 
       function renderStories() {
@@ -1278,6 +3174,20 @@
           $("lightbox").classList.remove("open");
         }
       };
+      document.querySelectorAll(".calendar-section .acc-item").forEach(function (item) {
+        const button = item.querySelector(".acc-btn");
+        const panel = item.querySelector(".panel");
+        const label = item.querySelector(".acc-label");
+        panel.inert = true;
+        button.addEventListener("click", function () {
+          const isOpen = !item.classList.contains("open");
+          item.classList.toggle("open", isOpen);
+          button.setAttribute("aria-expanded", isOpen);
+          panel.inert = !isOpen;
+          label.textContent = isOpen ? label.dataset.open : label.dataset.closed;
+          if (isOpen) item.querySelector(".table-scroll").scrollTop = 0;
+        });
+      });
       render();
     </script>
   </body>
